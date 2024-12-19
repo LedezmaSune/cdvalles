@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,6 +10,8 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
+/* Barra de navegación */
 .navbar {
   position: fixed;
   top: 0;
@@ -20,14 +23,18 @@ body {
   font-size: 18px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Contenedor principal */
 .container {
-  margin-top: 80px;
+  margin-top: 80px; /* Espacio para la barra de navegación */
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   width: 90%;
   max-width: 400px;
 }
+
+/* Botones estilo app */
 .button {
   background-color: #6200ea;
   color: white;
@@ -40,10 +47,17 @@ body {
   text-decoration: none;
   transition: transform 0.2s, background-color 0.3s;
 }
+
 .button:hover {
   background-color: #3700b3;
   transform: scale(1.05);
 }
+
+.button:active {
+  transform: scale(0.95);
+}
+
+/* Pie de página */
 .footer {
   position: fixed;
   bottom: 0;
