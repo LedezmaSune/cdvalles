@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cd Valles </title>
+  <title>Página 2</title>
   <style>
-    /* Estilos generales */
+    /* Aquí copia todo el contenido de la etiqueta <style> del archivo principal */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -17,80 +17,23 @@
       justify-content: center;
       height: 100vh;
     }
-
-    /* Barra de navegación */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #6200ea;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 18px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Contenedor principal */
-    .container {
-      margin-top: 80px; /* Espacio para la barra de navegación */
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      width: 90%;
-      max-width: 400px;
-    }
-
-    /* Botones estilo app */
-    .button {
-      background-color: #6200ea;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none; /* Para enlaces */
-      transition: transform 0.2s, background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: #3700b3;
-      transform: scale(1.05);
-    }
-
-    .button:active {
-      transform: scale(0.95);
-    }
-
-    /* Pie de página */
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #6200ea;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 14px;
+    .navbar, .container, .button, .footer {
+      /* Resto del CSS copiado */
     }
   </style>
 </head>
 <body>
   <!-- Barra de navegación -->
-  <div class="navbar"> Cd. Valles </div>
+  <div class="navbar">Mi App</div>
 
-  <!-- Contenedor de botones -->
+  <!-- Contenido específico de esta página -->
   <div class="container">
-    <a href="https://auth.gruposalinas.com.mx/" target="_blank" class="button">Ir Grupo Salinas </a>
-    <a href="https://sites.google.com/view/somoscdvalles/expediente-operativo" target="_blank" class="button">Exprediente Operativo</a>
-    <a href="https://www.github.com" target="_blank" class="button">Ir a GitHub</a>
-    <button class="button" onclick="alert('¡Hola, este botón no redirige!');">Mostrar alerta</button>
+    <h1>Bienvenido a la Página 2</h1>
+    <p>Contenido de esta página secundaria.</p>
+    <a href="index.html" class="button">Volver a la Página Principal</a>
   </div>
 
   <!-- Pie de página -->
-  <div class="footer">&copy; 2024 Cd. Valles</div>
-
+  <div class="footer">&copy; 2024 Mi App</div>
 </body>
 </html>
