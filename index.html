@@ -51,6 +51,7 @@
       text-align: center;
       font-size: 16px;
       cursor: pointer;
+      text-decoration: none; /* Para enlaces */
       transition: transform 0.2s, background-color 0.3s;
     }
 
@@ -78,18 +79,18 @@
 </head>
 <body>
   <!-- Barra de navegación -->
-  <div class="navbar">Mi App</div>
+  <div class="navbar">Cd. Valles </div>
 
   <!-- Contenedor de botones -->
   <div class="container">
-    <button class="button" onclick="alert('Botón 1 clicado!')">Botón 1</button>
-    <button class="button" onclick="alert('Botón 2 clicado!')">Botón 2</button>
-    <button class="button" onclick="alert('Botón 3 clicado!')">Botón 3</button>
-    <button class="button" onclick="alert('Botón 4 clicado!')">Botón 4</button>
+    <a href="https://www.google.com" target="_blank" class="button">Ir a Google</a>
+    <a href="https://www.youtube.com" target="_blank" class="button">Ir a YouTube</a>
+    <a href="https://www.github.com" target="_blank" class="button">Ir a GitHub</a>
+    <button class="button" onclick="alert('¡Hola, este botón no redirige!');">Mostrar alerta</button>
   </div>
 
   <!-- Pie de página -->
-  <div class="footer">&copy; 2024 Mi App</div>
+  <div class="footer">&copy; 2024 Cd. Valles</div>
 
 </body>
 </html>
