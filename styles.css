@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  background-color: #f4f4f9; /* Gris claro para el fondo */
+  color: #333; /* Gris oscuro para el texto */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #6200ea;
+  background-color: #d32f2f; /* Rojo para la barra de navegación */
   color: white;
   text-align: center;
   padding: 15px 0;
@@ -36,7 +36,7 @@ body {
 
 /* Botones estilo app */
 .button {
-  background-color: #6200ea;
+  background-color: #d32f2f; /* Rojo para los botones */
   color: white;
   border: none;
   border-radius: 12px;
@@ -49,7 +49,7 @@ body {
 }
 
 .button:hover {
-  background-color: #3700b3;
+  background-color: #b71c1c; /* Rojo oscuro cuando el botón se pasa sobre él */
   transform: scale(1.05);
 }
 
@@ -62,7 +62,7 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #6200ea;
+  background-color: #333; /* Negro para el pie de página */
   color: white;
   text-align: center;
   padding: 10px 0;
