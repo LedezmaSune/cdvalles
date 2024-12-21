@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expediente Operativo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <div class="navbar">Expediente Operativo</div>
+
+  
+  <!-- Contenido de la página -->
+  <div class="container">
+    <p>Bienvenido a Expediente Operativo</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeasbm6HKr55j3lFRHiOe-eq2TPTaSTIUtqXFbufXRi5L4M8A/viewform" target="_blank" class="button">Expediente Operativo</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFIDh0GwrSamYM8WCCceWa0bl-hHzjzfzoTL902sk64DhYDA/viewform" target="_blank" class="button">Ficha Tecnica</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScYpU3Zo8fakFP6qO7rjjp2so31elu3dWX-XBgW_hxzXI8Ndw/viewform" target="_blank" class="button">Moto de Vida</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSejX_b636nYckjIYojsvZ0UYuyZ4X0t4_5croCrlZ1jBMga4g/viewform" target="_blank" class="button">Linea de Vida</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxHnsw-hJYWBKkszR57CCYRhJ-rLZXasW5ezyag-JPvZYAzQ/viewform" target="_blank" class="button">FODA</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBhIWro-CX1bziAmyhUmANz3cxMJmrI4yGyS8gnmm8_gB_FQ/viewform" target="_blank" class="button">FICHA DE CONTACTO</a>
+
+
+    
+    <a href="index.html" class="button">Volver a Página Principal</a>
+  </div>
+
+  <!-- Pie de página -->
+  <div class="footer">&copy; 2024 Cd Valles </div>
+</body>
+</html>
