@@ -68,3 +68,12 @@ body {
   padding: 10px 0;
   font-size: 14px;
 }
+
+
+
+.pdf-container {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
