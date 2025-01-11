@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Archivos</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { margin: 5px; padding: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+  </style>
+</head>
+<body>
+
+  <h1>Buscador de Archivos</h1>
+
+  <input type="text" id="archivo" placeholder="Buscar por archivo">
+  <input type="text" id="sucursal" placeholder="Buscar por sucursal">
+  <input type="text" id="nombre" placeholder="Buscar por nombre completo">
+  <button onclick="buscar()">Buscar</button>
+
+  <table id="resultados">
+    <thead>
+      <tr>
+        <th>Archivo</th>
+        <th>Sucursal</th>
+        <th>Nombre Completo</th>
+        <th>PDF</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function buscar() {
+      const archivo = document.getElementById('archivo').value;
+      const sucursal = document.getElementById('sucursal').value;
+      const nombre = document.getElementById('nombre').value;
+
+      const url = `https://script.google.com/macros/s/AKfycbzofjp6rnT_dbOWR5qRrPK8TdD71_5tmvgvf6HcxpsrPFTBrVUGz00KNmh8f8r7WXhtOA/exec?archivo=${archivo}&sucursal=${sucursal}&nombre=${nombre}`;
+
+      const respuesta = await fetch(url);
+      const datos = await respuesta.json();
+
+      const tabla = document.querySelector("#resultados tbody");
+      tabla.innerHTML = '';
+
+      if (datos.length === 0) {
+        tabla.innerHTML = '<tr><td colspan="4">No se encontraron resultados.</td></tr>';
+        return;
+      }
+
+      datos.forEach(item => {
+        const fila = `
+          <tr>
+            <td>${item.archivo}</td>
+            <td>${item.sucursal}</td>
+            <td>${item.nombre}</td>
+            <td><a href="${item.pdf}" target="_blank">Ver PDF</a></td>
+          </tr>`;
+        tabla.innerHTML += fila;
+      });
+    }
+  </script>
+
+</body>
+</html>
