@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Fetch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .highlight {
+            background-color: #ff00ff;
+            color: white;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Semana 4 - Miércoles - 17 PM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">Colocación Total $</td>
+                    <td><input type="number" name="colocacion_total" value="0"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Efectivo app %</td>
+                    <td><input type="number" name="efectivo_app" value="0"></td>
+                </tr>
+                <tr>
+                    <th colspan="3">Venta con Préstamo</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Total Préstamos Consumo</td>
+                    <td><input type="number" name="prestamos_consumo" value="0"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Consumo Recompra y renovación #</td>
+                    <td><input type="number" name="consumo_recompra" value="0"></td>
+                </tr>
+                <tr>
+                    <th colspan="3">Captación</th>
+                </tr>
+                <tr>
+                    <td>Guardadito #</td>
+                    <td><input type="number" name="guardadito" value="0"></td>
+                    <td><input type="number" name="guardadito_valor" value="0"></td>
+                </tr>
+                <tr>
+                    <td>SOMOS #</td>
+                    <td><input type="number" name="somos" value="1"></td>
+                    <td><input type="number" name="somos_valor" value="15000"></td>
+                </tr>
+                <tr class="highlight">
+                    <td colspan="3">SAN</td>
+                </tr>
+                <tr>
+                    <td>Afiliaciones #</td>
+                    <td><input type="number" name="afiliaciones" value="0"></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Migración de Transacciones</th>
+                </tr>
+                <tr>
+                    <td>WhatsApp #</td>
+                    <td><input type="number" name="whatsapp" value="0"></td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="button" id="enviar">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('enviar').addEventListener('click', async () => {
+            const formulario = document.getElementById('formulario');
+            const formData = new FormData(formulario);
+
+            // Convertimos los datos del formulario a un objeto JSON
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            try {
+                const response = await fetch('https://tu-api-o-destino.com/procesar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert('Datos enviados correctamente: ' + JSON.stringify(result));
+                } else {
+                    alert('Error al enviar los datos');
+                }
+            } catch (error) {
+                alert('Ocurrió un error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
