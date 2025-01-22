@@ -15,16 +15,22 @@
         }
         th, td {
             border: 1px solid black;
-            text-align: center;
+            text-align: left;
             padding: 8px;
         }
         th {
             background-color: #f2f2f2;
         }
         input[type="text"], input[type="number"] {
-            width: 100%;
+            width: 90%;
             padding: 5px;
+            margin: 5px 0;
             box-sizing: border-box;
+        }
+        .group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
         button {
             padding: 10px 15px;
@@ -44,133 +50,108 @@
             <thead>
                 <tr>
                     <th>Campo</th>
-                    <th>Valor</th>
+                    <th>Valores</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Marca Temporal</td>
-                    <td><input type="text" name="marca_temporal"></td>
+                    <td>Guardadito</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="guardadito_num">
+                            <label>$</label>
+                            <input type="number" name="guardadito_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Semana</td>
-                    <td><input type="number" name="semana"></td>
+                    <td>SOMOS</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="somos_num">
+                            <label>$</label>
+                            <input type="number" name="somos_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Día</td>
-                    <td><input type="text" name="dia"></td>
+                    <td>Débito Azteca</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="debito_azteca_num">
+                            <label>$</label>
+                            <input type="number" name="debito_azteca_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Dato</td>
-                    <td><input type="text" name="dato"></td>
+                    <td>Recompra y renovación</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="recompra_renovacion_num">
+                            <label>$</label>
+                            <input type="number" name="recompra_renovacion_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Sucursal</td>
-                    <td><input type="text" name="sucursal"></td>
+                    <td>Clientes Nuevos</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="clientes_nuevos_num">
+                            <label>$</label>
+                            <input type="number" name="clientes_nuevos_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Colocación Total $</td>
-                    <td><input type="number" name="colocacion_total"></td>
+                    <td>Consumo Recompra y renovación</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="consumo_recompra_renovacion_num">
+                            <label>$</label>
+                            <input type="number" name="consumo_recompra_renovacion_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Efectivo app %</td>
-                    <td><input type="number" name="efectivo_app"></td>
+                    <td>Inversión Creciente</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="inversion_creciente_num">
+                            <label>$</label>
+                            <input type="number" name="inversion_creciente_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Recompra y renovación #</td>
-                    <td><input type="number" name="recompra_renovacion_num"></td>
+                    <td>Inversión Azteca</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="inversion_azteca_num">
+                            <label>$</label>
+                            <input type="number" name="inversion_azteca_valor">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Recompra y renovación $</td>
-                    <td><input type="number" name="recompra_renovacion_valor"></td>
-                </tr>
-                <tr>
-                    <td>Clientes Nuevos #</td>
-                    <td><input type="number" name="clientes_nuevos_num"></td>
-                </tr>
-                <tr>
-                    <td>Clientes Nuevos $</td>
-                    <td><input type="number" name="clientes_nuevos_valor"></td>
-                </tr>
-                <tr>
-                    <td>Solicitud Clientes Nuevo Hoy</td>
-                    <td><input type="number" name="solicitud_clientes_hoy"></td>
-                </tr>
-                <tr>
-                    <td>Total Préstamos Consumo</td>
-                    <td><input type="number" name="prestamos_consumo_total"></td>
-                </tr>
-                <tr>
-                    <td>Consumo Recompra y renovación #</td>
-                    <td><input type="number" name="consumo_recompra_renovacion_num"></td>
-                </tr>
-                <tr>
-                    <td>Consumo Recompra y renovación $</td>
-                    <td><input type="number" name="consumo_recompra_renovacion_valor"></td>
-                </tr>
-                <tr>
-                    <td>Consumo Clientes Nuevos #</td>
-                    <td><input type="number" name="consumo_clientes_nuevos_num"></td>
-                </tr>
-                <tr>
-                    <td>Guardadito #</td>
-                    <td><input type="number" name="guardadito_num"></td>
-                </tr>
-                <tr>
-                    <td>Guardadito $</td>
-                    <td><input type="number" name="guardadito_valor"></td>
-                </tr>
-                <tr>
-                    <td>SOMOS #</td>
-                    <td><input type="number" name="somos_num"></td>
-                </tr>
-                <tr>
-                    <td>SOMOS $</td>
-                    <td><input type="number" name="somos_valor"></td>
-                </tr>
-                <tr>
-                    <td>Débito Azteca #</td>
-                    <td><input type="number" name="debito_azteca_num"></td>
-                </tr>
-                <tr>
-                    <td>Débito Azteca $</td>
-                    <td><input type="number" name="debito_azteca_valor"></td>
-                </tr>
-                <tr>
-                    <td>Afiliaciones #</td>
-                    <td><input type="number" name="afiliaciones"></td>
-                </tr>
-                <tr>
-                    <td>Portabilidad #</td>
-                    <td><input type="number" name="portabilidad"></td>
-                </tr>
-                <tr>
-                    <td>SNL $</td>
-                    <td><input type="number" name="snl"></td>
-                </tr>
-                <tr>
-                    <td>Factor VidaMax</td>
-                    <td><input type="number" step="0.01" name="factor_vidamax"></td>
-                </tr>
-                <tr>
-                    <td>WhatsApp #</td>
-                    <td><input type="number" name="whatsapp"></td>
-                </tr>
-                <tr>
-                    <td>Directo a Cuenta #</td>
-                    <td><input type="number" name="directo_cuenta"></td>
-                </tr>
-                <tr>
-                    <td>ATM #</td>
-                    <td><input type="number" name="atm"></td>
-                </tr>
-                <tr>
-                    <td>App Banco Azteca #</td>
-                    <td><input type="number" name="app_banco_azteca"></td>
-                </tr>
-                <tr>
-                    <td>App Banco Azteca Divisa #</td>
-                    <td><input type="number" name="app_banco_azteca_divisa"></td>
+                    <td>App Banco Azteca</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="app_banco_azteca_num">
+                            <label>Divisa #</label>
+                            <input type="number" name="app_banco_azteca_divisa_num">
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
