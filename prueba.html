@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario con Fetch</title>
+    <title>Formulario de Datos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,10 +20,6 @@
         }
         th {
             background-color: #f2f2f2;
-        }
-        .highlight {
-            background-color: #ff00ff;
-            color: white;
         }
         input[type="text"], input[type="number"] {
             width: 100%;
@@ -47,94 +43,139 @@
         <table>
             <thead>
                 <tr>
-                    <th colspan="3">Semana 4 - Miércoles - 17 PM</th>
+                    <th>Campo</th>
+                    <th>Valor</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="2">Colocación Total $</td>
-                    <td><input type="number" name="colocacion_total" value="0"></td>
+                    <td>Marca Temporal</td>
+                    <td><input type="text" name="marca_temporal"></td>
                 </tr>
                 <tr>
-                    <td colspan="2">Efectivo app %</td>
-                    <td><input type="number" name="efectivo_app" value="0"></td>
+                    <td>Semana</td>
+                    <td><input type="number" name="semana"></td>
                 </tr>
                 <tr>
-                    <th colspan="3">Venta con Préstamo</th>
+                    <td>Día</td>
+                    <td><input type="text" name="dia"></td>
                 </tr>
                 <tr>
-                    <td colspan="2">Total Préstamos Consumo</td>
-                    <td><input type="number" name="prestamos_consumo" value="0"></td>
+                    <td>Dato</td>
+                    <td><input type="text" name="dato"></td>
                 </tr>
                 <tr>
-                    <td colspan="2">Consumo Recompra y renovación #</td>
-                    <td><input type="number" name="consumo_recompra" value="0"></td>
+                    <td>Sucursal</td>
+                    <td><input type="text" name="sucursal"></td>
                 </tr>
                 <tr>
-                    <th colspan="3">Captación</th>
+                    <td>Colocación Total $</td>
+                    <td><input type="number" name="colocacion_total"></td>
+                </tr>
+                <tr>
+                    <td>Efectivo app %</td>
+                    <td><input type="number" name="efectivo_app"></td>
+                </tr>
+                <tr>
+                    <td>Recompra y renovación #</td>
+                    <td><input type="number" name="recompra_renovacion_num"></td>
+                </tr>
+                <tr>
+                    <td>Recompra y renovación $</td>
+                    <td><input type="number" name="recompra_renovacion_valor"></td>
+                </tr>
+                <tr>
+                    <td>Clientes Nuevos #</td>
+                    <td><input type="number" name="clientes_nuevos_num"></td>
+                </tr>
+                <tr>
+                    <td>Clientes Nuevos $</td>
+                    <td><input type="number" name="clientes_nuevos_valor"></td>
+                </tr>
+                <tr>
+                    <td>Solicitud Clientes Nuevo Hoy</td>
+                    <td><input type="number" name="solicitud_clientes_hoy"></td>
+                </tr>
+                <tr>
+                    <td>Total Préstamos Consumo</td>
+                    <td><input type="number" name="prestamos_consumo_total"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Recompra y renovación #</td>
+                    <td><input type="number" name="consumo_recompra_renovacion_num"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Recompra y renovación $</td>
+                    <td><input type="number" name="consumo_recompra_renovacion_valor"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Clientes Nuevos #</td>
+                    <td><input type="number" name="consumo_clientes_nuevos_num"></td>
                 </tr>
                 <tr>
                     <td>Guardadito #</td>
-                    <td><input type="number" name="guardadito" value="0"></td>
-                    <td><input type="number" name="guardadito_valor" value="0"></td>
+                    <td><input type="number" name="guardadito_num"></td>
+                </tr>
+                <tr>
+                    <td>Guardadito $</td>
+                    <td><input type="number" name="guardadito_valor"></td>
                 </tr>
                 <tr>
                     <td>SOMOS #</td>
-                    <td><input type="number" name="somos" value="1"></td>
-                    <td><input type="number" name="somos_valor" value="15000"></td>
+                    <td><input type="number" name="somos_num"></td>
                 </tr>
-                <tr class="highlight">
-                    <td colspan="3">SAN</td>
+                <tr>
+                    <td>SOMOS $</td>
+                    <td><input type="number" name="somos_valor"></td>
+                </tr>
+                <tr>
+                    <td>Débito Azteca #</td>
+                    <td><input type="number" name="debito_azteca_num"></td>
+                </tr>
+                <tr>
+                    <td>Débito Azteca $</td>
+                    <td><input type="number" name="debito_azteca_valor"></td>
                 </tr>
                 <tr>
                     <td>Afiliaciones #</td>
-                    <td><input type="number" name="afiliaciones" value="0"></td>
-                    <td>-</td>
+                    <td><input type="number" name="afiliaciones"></td>
                 </tr>
                 <tr>
-                    <th colspan="3">Migración de Transacciones</th>
+                    <td>Portabilidad #</td>
+                    <td><input type="number" name="portabilidad"></td>
+                </tr>
+                <tr>
+                    <td>SNL $</td>
+                    <td><input type="number" name="snl"></td>
+                </tr>
+                <tr>
+                    <td>Factor VidaMax</td>
+                    <td><input type="number" step="0.01" name="factor_vidamax"></td>
                 </tr>
                 <tr>
                     <td>WhatsApp #</td>
-                    <td><input type="number" name="whatsapp" value="0"></td>
-                    <td>-</td>
+                    <td><input type="number" name="whatsapp"></td>
+                </tr>
+                <tr>
+                    <td>Directo a Cuenta #</td>
+                    <td><input type="number" name="directo_cuenta"></td>
+                </tr>
+                <tr>
+                    <td>ATM #</td>
+                    <td><input type="number" name="atm"></td>
+                </tr>
+                <tr>
+                    <td>App Banco Azteca #</td>
+                    <td><input type="number" name="app_banco_azteca"></td>
+                </tr>
+                <tr>
+                    <td>App Banco Azteca Divisa #</td>
+                    <td><input type="number" name="app_banco_azteca_divisa"></td>
                 </tr>
             </tbody>
         </table>
         <br>
-        <button type="button" id="enviar">Enviar</button>
+        <button type="submit">Enviar</button>
     </form>
-
-    <script>
-        document.getElementById('enviar').addEventListener('click', async () => {
-            const formulario = document.getElementById('formulario');
-            const formData = new FormData(formulario);
-
-            // Convertimos los datos del formulario a un objeto JSON
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-
-            try {
-                const response = await fetch('https://tu-api-o-destino.com/procesar', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    const result = await response.json();
-                    alert('Datos enviados correctamente: ' + JSON.stringify(result));
-                } else {
-                    alert('Error al enviar los datos');
-                }
-            } catch (error) {
-                alert('Ocurrió un error: ' + error.message);
-            }
-        });
-    </script>
 </body>
 </html>
