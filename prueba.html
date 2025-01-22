@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Datos</title>
+    <title>Formulario Completo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,7 +21,7 @@
         th {
             background-color: #f2f2f2;
         }
-        input[type="text"], input[type="number"] {
+        input[type="text"], input[type="number"], input[type="date"], select {
             width: 90%;
             padding: 5px;
             margin: 5px 0;
@@ -54,7 +54,99 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Agrupados con # y $ -->
+                <!-- Campos Iniciales -->
+                <tr>
+                    <td>Marca Temporal</td>
+                    <td><input type="date" name="marca_temporal"></td>
+                </tr>
+                <tr>
+                    <td>Semana</td>
+                    <td><input type="number" name="semana"></td>
+                </tr>
+                <tr>
+                    <td>Día</td>
+                    <td>
+                        <select name="dia">
+                            <option value="lunes">Lunes</option>
+                            <option value="martes">Martes</option>
+                            <option value="miércoles">Miércoles</option>
+                            <option value="jueves">Jueves</option>
+                            <option value="viernes">Viernes</option>
+                            <option value="sábado">Sábado</option>
+                            <option value="domingo">Domingo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dato</td>
+                    <td><input type="text" name="dato"></td>
+                </tr>
+                <tr>
+                    <td>Sucursal</td>
+                    <td><input type="text" name="sucursal"></td>
+                </tr>
+                
+                <!-- Campos Agrupados con # y $ -->
+                <tr>
+                    <td>Colocación Total</td>
+                    <td><input type="number" name="colocacion_total_valor"></td>
+                </tr>
+                <tr>
+                    <td>Efectivo App</td>
+                    <td><input type="number" name="efectivo_app_valor"></td>
+                </tr>
+                <tr>
+                    <td>Recompra y Renovación</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="recompra_renovacion_num">
+                            <label>$</label>
+                            <input type="number" name="recompra_renovacion_valor">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Clientes Nuevos</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="clientes_nuevos_num">
+                            <label>$</label>
+                            <input type="number" name="clientes_nuevos_valor">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Solicitud Clientes Nuevo Hoy</td>
+                    <td><input type="number" name="solicitud_clientes_nuevo_hoy_num"></td>
+                </tr>
+                <tr>
+                    <td>Total Préstamos Consumo</td>
+                    <td><input type="number" name="total_prestamos_consumo_num"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Recompra y Renovación</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="consumo_recompra_renovacion_num">
+                            <label>$</label>
+                            <input type="number" name="consumo_recompra_renovacion_valor">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Consumo Clientes Nuevos</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="consumo_clientes_nuevos_num">
+                            <label>$</label>
+                            <input type="number" name="consumo_clientes_nuevos_valor">
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td>Guardadito</td>
                     <td>
@@ -89,35 +181,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Recompra y renovación</td>
+                    <td>Débito Negocio</td>
                     <td>
                         <div class="group">
                             <label>#</label>
-                            <input type="number" name="recompra_renovacion_num">
+                            <input type="number" name="debito_negocio_num">
                             <label>$</label>
-                            <input type="number" name="recompra_renovacion_valor">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Clientes Nuevos</td>
-                    <td>
-                        <div class="group">
-                            <label>#</label>
-                            <input type="number" name="clientes_nuevos_num">
-                            <label>$</label>
-                            <input type="number" name="clientes_nuevos_valor">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Consumo Recompra y renovación</td>
-                    <td>
-                        <div class="group">
-                            <label>#</label>
-                            <input type="number" name="consumo_recompra_renovacion_num">
-                            <label>$</label>
-                            <input type="number" name="consumo_recompra_renovacion_valor">
+                            <input type="number" name="debito_negocio_valor">
                         </div>
                     </td>
                 </tr>
@@ -144,6 +214,45 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Inversión a Plazo</td>
+                    <td>
+                        <div class="group">
+                            <label>#</label>
+                            <input type="number" name="inversion_a_plazo_num">
+                            <label>$</label>
+                            <input type="number" name="inversion_a_plazo_valor">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Afiliaciones</td>
+                    <td><input type="number" name="afiliaciones_num"></td>
+                </tr>
+                <tr>
+                    <td>Portabilidad</td>
+                    <td><input type="number" name="portabilidad_num"></td>
+                </tr>
+                <tr>
+                    <td>SNL</td>
+                    <td><input type="number" name="snl_valor"></td>
+                </tr>
+                <tr>
+                    <td>Factor VidaMax</td>
+                    <td><input type="number" name="factor_vidamax_valor"></td>
+                </tr>
+                <tr>
+                    <td>WhatsApp</td>
+                    <td><input type="number" name="whatsapp_num"></td>
+                </tr>
+                <tr>
+                    <td>Directo a Cuenta</td>
+                    <td><input type="number" name="directo_a_cuenta_num"></td>
+                </tr>
+                <tr>
+                    <td>ATM</td>
+                    <td><input type="number" name="atm_num"></td>
+                </tr>
+                <tr>
                     <td>App Banco Azteca</td>
                     <td>
                         <div class="group">
@@ -152,43 +261,6 @@
                             <label>Divisa #</label>
                             <input type="number" name="app_banco_azteca_divisa_num">
                         </div>
-                    </td>
-                </tr>
-                <!-- Campos que solo tienen # -->
-                <tr>
-                    <td>Total Prestamos Consumo</td>
-                    <td>
-                        <input type="number" name="total_prestamos_consumo_num">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Afiliaciones</td>
-                    <td>
-                        <input type="number" name="afiliaciones_num">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Portabilidad</td>
-                    <td>
-                        <input type="number" name="portabilidad_num">
-                    </td>
-                </tr>
-                <tr>
-                    <td>WhatsApp</td>
-                    <td>
-                        <input type="number" name="whatsapp_num">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Directo A Cuenta</td>
-                    <td>
-                        <input type="number" name="directo_a_cuenta_num">
-                    </td>
-                </tr>
-                <tr>
-                    <td>ATM</td>
-                    <td>
-                        <input type="number" name="atm_num">
                     </td>
                 </tr>
             </tbody>
