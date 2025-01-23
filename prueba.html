@@ -27,11 +27,6 @@
             margin: 5px 0;
             box-sizing: border-box;
         }
-        .group {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
         button {
             padding: 10px 15px;
             background-color: #4CAF50;
@@ -54,13 +49,176 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Campos del formulario (como en tu ejemplo) -->
-                <!-- Añadir campos según tu formulario... -->
                 <tr>
                     <td>Marca Temporal</td>
                     <td><input type="date" name="marca_temporal"></td>
                 </tr>
-                <!-- ... Más campos -->
+                <tr>
+                    <td>Semana</td>
+                    <td><input type="number" name="semana"></td>
+                </tr>
+                <tr>
+                    <td>Día</td>
+                    <td>
+                        <select name="dia">
+                            <option value="lunes">Lunes</option>
+                            <option value="martes">Martes</option>
+                            <option value="miércoles">Miércoles</option>
+                            <option value="jueves">Jueves</option>
+                            <option value="viernes">Viernes</option>
+                            <option value="sábado">Sábado</option>
+                            <option value="domingo">Domingo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dato</td>
+                    <td><input type="text" name="dato"></td>
+                </tr>
+                <tr>
+                    <td>Sucursal</td>
+                    <td><input type="text" name="sucursal"></td>
+                </tr>
+                <tr>
+                    <td>Colocación Total</td>
+                    <td><input type="number" name="colocacion_total_valor"></td>
+                </tr>
+                <tr>
+                    <td>Efectivo App</td>
+                    <td><input type="number" name="efectivo_app_valor"></td>
+                </tr>
+                <tr>
+                    <td>Recompra y Renovación (#)</td>
+                    <td><input type="number" name="recompra_renovacion_num"></td>
+                </tr>
+                <tr>
+                    <td>Recompra y Renovación ($)</td>
+                    <td><input type="number" name="recompra_renovacion_valor"></td>
+                </tr>
+                <tr>
+                    <td>Clientes Nuevos (#)</td>
+                    <td><input type="number" name="clientes_nuevos_num"></td>
+                </tr>
+                <tr>
+                    <td>Clientes Nuevos ($)</td>
+                    <td><input type="number" name="clientes_nuevos_valor"></td>
+                </tr>
+                <tr>
+                    <td>Solicitud Clientes Nuevo Hoy (#)</td>
+                    <td><input type="number" name="solicitud_clientes_nuevo_hoy_num"></td>
+                </tr>
+                <tr>
+                    <td>Total Préstamos Consumo (#)</td>
+                    <td><input type="number" name="total_prestamos_consumo_num"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Recompra y Renovación (#)</td>
+                    <td><input type="number" name="consumo_recompra_renovacion_num"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Recompra y Renovación ($)</td>
+                    <td><input type="number" name="consumo_recompra_renovacion_valor"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Clientes Nuevos (#)</td>
+                    <td><input type="number" name="consumo_clientes_nuevos_num"></td>
+                </tr>
+                <tr>
+                    <td>Consumo Clientes Nuevos ($)</td>
+                    <td><input type="number" name="consumo_clientes_nuevos_valor"></td>
+                </tr>
+                <tr>
+                    <td>Guardadito (#)</td>
+                    <td><input type="number" name="guardadito_num"></td>
+                </tr>
+                <tr>
+                    <td>Guardadito ($)</td>
+                    <td><input type="number" name="guardadito_valor"></td>
+                </tr>
+                <tr>
+                    <td>SOMOS (#)</td>
+                    <td><input type="number" name="somos_num"></td>
+                </tr>
+                <tr>
+                    <td>SOMOS ($)</td>
+                    <td><input type="number" name="somos_valor"></td>
+                </tr>
+                <tr>
+                    <td>Débito Azteca (#)</td>
+                    <td><input type="number" name="debito_azteca_num"></td>
+                </tr>
+                <tr>
+                    <td>Débito Azteca ($)</td>
+                    <td><input type="number" name="debito_azteca_valor"></td>
+                </tr>
+                <tr>
+                    <td>Débito Negocio (#)</td>
+                    <td><input type="number" name="debito_negocio_num"></td>
+                </tr>
+                <tr>
+                    <td>Débito Negocio ($)</td>
+                    <td><input type="number" name="debito_negocio_valor"></td>
+                </tr>
+                <tr>
+                    <td>Inversión Creciente (#)</td>
+                    <td><input type="number" name="inversion_creciente_num"></td>
+                </tr>
+                <tr>
+                    <td>Inversión Creciente ($)</td>
+                    <td><input type="number" name="inversion_creciente_valor"></td>
+                </tr>
+                <tr>
+                    <td>Inversión Azteca (#)</td>
+                    <td><input type="number" name="inversion_azteca_num"></td>
+                </tr>
+                <tr>
+                    <td>Inversión Azteca ($)</td>
+                    <td><input type="number" name="inversion_azteca_valor"></td>
+                </tr>
+                <tr>
+                    <td>Inversión a Plazo (#)</td>
+                    <td><input type="number" name="inversion_a_plazo_num"></td>
+                </tr>
+                <tr>
+                    <td>Inversión a Plazo ($)</td>
+                    <td><input type="number" name="inversion_a_plazo_valor"></td>
+                </tr>
+                <tr>
+                    <td>Afiliaciones (#)</td>
+                    <td><input type="number" name="afiliaciones_num"></td>
+                </tr>
+                <tr>
+                    <td>Portabilidad (#)</td>
+                    <td><input type="number" name="portabilidad_num"></td>
+                </tr>
+                <tr>
+                    <td>SNL ($)</td>
+                    <td><input type="number" name="snl_valor"></td>
+                </tr>
+                <tr>
+                    <td>Factor VidaMax ($)</td>
+                    <td><input type="number" name="factor_vidamax_valor"></td>
+                </tr>
+                <tr>
+                    <td>WhatsApp (#)</td>
+                    <td><input type="number" name="whatsapp_num"></td>
+                </tr>
+                <tr>
+                    <td>Directo a Cuenta (#)</td>
+                    <td><input type="number" name="directo_a_cuenta_num"></td>
+                </tr>
+                <tr>
+                    <td>ATM (#)</td>
+                    <td><input type="number" name="atm_num"></td>
+                </tr>
+                <tr>
+                    <td>App Banco Azteca (#)</td>
+                    <td><input type="number" name="app_banco_azteca_num"></td>
+                </tr>
+                <tr>
+                    <td>App Banco Azteca Divisa (#)</td>
+                    <td><input type="number" name="app_banco_azteca_divisa_num"></td>
+                </tr>
             </tbody>
         </table>
         <br>
@@ -68,30 +226,23 @@
     </form>
 
     <script>
-        document.getElementById("formulario").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita el comportamiento por defecto del formulario
-
-            // Obtenemos los datos del formulario
-            const formData = new FormData(this);
-
-            // Creamos un objeto para almacenar los datos del formulario
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-
-            // Enviamos los datos a través de fetch
-            fetch('URL_DEL_SERVICIO', {
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let formData = new FormData(event.target);
+            let formObject = {};
+            formData.forEach((value, key) => formObject[key] = value);
+            
+            fetch('URL_DE_TU_WEB_APP', {  // Reemplaza con la URL de tu Web App
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formObject), // Convertimos el objeto a formato JSON
+                body: JSON.stringify(formObject)
             })
-            .then(response => response.json()) // Suponiendo que la respuesta es JSON
+            .then(response => response.json())
             .then(data => {
                 alert('Formulario enviado exitosamente!');
-                console.log(data); // Muestra la respuesta del servidor
             })
             .catch(error => {
                 alert('Error al enviar el formulario');
