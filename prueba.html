@@ -125,4 +125,31 @@
         <input type="number" id="app_banco_azteca_num" name="app_banco_azteca_num" required><br><br>
 
         <label for="app_banco_azteca_divisa_num">App Banco Azteca Divisa #:</label>
-        <input type="number" id="app_banco_azteca_divisa_num" name="app_banco_azteca_divisa_num" required><br
+        <input type="number" id="app_banco_azteca_divisa_num" name="app_banco_azteca_divisa_num" required><br>
+
+
+<br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío por defecto
+
+            // Crear objeto con los datos del formulario
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Llamar al script de Google Apps para procesar los datos
+            google.script.run.withSuccessHandler(function(response) {
+                alert('Datos enviados correctamente');
+            }).guardarDatosEnGoogleSheet(data);
+        });
+    </script>
+
+</body>
+</html>
