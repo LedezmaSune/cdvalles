@@ -127,29 +127,42 @@
         <label for="app_banco_azteca_divisa_num">App Banco Azteca Divisa #:</label>
         <input type="number" id="app_banco_azteca_divisa_num" name="app_banco_azteca_divisa_num" required><br>
 
+     
 
-<br><br>
 
         <button type="submit">Enviar</button>
     </form>
 
     <script>
+        // Evento para el formulario
         document.getElementById('formulario').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar el envío por defecto
+            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
 
-            // Crear objeto con los datos del formulario
+            // Crear el objeto FormData
             const formData = new FormData(this);
             const data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
             });
 
-            // Llamar al script de Google Apps para procesar los datos
-            google.script.run.withSuccessHandler(function(response) {
+            // Usar fetch para enviar los datos al Google Apps Script
+            fetch('https://script.google.com/macros/s/tu-script-id/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Éxito:', data);
                 alert('Datos enviados correctamente');
-            }).guardarDatosEnGoogleSheet(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar los datos');
+            });
         });
     </script>
-
 </body>
 </html>
