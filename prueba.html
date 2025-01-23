@@ -3,252 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Completo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        input[type="text"], input[type="number"], input[type="date"], select {
-            width: 90%;
-            padding: 5px;
-            margin: 5px 0;
-            box-sizing: border-box;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Formulario de Métricas de Ventas</title>
 </head>
 <body>
-    <form id="formulario">
-        <table>
-            <thead>
-                <tr>
-                    <th>Campo</th>
-                    <th>Valores</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Marca Temporal</td>
-                    <td><input type="date" name="marca_temporal"></td>
-                </tr>
-                <tr>
-                    <td>Semana</td>
-                    <td><input type="number" name="semana"></td>
-                </tr>
-                <tr>
-                    <td>Día</td>
-                    <td>
-                        <select name="dia">
-                            <option value="lunes">Lunes</option>
-                            <option value="martes">Martes</option>
-                            <option value="miércoles">Miércoles</option>
-                            <option value="jueves">Jueves</option>
-                            <option value="viernes">Viernes</option>
-                            <option value="sábado">Sábado</option>
-                            <option value="domingo">Domingo</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Dato</td>
-                    <td><input type="text" name="dato"></td>
-                </tr>
-                <tr>
-                    <td>Sucursal</td>
-                    <td><input type="text" name="sucursal"></td>
-                </tr>
-                <tr>
-                    <td>Colocación Total</td>
-                    <td><input type="number" name="colocacion_total_valor"></td>
-                </tr>
-                <tr>
-                    <td>Efectivo App</td>
-                    <td><input type="number" name="efectivo_app_valor"></td>
-                </tr>
-                <tr>
-                    <td>Recompra y Renovación (#)</td>
-                    <td><input type="number" name="recompra_renovacion_num"></td>
-                </tr>
-                <tr>
-                    <td>Recompra y Renovación ($)</td>
-                    <td><input type="number" name="recompra_renovacion_valor"></td>
-                </tr>
-                <tr>
-                    <td>Clientes Nuevos (#)</td>
-                    <td><input type="number" name="clientes_nuevos_num"></td>
-                </tr>
-                <tr>
-                    <td>Clientes Nuevos ($)</td>
-                    <td><input type="number" name="clientes_nuevos_valor"></td>
-                </tr>
-                <tr>
-                    <td>Solicitud Clientes Nuevo Hoy (#)</td>
-                    <td><input type="number" name="solicitud_clientes_nuevo_hoy_num"></td>
-                </tr>
-                <tr>
-                    <td>Total Préstamos Consumo (#)</td>
-                    <td><input type="number" name="total_prestamos_consumo_num"></td>
-                </tr>
-                <tr>
-                    <td>Consumo Recompra y Renovación (#)</td>
-                    <td><input type="number" name="consumo_recompra_renovacion_num"></td>
-                </tr>
-                <tr>
-                    <td>Consumo Recompra y Renovación ($)</td>
-                    <td><input type="number" name="consumo_recompra_renovacion_valor"></td>
-                </tr>
-                <tr>
-                    <td>Consumo Clientes Nuevos (#)</td>
-                    <td><input type="number" name="consumo_clientes_nuevos_num"></td>
-                </tr>
-                <tr>
-                    <td>Consumo Clientes Nuevos ($)</td>
-                    <td><input type="number" name="consumo_clientes_nuevos_valor"></td>
-                </tr>
-                <tr>
-                    <td>Guardadito (#)</td>
-                    <td><input type="number" name="guardadito_num"></td>
-                </tr>
-                <tr>
-                    <td>Guardadito ($)</td>
-                    <td><input type="number" name="guardadito_valor"></td>
-                </tr>
-                <tr>
-                    <td>SOMOS (#)</td>
-                    <td><input type="number" name="somos_num"></td>
-                </tr>
-                <tr>
-                    <td>SOMOS ($)</td>
-                    <td><input type="number" name="somos_valor"></td>
-                </tr>
-                <tr>
-                    <td>Débito Azteca (#)</td>
-                    <td><input type="number" name="debito_azteca_num"></td>
-                </tr>
-                <tr>
-                    <td>Débito Azteca ($)</td>
-                    <td><input type="number" name="debito_azteca_valor"></td>
-                </tr>
-                <tr>
-                    <td>Débito Negocio (#)</td>
-                    <td><input type="number" name="debito_negocio_num"></td>
-                </tr>
-                <tr>
-                    <td>Débito Negocio ($)</td>
-                    <td><input type="number" name="debito_negocio_valor"></td>
-                </tr>
-                <tr>
-                    <td>Inversión Creciente (#)</td>
-                    <td><input type="number" name="inversion_creciente_num"></td>
-                </tr>
-                <tr>
-                    <td>Inversión Creciente ($)</td>
-                    <td><input type="number" name="inversion_creciente_valor"></td>
-                </tr>
-                <tr>
-                    <td>Inversión Azteca (#)</td>
-                    <td><input type="number" name="inversion_azteca_num"></td>
-                </tr>
-                <tr>
-                    <td>Inversión Azteca ($)</td>
-                    <td><input type="number" name="inversion_azteca_valor"></td>
-                </tr>
-                <tr>
-                    <td>Inversión a Plazo (#)</td>
-                    <td><input type="number" name="inversion_a_plazo_num"></td>
-                </tr>
-                <tr>
-                    <td>Inversión a Plazo ($)</td>
-                    <td><input type="number" name="inversion_a_plazo_valor"></td>
-                </tr>
-                <tr>
-                    <td>Afiliaciones (#)</td>
-                    <td><input type="number" name="afiliaciones_num"></td>
-                </tr>
-                <tr>
-                    <td>Portabilidad (#)</td>
-                    <td><input type="number" name="portabilidad_num"></td>
-                </tr>
-                <tr>
-                    <td>SNL ($)</td>
-                    <td><input type="number" name="snl_valor"></td>
-                </tr>
-                <tr>
-                    <td>Factor VidaMax ($)</td>
-                    <td><input type="number" name="factor_vidamax_valor"></td>
-                </tr>
-                <tr>
-                    <td>WhatsApp (#)</td>
-                    <td><input type="number" name="whatsapp_num"></td>
-                </tr>
-                <tr>
-                    <td>Directo a Cuenta (#)</td>
-                    <td><input type="number" name="directo_a_cuenta_num"></td>
-                </tr>
-                <tr>
-                    <td>ATM (#)</td>
-                    <td><input type="number" name="atm_num"></td>
-                </tr>
-                <tr>
-                    <td>App Banco Azteca (#)</td>
-                    <td><input type="number" name="app_banco_azteca_num"></td>
-                </tr>
-                <tr>
-                    <td>App Banco Azteca Divisa (#)</td>
-                    <td><input type="number" name="app_banco_azteca_divisa_num"></td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <button type="submit">Enviar</button>
+    <h1>Formulario de Métricas de Ventas</h1>
+    <form id="formulario" onsubmit="enviarFormulario(event)">
+        <label for="semana">Semana:</label>
+        <input type="text" id="semana" name="semana" required><br><br>
+
+        <label for="dia">Día:</label>
+        <input type="text" id="dia" name="dia" required><br><br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required><br><br>
+
+        <label for="colocacion">Colocación Total $:</label>
+        <input type="number" id="colocacion" name="colocacion" required><br><br>
+
+        <label for="efectivo">Efectivo app %:</label>
+        <input type="number" id="efectivo" name="efectivo" required><br><br>
+
+        <label for="recompra">Recompra y renovación #:</label>
+        <input type="number" id="recompra" name="recompra" required><br><br>
+
+        <label for="clientes_nuevos">Clientes Nuevos #:</label>
+        <input type="number" id="clientes_nuevos" name="clientes_nuevos" required><br><br>
+
+        <label for="solicitud_clientes_nuevos">Solicitud Clientes Nuevo Hoy:</label>
+        <input type="number" id="solicitud_clientes_nuevos" name="solicitud_clientes_nuevos" required><br><br>
+
+        <label for="venta_con_prestamo">Venta con Prestamo:</label>
+        <input type="number" id="venta_con_prestamo" name="venta_con_prestamo" required><br><br>
+
+        <label for="total_prestamos_consumo">Total Prestamos Consumo:</label>
+        <input type="number" id="total_prestamos_consumo" name="total_prestamos_consumo" required><br><br>
+
+        <label for="consumo_recompra">Consumo Recompra y renovación #:</label>
+        <input type="number" id="consumo_recompra" name="consumo_recompra" required><br><br>
+
+        <label for="consumo_clientes_nuevos">Consumo Clientes Nuevos #:</label>
+        <input type="number" id="consumo_clientes_nuevos" name="consumo_clientes_nuevos" required><br><br>
+
+        <label for="captacion">Captación:</label>
+        <input type="number" id="captacion" name="captacion" required><br><br>
+
+        <label for="guardadito">Guardadito #:</label>
+        <input type="number" id="guardadito" name="guardadito" required><br><br>
+
+        <label for="somos">SOMOS #:</label>
+        <input type="number" id="somos" name="somos" required><br><br>
+
+        <label for="debito_azteca">Débito Azteca #:</label>
+        <input type="number" id="debito_azteca" name="debito_azteca" required><br><br>
+
+        <label for="debito_negocio">Débito Negocio #:</label>
+        <input type="number" id="debito_negocio" name="debito_negocio" required><br><br>
+
+        <label for="inversion_creciente">Inversión Creciente #:</label>
+        <input type="number" id="inversion_creciente" name="inversion_creciente" required><br><br>
+
+        <label for="inversion_azteca">Inversión Azteca #:</label>
+        <input type="number" id="inversion_azteca" name="inversion_azteca" required><br><br>
+
+        <label for="inversion_plazo">Inversión A Plazo #:</label>
+        <input type="number" id="inversion_plazo" name="inversion_plazo" required><br><br>
+
+        <label for="san">SAN:</label>
+        <input type="number" id="san" name="san" required><br><br>
+
+        <label for="afiliaciones">Afiliaciones #:</label>
+        <input type="number" id="afiliaciones" name="afiliaciones" required><br><br>
+
+        <label for="portabilidad">Portabilidad #:</label>
+        <input type="number" id="portabilidad" name="portabilidad" required><br><br>
+
+        <label for="snl">SNL $:</label>
+        <input type="number" id="snl" name="snl" required><br><br>
+
+        <label for="factor_vmax">Factor VidaMax:</label>
+        <input type="number" id="factor_vmax" name="factor_vmax" required><br><br>
+
+        <label for="migracion_transacciones">Migración de Transacciones:</label>
+        <input type="number" id="migracion_transacciones" name="migracion_transacciones" required><br><br>
+
+        <label for="whatsapp">WhatsApp #:</label>
+        <input type="number" id="whatsapp" name="whatsapp" required><br><br>
+
+        <label for="directo_cuenta">Directo A Cuenta #:</label>
+        <input type="number" id="directo_cuenta" name="directo_cuenta" required><br><br>
+
+        <label for="atm">ATM #:</label>
+        <input type="number" id="atm" name="atm" required><br><br>
+
+        <label for="app_banco_azteca">App Banco Azteca #:</label>
+        <input type="number" id="app_banco_azteca" name="app_banco_azteca" required><br><br>
+
+        <label for="app_banco_azteca_divisa">App Banco Azteca Divisa #:</label>
+        <input type="number" id="app_banco_azteca_divisa" name="app_banco_azteca_divisa" required><br><br>
+
+        <input type="submit" value="Enviar">
     </form>
 
     <script>
-        document.getElementById('formulario').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            let formData = new FormData(event.target);
-            let formObject = {};
-            formData.forEach((value, key) => formObject[key] = value);
-            
-            fetch('URL_DE_TU_WEB_APP', {  // Reemplaza con la URL de tu Web App
+        // Función para manejar el envío del formulario
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evitar el envío tradicional del formulario
+
+            // Obtener los valores del formulario
+            const formularioData = new FormData(document.getElementById('formulario'));
+            const datos = {};
+            formularioData.forEach((value, key) => {
+                datos[key] = value;
+            });
+
+            // Enviar los datos al script de Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbx_example/exec', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formObject)
+                body: JSON.stringify(datos)
             })
             .then(response => response.json())
             .then(data => {
-                alert('Formulario enviado exitosamente!');
+                alert('Formulario enviado correctamente');
+                document.getElementById('formulario').reset();
             })
             .catch(error => {
-                alert('Error al enviar el formulario');
+                alert('Hubo un error al enviar el formulario');
                 console.error('Error:', error);
             });
-        });
+        }
     </script>
 </body>
 </html>
