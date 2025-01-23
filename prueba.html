@@ -8,15 +8,44 @@
 <body>
     <h1>Formulario de Métricas de Ventas</h1>
     <form id="formulario" onsubmit="enviarFormulario(event)">
+        
+        <!-- Marca Temporal -->
+        <label for="fecha">Marca Temporal:</label>
+        <input type="datetime-local" id="fecha" name="fecha" value="" required><br><br>
+
+        <!-- Semana -->
         <label for="semana">Semana:</label>
-        <input type="text" id="semana" name="semana" required><br><br>
+        <input type="number" id="semana" name="semana" required><br><br>
 
+        <!-- Día -->
         <label for="dia">Día:</label>
-        <input type="text" id="dia" name="dia" required><br><br>
+        <select id="dia" name="dia" required>
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles">Miércoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+            <option value="Sábado">Sábado</option>
+            <option value="Domingo">Domingo</option>
+        </select><br><br>
 
-        <label for="hora">Hora:</label>
-        <input type="time" id="hora" name="hora" required><br><br>
+        <!-- Sucursal -->
+        <label for="sucursal">Sucursal:</label>
+        <select id="sucursal" name="sucursal" required>
+            <option value="1756 - DAZ TAMUIN">1756 - DAZ TAMUIN</option>
+            <option value="3282 - DAZ TANCANHUITZ">3282 - DAZ TANCANHUITZ</option>
+            <option value="3446 - EKT TAMUIN SLP">3446 - EKT TAMUIN SLP</option>
+            <option value="4307 - EKT CD VALLES">4307 - EKT CD VALLES</option>
+            <option value="4678 - PRESTA PRENDA CD VALLES">4678 - PRESTA PRENDA CD VALLES</option>
+            <option value="5901 - DAZ TAMASOPO">5901 - DAZ TAMASOPO</option>
+            <option value="6116 - EKT SLP CD VALLES LOMAS YUEJAT">6116 - EKT SLP CD VALLES LOMAS YUEJAT</option>
+            <option value="8319 - DAZ EL HIGO VERACRUZ">8319 - DAZ EL HIGO VERACRUZ</option>
+            <option value="4812 - DAZ RIO VERDE">4812 - DAZ RIO VERDE</option>
+            <option value="9603 - MEGA RIO VERDE">9603 - MEGA RIO VERDE</option>
+            <option value="0736 - DAZ CERRITO">0736 - DAZ CERRITO</option>
+        </select><br><br>
 
+        <!-- Datos de Ventas -->
         <label for="colocacion">Colocación Total $:</label>
         <input type="number" id="colocacion" name="colocacion" required><br><br>
 
@@ -26,14 +55,17 @@
         <label for="recompra">Recompra y renovación #:</label>
         <input type="number" id="recompra" name="recompra" required><br><br>
 
+        <label for="recompra_dolares">Recompra y renovación $:</label>
+        <input type="number" id="recompra_dolares" name="recompra_dolares" required><br><br>
+
         <label for="clientes_nuevos">Clientes Nuevos #:</label>
         <input type="number" id="clientes_nuevos" name="clientes_nuevos" required><br><br>
 
+        <label for="clientes_nuevos_dolares">Clientes Nuevos $:</label>
+        <input type="number" id="clientes_nuevos_dolares" name="clientes_nuevos_dolares" required><br><br>
+
         <label for="solicitud_clientes_nuevos">Solicitud Clientes Nuevo Hoy:</label>
         <input type="number" id="solicitud_clientes_nuevos" name="solicitud_clientes_nuevos" required><br><br>
-
-        <label for="venta_con_prestamo">Venta con Prestamo:</label>
-        <input type="number" id="venta_con_prestamo" name="venta_con_prestamo" required><br><br>
 
         <label for="total_prestamos_consumo">Total Prestamos Consumo:</label>
         <input type="number" id="total_prestamos_consumo" name="total_prestamos_consumo" required><br><br>
@@ -41,35 +73,53 @@
         <label for="consumo_recompra">Consumo Recompra y renovación #:</label>
         <input type="number" id="consumo_recompra" name="consumo_recompra" required><br><br>
 
+        <label for="consumo_recompra_dolares">Consumo Recompra y renovación $:</label>
+        <input type="number" id="consumo_recompra_dolares" name="consumo_recompra_dolares" required><br><br>
+
         <label for="consumo_clientes_nuevos">Consumo Clientes Nuevos #:</label>
         <input type="number" id="consumo_clientes_nuevos" name="consumo_clientes_nuevos" required><br><br>
-
-        <label for="captacion">Captación:</label>
-        <input type="number" id="captacion" name="captacion" required><br><br>
 
         <label for="guardadito">Guardadito #:</label>
         <input type="number" id="guardadito" name="guardadito" required><br><br>
 
+        <label for="guardadito_dolares">Guardadito $:</label>
+        <input type="number" id="guardadito_dolares" name="guardadito_dolares" required><br><br>
+
         <label for="somos">SOMOS #:</label>
         <input type="number" id="somos" name="somos" required><br><br>
 
-        <label for="debito_azteca">Débito Azteca #:</label>
+        <label for="somos_dolares">SOMOS $:</label>
+        <input type="number" id="somos_dolares" name="somos_dolares" required><br><br>
+
+        <label for="debito_azteca">Debito Azteca #:</label>
         <input type="number" id="debito_azteca" name="debito_azteca" required><br><br>
 
-        <label for="debito_negocio">Débito Negocio #:</label>
+        <label for="debito_azteca_dolares">Debito Azteca $:</label>
+        <input type="number" id="debito_azteca_dolares" name="debito_azteca_dolares" required><br><br>
+
+        <label for="debito_negocio">Debito Negocio #:</label>
         <input type="number" id="debito_negocio" name="debito_negocio" required><br><br>
+
+        <label for="debito_negocio_dolares">Debito Negocio $:</label>
+        <input type="number" id="debito_negocio_dolares" name="debito_negocio_dolares" required><br><br>
 
         <label for="inversion_creciente">Inversión Creciente #:</label>
         <input type="number" id="inversion_creciente" name="inversion_creciente" required><br><br>
 
+        <label for="inversion_creciente_dolares">Inversión Creciente $:</label>
+        <input type="number" id="inversion_creciente_dolares" name="inversion_creciente_dolares" required><br><br>
+
         <label for="inversion_azteca">Inversión Azteca #:</label>
         <input type="number" id="inversion_azteca" name="inversion_azteca" required><br><br>
+
+        <label for="inversion_azteca_dolares">Inversión Azteca $:</label>
+        <input type="number" id="inversion_azteca_dolares" name="inversion_azteca_dolares" required><br><br>
 
         <label for="inversion_plazo">Inversión A Plazo #:</label>
         <input type="number" id="inversion_plazo" name="inversion_plazo" required><br><br>
 
-        <label for="san">SAN:</label>
-        <input type="number" id="san" name="san" required><br><br>
+        <label for="inversion_plazo_dolares">Inversión A Plazo $:</label>
+        <input type="number" id="inversion_plazo_dolares" name="inversion_plazo_dolares" required><br><br>
 
         <label for="afiliaciones">Afiliaciones #:</label>
         <input type="number" id="afiliaciones" name="afiliaciones" required><br><br>
@@ -80,11 +130,8 @@
         <label for="snl">SNL $:</label>
         <input type="number" id="snl" name="snl" required><br><br>
 
-        <label for="factor_vmax">Factor VidaMax:</label>
-        <input type="number" id="factor_vmax" name="factor_vmax" required><br><br>
-
-        <label for="migracion_transacciones">Migración de Transacciones:</label>
-        <input type="number" id="migracion_transacciones" name="migracion_transacciones" required><br><br>
+        <label for="factor_vidamax">Factor VidaMax:</label>
+        <input type="number" id="factor_vidamax" name="factor_vidamax" required><br><br>
 
         <label for="whatsapp">WhatsApp #:</label>
         <input type="number" id="whatsapp" name="whatsapp" required><br><br>
@@ -92,48 +139,29 @@
         <label for="directo_cuenta">Directo A Cuenta #:</label>
         <input type="number" id="directo_cuenta" name="directo_cuenta" required><br><br>
 
-        <label for="atm">ATM #:</label>
+        <label for="atm">ATM#:</label>
         <input type="number" id="atm" name="atm" required><br><br>
 
         <label for="app_banco_azteca">App Banco Azteca #:</label>
         <input type="number" id="app_banco_azteca" name="app_banco_azteca" required><br><br>
 
-        <label for="app_banco_azteca_divisa">App Banco Azteca Divisa #:</label>
+        <label for="app_banco_azteca_divisa">App Banco Azteca Divisa#:</label>
         <input type="number" id="app_banco_azteca_divisa" name="app_banco_azteca_divisa" required><br><br>
 
         <input type="submit" value="Enviar">
     </form>
 
     <script>
-        // Función para manejar el envío del formulario
         function enviarFormulario(event) {
-            event.preventDefault(); // Evitar el envío tradicional del formulario
+            event.preventDefault();
 
-            // Obtener los valores del formulario
             const formularioData = new FormData(document.getElementById('formulario'));
             const datos = {};
             formularioData.forEach((value, key) => {
                 datos[key] = value;
             });
 
-            // Enviar los datos al script de Google Apps Script
             fetch('https://script.google.com/macros/s/AKfycbx_example/exec', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(datos)
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Formulario enviado correctamente');
-                document.getElementById('formulario').reset();
-            })
-            .catch(error => {
-                alert('Hubo un error al enviar el formulario');
-                console.error('Error:', error);
-            });
-        }
-    </script>
-</body>
-</html>
+                    'Content-Type': '
