@@ -6,10 +6,10 @@
     <title>Formulario de Datos</title>
 </head>
 <body>
-    <h1>Formulario de Datos de Sucursal</h1>
 
+    <h1>Formulario de Datos</h1>
     <form id="formulario">
-        <!-- Campos de datos -->
+        <!-- Marca Temporal y Otros Campos -->
         <label for="marca_temporal">Marca Temporal:</label>
         <input type="datetime-local" id="marca_temporal" name="marca_temporal" required><br><br>
 
@@ -22,6 +22,7 @@
         <label for="dato">Dato:</label>
         <input type="text" id="dato" name="dato" required><br><br>
 
+        <!-- Sucursal -->
         <label for="sucursal">Sucursal:</label>
         <select id="sucursal" name="sucursal" required>
             <option value="1756 - DAZ TAMUIN">1756 - DAZ TAMUIN</option>
@@ -37,96 +38,66 @@
             <option value="0736 - DAZ CERRITO">0736 - DAZ CERRITO</option>
         </select><br><br>
 
-        <!-- Agrupamos los campos similares -->
-        <h3>Colocación y Recompra</h3>
-        <label for="colocacion">Colocación Total $:</label>
-        <input type="number" id="colocacion" name="colocacion" required><br><br>
+        <!-- Campos con # y $ -->
+        <label for="colocacion_total">Colocación Total $:</label>
+        <input type="number" id="colocacion_total" name="colocacion_total" required><br><br>
 
-        <label for="efectivo">Efectivo app %:</label>
-        <input type="number" id="efectivo" name="efectivo" required><br><br>
+        <label for="efectivo_app_percent">Efectivo app %:</label>
+        <input type="number" id="efectivo_app_percent" name="efectivo_app_percent" required><br><br>
 
-        <label for="recompra_num">Recompra y Renovación #:</label>
-        <input type="number" id="recompra_num" name="recompra_num" required><br><br>
+        <label for="recompra_renovacion_num">Recompra y renovación #:</label>
+        <input type="number" id="recompra_renovacion_num" name="recompra_renovacion_num" required>
+        <label for="recompra_renovacion_val">Recompra y renovación $:</label>
+        <input type="number" id="recompra_renovacion_val" name="recompra_renovacion_val" required><br><br>
 
-        <label for="recompra_dolares">Recompra y Renovación $:</label>
-        <input type="number" id="recompra_dolares" name="recompra_dolares" required><br><br>
-
-        <!-- Agrupamos los campos similares de Clientes Nuevos -->
-        <h3>Clientes Nuevos</h3>
         <label for="clientes_nuevos_num">Clientes Nuevos #:</label>
-        <input type="number" id="clientes_nuevos_num" name="clientes_nuevos_num" required><br><br>
+        <input type="number" id="clientes_nuevos_num" name="clientes_nuevos_num" required>
+        <label for="clientes_nuevos_val">Clientes Nuevos $:</label>
+        <input type="number" id="clientes_nuevos_val" name="clientes_nuevos_val" required><br><br>
 
-        <label for="clientes_nuevos_dolares">Clientes Nuevos $:</label>
-        <input type="number" id="clientes_nuevos_dolares" name="clientes_nuevos_dolares" required><br><br>
-
-        <label for="solicitud_clientes_nuevos">Solicitud Clientes Nuevo Hoy:</label>
-        <input type="number" id="solicitud_clientes_nuevos" name="solicitud_clientes_nuevos" required><br><br>
-
-        <!-- Agrupamos los campos de Consumo -->
-        <h3>Consumo</h3>
-        <label for="total_prestamos_consumo">Total Prestamos Consumo:</label>
-        <input type="number" id="total_prestamos_consumo" name="total_prestamos_consumo" required><br><br>
-
-        <label for="consumo_recompra_num">Consumo Recompra y Renovación #:</label>
-        <input type="number" id="consumo_recompra_num" name="consumo_recompra_num" required><br><br>
-
-        <label for="consumo_recompra_dolares">Consumo Recompra y Renovación $:</label>
-        <input type="number" id="consumo_recompra_dolares" name="consumo_recompra_dolares" required><br><br>
-
-        <label for="consumo_clientes_nuevos_num">Consumo Clientes Nuevos #:</label>
-        <input type="number" id="consumo_clientes_nuevos_num" name="consumo_clientes_nuevos_num" required><br><br>
-
-        <!-- Agrupamos los campos de Guardadito -->
-        <h3>Guardadito</h3>
         <label for="guardadito_num">Guardadito #:</label>
-        <input type="number" id="guardadito_num" name="guardadito_num" required><br><br>
+        <input type="number" id="guardadito_num" name="guardadito_num" required>
+        <label for="guardadito_val">Guardadito $:</label>
+        <input type="number" id="guardadito_val" name="guardadito_val" required><br><br>
 
-        <label for="guardadito_dolares">Guardadito $:</label>
-        <input type="number" id="guardadito_dolares" name="guardadito_dolares" required><br><br>
+        <label for="somos_num">SOMOS #:</label>
+        <input type="number" id="somos_num" name="somos_num" required>
+        <label for="somos_val">SOMOS $:</label>
+        <input type="number" id="somos_val" name="somos_val" required><br><br>
 
-        <!-- Agrupamos los campos de Débito Azteca y Débito Negocio -->
-        <h3>Débitos</h3>
         <label for="debito_azteca_num">Débito Azteca #:</label>
-        <input type="number" id="debito_azteca_num" name="debito_azteca_num" required><br><br>
-
-        <label for="debito_azteca_dolares">Débito Azteca $:</label>
-        <input type="number" id="debito_azteca_dolares" name="debito_azteca_dolares" required><br><br>
+        <input type="number" id="debito_azteca_num" name="debito_azteca_num" required>
+        <label for="debito_azteca_val">Débito Azteca $:</label>
+        <input type="number" id="debito_azteca_val" name="debito_azteca_val" required><br><br>
 
         <label for="debito_negocio_num">Débito Negocio #:</label>
-        <input type="number" id="debito_negocio_num" name="debito_negocio_num" required><br><br>
+        <input type="number" id="debito_negocio_num" name="debito_negocio_num" required>
+        <label for="debito_negocio_val">Débito Negocio $:</label>
+        <input type="number" id="debito_negocio_val" name="debito_negocio_val" required><br><br>
 
-        <label for="debito_negocio_dolares">Débito Negocio $:</label>
-        <input type="number" id="debito_negocio_dolares" name="debito_negocio_dolares" required><br><br>
-
-        <!-- Agrupamos los campos de Inversión -->
-        <h3>Inversión</h3>
         <label for="inversion_creciente_num">Inversión Creciente #:</label>
-        <input type="number" id="inversion_creciente_num" name="inversion_creciente_num" required><br><br>
-
-        <label for="inversion_creciente_dolares">Inversión Creciente $:</label>
-        <input type="number" id="inversion_creciente_dolares" name="inversion_creciente_dolares" required><br><br>
+        <input type="number" id="inversion_creciente_num" name="inversion_creciente_num" required>
+        <label for="inversion_creciente_val">Inversión Creciente $:</label>
+        <input type="number" id="inversion_creciente_val" name="inversion_creciente_val" required><br><br>
 
         <label for="inversion_azteca_num">Inversión Azteca #:</label>
-        <input type="number" id="inversion_azteca_num" name="inversion_azteca_num" required><br><br>
-
-        <label for="inversion_azteca_dolares">Inversión Azteca $:</label>
-        <input type="number" id="inversion_azteca_dolares" name="inversion_azteca_dolares" required><br><br>
+        <input type="number" id="inversion_azteca_num" name="inversion_azteca_num" required>
+        <label for="inversion_azteca_val">Inversión Azteca $:</label>
+        <input type="number" id="inversion_azteca_val" name="inversion_azteca_val" required><br><br>
 
         <label for="inversion_plazo_num">Inversión A Plazo #:</label>
-        <input type="number" id="inversion_plazo_num" name="inversion_plazo_num" required><br><br>
+        <input type="number" id="inversion_plazo_num" name="inversion_plazo_num" required>
+        <label for="inversion_plazo_val">Inversión A Plazo $:</label>
+        <input type="number" id="inversion_plazo_val" name="inversion_plazo_val" required><br><br>
 
-        <label for="inversion_plazo_dolares">Inversión A Plazo $:</label>
-        <input type="number" id="inversion_plazo_dolares" name="inversion_plazo_dolares" required><br><br>
-
-        <!-- Otros campos -->
         <label for="afiliaciones_num">Afiliaciones #:</label>
         <input type="number" id="afiliaciones_num" name="afiliaciones_num" required><br><br>
 
         <label for="portabilidad_num">Portabilidad #:</label>
         <input type="number" id="portabilidad_num" name="portabilidad_num" required><br><br>
 
-        <label for="snl_dolares">SNL $:</label>
-        <input type="number" id="snl_dolares" name="snl_dolares" required><br><br>
+        <label for="snl_val">SNL $:</label>
+        <input type="number" id="snl_val" name="snl_val" required><br><br>
 
         <label for="factor_vidamax">Factor VidaMax:</label>
         <input type="number" id="factor_vidamax" name="factor_vidamax" required><br><br>
@@ -134,8 +105,8 @@
         <label for="whatsapp_num">WhatsApp #:</label>
         <input type="number" id="whatsapp_num" name="whatsapp_num" required><br><br>
 
-        <label for="directo_cuenta_num">Directo A Cuenta #:</label>
-        <input type="number" id="directo_cuenta_num" name="directo_cuenta_num" required><br><br>
+        <label for="directo_a_cuenta_num">Directo A Cuenta #:</label>
+        <input type="number" id="directo_a_cuenta_num" name="directo_a_cuenta_num" required><br><br>
 
         <label for="atm_num">ATM #:</label>
         <input type="number" id="atm_num" name="atm_num" required><br><br>
@@ -144,44 +115,4 @@
         <input type="number" id="app_banco_azteca_num" name="app_banco_azteca_num" required><br><br>
 
         <label for="app_banco_azteca_divisa_num">App Banco Azteca Divisa #:</label>
-        <input type="number" id="app_banco_azteca_divisa_num" name="app_banco_azteca_divisa_num" required><br><br>
-
-        <button type="submit">Enviar</button>
-    </form>
-
-    <script>
-        // Script para manejar el envío del formulario y registrar los datos en Google Sheets
-        document.getElementById('formulario').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita que se recargue la página
-
-            // Recoger los datos del formulario
-            var formData = new FormData(this);
-            var dataObject = {};
-            formData.forEach(function(value, key) {
-                dataObject[key] = value;
-            });
-
-            // Convertir a un formato JSON para enviarlo a Google Apps Script
-            var jsonData = JSON.stringify(dataObject);
-
-            // Enviar los datos a Google Apps Script (aquí debes sustituir la URL de tu script)
-            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: jsonData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Datos enviados exitosamente');
-                console.log(data);
-            })
-            .catch((error) => {
-                alert('Error al enviar los datos');
-                console.error('Error:', error);
-            });
-        });
-    </script>
-</body>
-</html>
+        <input type="number" id="app_banco_azteca_divisa_num" name="app_banco_azteca_divisa_num" required><br
