@@ -17,6 +17,13 @@
   <p>Si no eres redirigido automáticamente, haz clic <a href="https://script.google.com/macros/s/AKfycbxE7DKhmnd1I1RbhCl0GSKoPkDjAgoomRY5y009TFZo1Zb-5eurbB2kizoELoqFHvAd/exec" target="_blank">aquí</a>.</p>
 
   <!-- Pie de página -->
-  <div class="footer">&copy; 2024 Cd Valles</div>
+    <footer class="footer">
+    &copy; <span id="year"></span> Cd Valles
+  </footer>
+
+  <script>
+    // Actualizar el año automáticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
