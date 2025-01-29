@@ -1,14 +1,14 @@
 /* Estilos generales */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9; /* Gris claro para el fondo */
-  color: #333; /* Gris oscuro para el texto */
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f4f4f9, #e0e0e7);
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Barra de navegación */
@@ -16,45 +16,59 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #d32f2f; /* Rojo para la barra de navegación */
+  background-color: #d32f2f;
   color: white;
   text-align: center;
   padding: 15px 0;
   font-size: 18px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
 /* Contenedor principal */
 .container {
-  margin-top: 80px; /* Espacio para la barra de navegación */
+  margin: 80px 0 60px; /* Espacio para la barra de navegación y el pie de página */
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   width: 90%;
   max-width: 400px;
 }
 
+@media (max-width: 480px) {
+  .container {
+      grid-template-columns: 1fr; /* Una columna en móviles */
+  }
+}
+
 /* Botones estilo app */
 .button {
-  background-color: #d32f2f; /* Rojo para los botones */
+  background-color: #d32f2f;
   color: white;
   border: none;
   border-radius: 12px;
-  padding: 15px;
+  padding: 15px 20px;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.2s, background-color 0.3s;
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-  background-color: #b71c1c; /* Rojo oscuro cuando el botón se pasa sobre él */
+  background-color: #b71c1c;
   transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button:active {
   transform: scale(0.95);
+}
+
+.button:focus {
+  outline: 3px solid #ffcc00;
+  outline-offset: 2px;
 }
 
 /* Pie de página */
@@ -62,18 +76,21 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #333; /* Negro para el pie de página */
+  background-color: #333;
   color: white;
   text-align: center;
   padding: 10px 0;
   font-size: 14px;
 }
 
-
-
+/* Contenedor de PDF */
 .pdf-container {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
 }
