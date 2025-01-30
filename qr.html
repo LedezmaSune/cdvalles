@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de QR - Región CD Valles</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Barra de navegación */
+    .navbar {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Botón de regreso */
+    .back-button {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    /* Contenedor principal */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Estilos para los botones */
+    .button {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 16px;
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    /* Estilos para el generador de QR */
+    .qr-container {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      background-color: white;
+    }
+
+    .qr-container input, .qr-container button, .qr-container img, .qr-container a {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .qr-container button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .qr-container button:hover {
+      background-color: #45a049;
+    }
+
+    .qr-container img {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .qr-container a {
+      display: none;
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    /* Pie de página */
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">Región CD Valles</header>
+
+  <!-- Botón de regreso a index.html -->
+  <a href="index.html" class="back-button">Regresar a Inicio</a>
+
+  <!-- Contenedor principal -->
+  <main class="container">
+    <!-- Generador de QR -->
+    <div class="qr-container">
+      <label for="qrData">Introduce el texto o URL para generar el Código QR:</label><br>
+      <input type="text" id="qrData" name="qrData" placeholder="Texto o URL"><br>
+      <button onclick="generateQRCode()">Generar Código QR</button><br>
+      <!-- Aquí se mostrará el código QR -->
+      <img id="qrCode" src="" alt="Código QR"><br>
+      <a id="downloadLink" href="#" download="QR_Code.png">Guardar Código QR como Imagen</a>
+    </div>
+
+    <!-- Botones de recursos -->
+    <a href="https://forms.gle/tTar3mU3pZbApg9S6" target="_blank" class="button">Cortes Diarios</a>
+    <a href="https://tally.so/r/mRbxWp" target="_blank" class="button">Reuniónes RED</a>
+    <a href="checklist.html" class="button">Check Lists</a>
+    <a href="pdf.html" class="button">Para Imprimir</a>
+    <a href="eo.html" class="button">Expediente Operativo</a>
+    <a href="veo.html" class="button">Buscador PDF Expediente Operativo</a>
+    <a href="https://auth.gruposalinas.com.mx" target="_blank" class="button">Grupo Salinas</a>
+    <a href="pdfgg.html" class="button">Grito de Guerra</a>
+    <a href="pdfms.html" class="button">Matriz de Sanciones</a>
+    <a href="vacaciones.html" target="_blank" class="button">Agenda Vacaciones G/LF/LO</a>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    &copy; <span id="year"></span> Cd Valles
+  </footer>
+
+  <script>
+    // Función para generar el código QR
+    function generateQRCode() {
+      var data = document.getElementById('qrData').value;
+      
+      if (data.trim() !== "") {
+        // Genera el código QR
+        var qrCodeUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(data);
+        
+        // Muestra el código QR
+        var qrCodeImage = document.getElementById('qrCode');
+        qrCodeImage.src = qrCodeUrl;
+        qrCodeImage.style.display = 'block';
+
+        // Configura el enlace de descarga
+        var downloadLink = document.getElementById('downloadLink');
+        downloadLink.href = qrCodeUrl;
+        downloadLink.style.display = 'block';
+      } else {
+        alert("Por favor, introduce un texto o URL válido.");
+      }
+    }
+
+    // Actualizar el año automáticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
