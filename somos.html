@@ -2,102 +2,189 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Somos Extraordinarios</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <title>Benchmark Elektra</title>
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    .form-container {
       background: #fff;
-      margin: 0;
-      padding: 2rem;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .title {
-      font-size: 3rem;
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    legend {
       font-weight: bold;
+      padding: 0 10px;
     }
-
-    .title span:nth-child(1) { color: #A6192E; }   /* s - rojo */
-    .title span:nth-child(2) { color: #00843D; }   /* o - verde */
-    .title span:nth-child(3) { color: #58595B; }   /* m - gris */
-    .title span:nth-child(4) { color: #F68B1F; }   /* o - naranja */
-    .title span:nth-child(5) { color: #58595B; }   /* s - gris */
-
-    .subtitle {
-      color: #58595B;
-      font-size: 1.5rem;
-      margin-top: -10px;
+    .question {
+      margin-bottom: 15px;
     }
-
-    .circle-container {
-      position: relative;
-      width: 250px;
-      height: 250px;
-      margin: 2rem auto;
-      border-radius: 50%;
-      background: conic-gradient(
-        #007A33 0deg 120deg,
-        #F68B1F 120deg 240deg,
-        #A6192E 240deg 360deg
-      );
+    .question label {
+      display: block;
+      margin-bottom: 5px;
     }
-
-    .circle-center {
-      position: absolute;
-      top: 25%;
-      left: 25%;
-      width: 50%;
-      height: 50%;
-      background: white;
-      border-radius: 50%;
-      z-index: 2;
+    .question input[type="radio"] {
+      margin-right: 10px;
     }
-
-    .text-section {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      font-size: 1rem;
+    .footer-inputs {
+      margin-top: 30px;
+    }
+    .footer-inputs input {
+      padding: 8px;
+      margin-right: 10px;
+      width: 45%;
+    }
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 30px;
+      background: #28a745;
+      border: none;
       color: white;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
     }
-
-    .amables {
-      transform: rotate(-60deg);
-      transform-origin: center;
-      top: 10%;
-      left: -5%;
-    }
-
-    .asesores {
-      transform: rotate(60deg);
-      transform-origin: center;
-      top: 10%;
-      right: -5%;
-    }
-
-    .inolvidables {
-      bottom: 5%;
-      left: 30%;
+    button:hover {
+      background: #218838;
     }
   </style>
 </head>
 <body>
 
-  <div class="title">
-    <span>s</span><span>o</span><span>m</span><span>o</span><span>s</span>
-  </div>
-  <div class="subtitle">extraordinarios</div>
+  <div class="form-container">
+    <h2>Cuestionario Benchmark - Elektra</h2>
+    <form>
 
-  <div class="circle-container">
-    <div class="circle-center"></div>
-    <div class="text-section amables">amables</div>
-    <div class="text-section asesores">asesores</div>
-    <div class="text-section inolvidables">inolvidables</div>
+      <!-- ABORDA -->
+      <fieldset>
+        <legend>1. ABORDA</legend>
+        <div class="question">
+          <label>Realiza parafraseo, retrofraseo y efectúa el cuadro verbal en la conversación.</label>
+          <label><input type="radio" name="aborda1" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="aborda1" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Emplea el espejeo, espejeo cruzado y la próxemica.</label>
+          <label><input type="radio" name="aborda2" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="aborda2" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Establece un centramiento, controla su respiración y efectúa una alineación emocional.</label>
+          <label><input type="radio" name="aborda3" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="aborda3" value="X"> ✘ No cumple</label>
+        </div>
+      </fieldset>
+
+      <!-- DESCUBRE -->
+      <fieldset>
+        <legend>2. DESCUBRE</legend>
+        <div class="question">
+          <label>Realiza preguntas poderosas y bien enfocadas para descubrir necesidades.</label>
+          <label><input type="radio" name="descubre1" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="descubre1" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Valida la información obtenida del cliente antes de avanzar.</label>
+          <label><input type="radio" name="descubre2" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="descubre2" value="X"> ✘ No cumple</label>
+        </div>
+      </fieldset>
+
+      <!-- SOLUCIONA -->
+      <fieldset>
+        <legend>3. SOLUCIONA</legend>
+        <div class="question">
+          <label>Prepara el producto antes de mostrar al cliente.</label>
+          <label><input type="radio" name="soluciona1" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="soluciona1" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Presenta el producto al cliente.</label>
+          <label><input type="radio" name="soluciona2" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="soluciona2" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Invita a probar el producto al cliente.</label>
+          <label><input type="radio" name="soluciona3" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="soluciona3" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Realiza un pre-cierre claro y directo antes de avanzar al cierre final.</label>
+          <label><input type="radio" name="soluciona4" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="soluciona4" value="X"> ✘ No cumple</label>
+        </div>
+      </fieldset>
+
+      <!-- CIERRA -->
+      <fieldset>
+        <legend>4. CIERRA</legend>
+        <div class="question">
+          <label>Escucha activamente las objeciones del cliente.</label>
+          <label><input type="radio" name="cierra1" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="cierra1" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Reformula la objeción en forma de pregunta para clarificar la necesidad del cliente.</label>
+          <label><input type="radio" name="cierra2" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="cierra2" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Responde a la objeción usando la técnica Ventaja-Enlace-Beneficio / Máximos y Mínimos.</label>
+          <label><input type="radio" name="cierra3" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="cierra3" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Verifica si el cliente tiene otras inquietudes antes de avanzar.</label>
+          <label><input type="radio" name="cierra4" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="cierra4" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Realiza un cierre claro y directo.</label>
+          <label><input type="radio" name="cierra5" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="cierra5" value="X"> ✘ No cumple</label>
+        </div>
+      </fieldset>
+
+      <!-- ASEGURA -->
+      <fieldset>
+        <legend>5. ASEGURA</legend>
+        <div class="question">
+          <label>Establece un anclaje emocional o mental que refuerce la compra.</label>
+          <label><input type="radio" name="asegura1" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="asegura1" value="X"> ✘ No cumple</label>
+        </div>
+        <div class="question">
+          <label>Facilita el proceso de pago de manera rápida y sin fricciones.</label>
+          <label><input type="radio" name="asegura2" value="✔"> ✔ Cumple</label>
+          <label><input type="radio" name="asegura2" value="X"> ✘ No cumple</label>
+        </div>
+      </fieldset>
+
+      <!-- Evaluador -->
+      <div class="footer-inputs">
+        <input type="text" placeholder="Nombre del evaluador">
+        <input type="text" placeholder="Nombre del vendedor">
+        <input type="date">
+      </div>
+
+      <button type="submit">Enviar evaluación</button>
+    </form>
   </div>
 
 </body>
