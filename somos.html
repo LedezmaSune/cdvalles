@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Somos Extraordinarios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      background: #fff;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .title span:nth-child(1) { color: #A6192E; }   /* s - rojo */
+    .title span:nth-child(2) { color: #00843D; }   /* o - verde */
+    .title span:nth-child(3) { color: #58595B; }   /* m - gris */
+    .title span:nth-child(4) { color: #F68B1F; }   /* o - naranja */
+    .title span:nth-child(5) { color: #58595B; }   /* s - gris */
+
+    .subtitle {
+      color: #58595B;
+      font-size: 1.5rem;
+      margin-top: -10px;
+    }
+
+    .circle-container {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 2rem auto;
+      border-radius: 50%;
+      background: conic-gradient(
+        #007A33 0deg 120deg,
+        #F68B1F 120deg 240deg,
+        #A6192E 240deg 360deg
+      );
+    }
+
+    .circle-center {
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
+      background: white;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .text-section {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .amables {
+      transform: rotate(-60deg);
+      transform-origin: center;
+      top: 10%;
+      left: -5%;
+    }
+
+    .asesores {
+      transform: rotate(60deg);
+      transform-origin: center;
+      top: 10%;
+      right: -5%;
+    }
+
+    .inolvidables {
+      bottom: 5%;
+      left: 30%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">
+    <span>s</span><span>o</span><span>m</span><span>o</span><span>s</span>
+  </div>
+  <div class="subtitle">extraordinarios</div>
+
+  <div class="circle-container">
+    <div class="circle-center"></div>
+    <div class="text-section amables">amables</div>
+    <div class="text-section asesores">asesores</div>
+    <div class="text-section inolvidables">inolvidables</div>
+  </div>
+
+</body>
+</html>
