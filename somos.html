@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evaluación Benchmark - Elektra</title>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    /* --- Diseño básico limpio, adapta si necesitas --- */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      padding: 30px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #2A5CAA;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
+    input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .radio-group {
+      margin: 8px 0 20px;
+    }
+    .radio-group label {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    button {
+      padding: 12px 30px;
+      background-color: #2A5CAA;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto 0;
+    }
+    button:hover {
+      background-color: #1e4688;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Evaluación Benchmark - Elektra</h2>
+  <form id="formulario">
+    <div class="form-group">
+      <label>Evaluador</label>
+      <input type="text" name="evaluador" required />
+    </div>
+    <div class="form-group">
+      <label>Vendedor</label>
+      <input type="text" name="vendedor" required />
+    </div>
+    <div class="form-group">
+      <label>Fecha</label>
+      <input type="date" name="fecha" required />
+    </div>
+
+    <div id="preguntas"></div>
+
+    <button type="submit">Enviar y Generar PDF</button>
+  </form>
+</div>
+
+<script>
+  const CLIENT_ID = "1090978274391-k90i2vcn7aftqludlhd353p9p5kg3rk8.apps.googleusercontent.com";
+  const API_KEY = "AIzaSyC2wPChoOfXdd8nUBCg3ng9fmAdAw0wnis";
+  const SPREADSHEET_ID = "1cE9MlFoZDrVl4Dgu-SUQjRcaEAlZzC5eeifvo5EYeyo";
+  const SCOPE = "https://www.googleapis.com/auth/spreadsheets";
+
+  const secciones = {
+    "ABORDA": [
+      "Parafraseo y cuadro verbal",
+      "Espejeo y proxémica",
+      "Centramiento y alineación emocional"
+    ],
+    "DESCUBRE": [
+      "Preguntas poderosas",
+      "Valida la información"
+    ],
+    "SOLUCIONA": [
+      "Prepara el producto",
+      "Presenta el producto",
+      "Invita a probar el producto",
+      "Realiza pre-cierre"
+    ],
+    "CIERRA": [
+      "Escucha objeciones",
+      "Reformula objeción",
+      "Técnica VEB / Máximos y mínimos",
+      "Verifica otras inquietudes",
+      "Realiza cierre claro"
+    ],
+    "ASEGURA": [
+      "Anclaje emocional",
+      "Facilita el pago"
+    ]
+  };
+
+  // Generar preguntas dinámicamente
+  const preguntasDiv = document.getElementById("preguntas");
+  let i = 1;
+  for (let [seccion, preguntas] of Object.entries(secciones)) {
+    preguntas.forEach(preg => {
+      const name = `${seccion.toLowerCase()}${i}`;
+      const div = document.createElement("div");
+      div.className = "form-group";
+      div.innerHTML = `
+        <label>${i}. (${seccion}) ${preg}</label>
+        <div class="radio-group">
+          <label><input type="radio" name="${name}" value="✔" required> ✔ Cumple</label>
+          <label><input type="radio" name="${name}" value="X"> ✘ No cumple</label>
+        </div>
+      `;
+      preguntasDiv.appendChild(div);
+      i++;
+    });
+  }
+
+  // Manejo de autenticación y envío
+  document.getElementById("formulario").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    await gapi.auth2.getAuthInstance().signIn();
+
+    const values = [
+      [
+        data.fecha,
+        data.evaluador,
+        data.vendedor,
+        data.aborda1,
+        data.aborda2,
+        data.aborda3,
+        data.descubre4,
+        data.descubre5,
+        data.soluciona6,
+        data.soluciona7,
+        data.soluciona8,
+        data.soluciona9,
+        data.cierra10,
+        data.cierra11,
+        data.cierra12,
+        data.cierra13,
+        data.cierra14,
+        data.asegura15,
+        data.asegura16
+      ]
+    ];
+
+    try {
+      await gapi.client.sheets.spreadsheets.values.append({
+        spreadsheetId: SPREADSHEET_ID,
+        range: "A1",
+        valueInputOption: "USER_ENTERED",
+        resource: {
+          values
+        }
+      });
+      alert("✅ Evaluación guardada correctamente");
+
+      // Generar PDF
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      let y = 20;
+      doc.setFontSize(16);
+      doc.text("Evaluación Benchmark - Elektra", 15, y);
+      y += 10;
+      doc.setFontSize(12);
+      doc.text(`Evaluador: ${data.evaluador}`, 15, y); y += 6;
+      doc.text(`Vendedor: ${data.vendedor}`, 15, y); y += 6;
+      doc.text(`Fecha: ${data.fecha}`, 15, y); y += 10;
+
+      for (let [key, value] of Object.entries(data)) {
+        if (!['evaluador', 'vendedor', 'fecha'].includes(key)) {
+          doc.text(`${key.toUpperCase()}: ${value}`, 15, y);
+          y += 6;
+          if (y > 270) { doc.addPage(); y = 20; }
+        }
+      }
+
+      const nombre = data.vendedor.replace(/\s+/g, "");
+      doc.save(`Evaluacion-Benchmark-${nombre}-${data.fecha}.pdf`);
+      e.target.reset();
+    } catch (err) {
+      console.error(err);
+      alert("❌ Ocurrió un error al guardar en la hoja");
+    }
+  });
+
+  function start() {
+    gapi.client.init({
+      apiKey: API_KEY,
+      clientId: CLIENT_ID,
+      discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+      scope: SCOPE
+    }).then(() => {
+      if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+    });
+  }
+
+  gapi.load("client:auth2", () => {
+    gapi.auth2.init({ client_id: CLIENT_ID });
+    gapi.client.load("sheets", "v4", start);
+  });
+</script>
+
+</body>
+</html>
