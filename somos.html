@@ -2,66 +2,54 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Evaluación Benchmark - Elektra</title>
+  <title>Evaluación Benchmark</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      background: #f0f2f5;
       padding: 20px;
     }
-    .form-container {
-      background: #fff;
-      padding: 30px;
-      max-width: 800px;
+    .container {
+      max-width: 900px;
       margin: auto;
-      border-radius: 10px;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h2 {
       text-align: center;
-      margin-bottom: 30px;
+      color: #007BFF;
     }
-    fieldset {
-      border: 1px solid #ccc;
-      margin-bottom: 20px;
-      padding: 20px;
-      border-radius: 8px;
-    }
-    legend {
+    label {
       font-weight: bold;
-      padding: 0 10px;
-    }
-    .question {
-      margin-bottom: 15px;
-    }
-    .question label {
       display: block;
-      margin-bottom: 5px;
+      margin-top: 15px;
     }
-    .question input[type="radio"] {
-      margin-right: 10px;
-    }
-    .footer-inputs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 30px;
-    }
-    .footer-inputs input {
-      flex: 1;
+    input[type="text"], input[type="date"] {
+      width: 100%;
       padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .radio-group {
+      margin-bottom: 10px;
+    }
+    .radio-group input {
+      margin-right: 8px;
     }
     button {
-      display: inline-block;
-      margin: 15px 10px 0 0;
-      padding: 12px 20px;
-      background: #007bff;
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #007BFF;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 16px;
     }
     button:hover {
       background: #0056b3;
@@ -70,134 +58,178 @@
 </head>
 <body>
 
-  <div class="form-container">
-    <h2>Evaluación Benchmark - Elektra</h2>
-    <form id="evalForm">
+<div class="container">
+  <h2>Evaluación Benchmark - Elektra</h2>
+  <form id="formulario">
 
-      <!-- Campo nombre evaluador y vendedor -->
-      <div class="footer-inputs">
-        <input type="text" name="evaluador" placeholder="Nombre del evaluador" required>
-        <input type="text" name="vendedor" placeholder="Nombre del vendedor" required>
-      </div>
+    <label>Nombre del evaluador:</label>
+    <input type="text" name="evaluador" required>
 
-      <!-- Generador automático de preguntas -->
-      <div id="preguntas-container"></div>
+    <label>Nombre del vendedor:</label>
+    <input type="text" name="vendedor" required>
 
-      <!-- Botones -->
-      <button type="submit">Enviar a Google Sheets</button>
-      <button type="button" id="generatePDF">Generar PDF</button>
-    </form>
-  </div>
+    <label>Fecha:</label>
+    <input type="date" name="fecha" required>
 
-  <script>
-    const secciones = {
-      "ABORDA": [
-        "Parafraseo y cuadro verbal",
-        "Espejeo y proxémica",
-        "Centramiento y alineación emocional"
-      ],
-      "DESCUBRE": [
-        "Preguntas poderosas",
-        "Valida info antes de avanzar"
-      ],
-      "SOLUCIONA": [
-        "Prepara el producto",
-        "Presenta el producto",
-        "Invita a probar",
-        "Realiza pre-cierre"
-      ],
-      "CIERRA": [
-        "Escucha objeciones",
-        "Reformula objeción",
-        "Técnica VEB / Máximos y Mínimos",
-        "Verifica otras inquietudes",
-        "Realiza cierre claro"
-      ],
-      "ASEGURA": [
-        "Anclaje emocional",
-        "Facilita el pago"
-      ]
-    };
+    <!-- Preguntas -->
+    <!-- ABORDA -->
+    <label>ABORDA 1: Parafraseo y cuadro verbal</label>
+    <div class="radio-group">
+      <input type="radio" name="aborda1" value="✔" required> ✔
+      <input type="radio" name="aborda1" value="X"> ✘
+    </div>
 
-    const preguntasContainer = document.getElementById("preguntas-container");
-    let contador = 1;
+    <label>ABORDA 2: Espejeo y proxémica</label>
+    <div class="radio-group">
+      <input type="radio" name="aborda2" value="✔" required> ✔
+      <input type="radio" name="aborda2" value="X"> ✘
+    </div>
 
-    for (let [seccion, preguntas] of Object.entries(secciones)) {
-      const fieldset = document.createElement("fieldset");
-      const legend = document.createElement("legend");
-      legend.textContent = seccion;
-      fieldset.appendChild(legend);
+    <label>ABORDA 3: Centramiento y alineación emocional</label>
+    <div class="radio-group">
+      <input type="radio" name="aborda3" value="✔" required> ✔
+      <input type="radio" name="aborda3" value="X"> ✘
+    </div>
 
-      preguntas.forEach((texto, index) => {
-        const key = `${seccion.toLowerCase()}${index + 1}`;
-        const div = document.createElement("div");
-        div.className = "question";
-        div.innerHTML = `
-          <label>${contador++}. ${texto}</label>
-          <label><input type="radio" name="${key}" value="✔" required> ✔ Cumple</label>
-          <label><input type="radio" name="${key}" value="X"> ✘ No cumple</label>
-        `;
-        fieldset.appendChild(div);
-      });
+    <!-- DESCUBRE -->
+    <label>DESCUBRE 1: Preguntas poderosas</label>
+    <div class="radio-group">
+      <input type="radio" name="descubre1" value="✔" required> ✔
+      <input type="radio" name="descubre1" value="X"> ✘
+    </div>
 
-      preguntasContainer.appendChild(fieldset);
+    <label>DESCUBRE 2: Valida la información</label>
+    <div class="radio-group">
+      <input type="radio" name="descubre2" value="✔" required> ✔
+      <input type="radio" name="descubre2" value="X"> ✘
+    </div>
+
+    <!-- SOLUCIONA -->
+    <label>SOLUCIONA 1: Prepara el producto</label>
+    <div class="radio-group">
+      <input type="radio" name="soluciona1" value="✔" required> ✔
+      <input type="radio" name="soluciona1" value="X"> ✘
+    </div>
+
+    <label>SOLUCIONA 2: Presenta el producto</label>
+    <div class="radio-group">
+      <input type="radio" name="soluciona2" value="✔" required> ✔
+      <input type="radio" name="soluciona2" value="X"> ✘
+    </div>
+
+    <label>SOLUCIONA 3: Invita a probar el producto</label>
+    <div class="radio-group">
+      <input type="radio" name="soluciona3" value="✔" required> ✔
+      <input type="radio" name="soluciona3" value="X"> ✘
+    </div>
+
+    <label>SOLUCIONA 4: Realiza pre-cierre</label>
+    <div class="radio-group">
+      <input type="radio" name="soluciona4" value="✔" required> ✔
+      <input type="radio" name="soluciona4" value="X"> ✘
+    </div>
+
+    <!-- CIERRA -->
+    <label>CIERRA 1: Escucha objeciones</label>
+    <div class="radio-group">
+      <input type="radio" name="cierra1" value="✔" required> ✔
+      <input type="radio" name="cierra1" value="X"> ✘
+    </div>
+
+    <label>CIERRA 2: Reformula objeción</label>
+    <div class="radio-group">
+      <input type="radio" name="cierra2" value="✔" required> ✔
+      <input type="radio" name="cierra2" value="X"> ✘
+    </div>
+
+    <label>CIERRA 3: Técnica VEB / Mínimos y máximos</label>
+    <div class="radio-group">
+      <input type="radio" name="cierra3" value="✔" required> ✔
+      <input type="radio" name="cierra3" value="X"> ✘
+    </div>
+
+    <label>CIERRA 4: Verifica otras inquietudes</label>
+    <div class="radio-group">
+      <input type="radio" name="cierra4" value="✔" required> ✔
+      <input type="radio" name="cierra4" value="X"> ✘
+    </div>
+
+    <label>CIERRA 5: Realiza cierre claro</label>
+    <div class="radio-group">
+      <input type="radio" name="cierra5" value="✔" required> ✔
+      <input type="radio" name="cierra5" value="X"> ✘
+    </div>
+
+    <!-- ASEGURA -->
+    <label>ASEGURA 1: Anclaje emocional</label>
+    <div class="radio-group">
+      <input type="radio" name="asegura1" value="✔" required> ✔
+      <input type="radio" name="asegura1" value="X"> ✘
+    </div>
+
+    <label>ASEGURA 2: Facilita el pago</label>
+    <div class="radio-group">
+      <input type="radio" name="asegura2" value="✔" required> ✔
+      <input type="radio" name="asegura2" value="X"> ✘
+    </div>
+
+    <button type="submit">Enviar y Generar PDF</button>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById("formulario");
+  const scriptURL = "URL_DE_TU_WEBAPP"; // Reemplaza con la URL de tu Web App
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Validación: si algún campo no está marcado, no continúa
+    if (!form.checkValidity()) {
+      alert("⚠️ Por favor responde todas las preguntas.");
+      return;
     }
 
-    document.getElementById("evalForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData.entries());
-
-      fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_URL/exec", { // <-- Reemplaza esto
+    // Enviar a Google Sheets
+    try {
+      await fetch(scriptURL, {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" }
-      })
-        .then(res => res.text())
-        .then(msg => {
-          alert("✅ " + msg);
-          this.reset();
-        })
-        .catch(err => alert("❌ Error: " + err));
-    });
+      });
+      alert("✅ Evaluación enviada correctamente a Google Sheets");
+    } catch (error) {
+      alert("❌ Error al enviar a Google Sheets");
+      return;
+    }
 
-    document.getElementById("generatePDF").addEventListener("click", function () {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
+    // Generar PDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    let y = 10;
 
-      const form = document.getElementById("evalForm");
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
+    doc.setFontSize(14);
+    doc.text("Evaluación Benchmark - Elektra", 10, y); y += 10;
+    doc.setFontSize(11);
+    doc.text("Evaluador: " + data.evaluador, 10, y); y += 6;
+    doc.text("Vendedor: " + data.vendedor, 10, y); y += 6;
+    doc.text("Fecha: " + data.fecha, 10, y); y += 10;
 
-      let y = 10;
-      doc.setFontSize(14);
-      doc.text("Evaluación Benchmark - Elektra", 10, y);
-      y += 10;
-
-      doc.setFontSize(12);
-      doc.text("Evaluador: " + data.evaluador, 10, y); y += 7;
-      doc.text("Vendedor: " + data.vendedor, 10, y); y += 10;
-      doc.text("Fecha: " + new Date().toLocaleDateString(), 10, y); y += 10;
-
-      let preguntaIndex = 1;
-      for (let [seccion, preguntas] of Object.entries(secciones)) {
-        doc.setFont(undefined, "bold");
-        doc.text(seccion, 10, y); y += 7;
-        doc.setFont(undefined, "normal");
-
-        preguntas.forEach((pregunta, i) => {
-          const key = `${seccion.toLowerCase()}${i + 1}`;
-          const val = data[key] || "-";
-          doc.text(`${preguntaIndex++}. ${pregunta}: ${val}`, 12, y);
-          y += 7;
-        });
-        y += 3;
+    for (const [key, value] of Object.entries(data)) {
+      if (!["evaluador", "vendedor", "fecha"].includes(key)) {
+        doc.text(`${key.toUpperCase()}: ${value}`, 10, y);
+        y += 6;
+        if (y > 270) { doc.addPage(); y = 10; }
       }
+    }
 
-      doc.save("evaluacion_benchmark.pdf");
-    });
-  </script>
+    doc.save(`Evaluacion-${data.vendedor}.pdf`);
+    form.reset();
+  });
+</script>
 
 </body>
 </html>
