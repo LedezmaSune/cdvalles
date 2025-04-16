@@ -7,59 +7,199 @@
   <script src="https://apis.google.com/js/api.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
-    /* --- Diseño básico limpio, adapta si necesitas --- */
+    /* (ESTILO OMITIDO AQUÍ PARA BREVEDAD: lo copio si lo necesitas) */
+    :root {
+      --primary-color: #2A5CAA;
+      --secondary-color: #F5A623;
+      --success-color: #4CAF50;
+      --error-color: #f44336;
+      --background-color: #f8f9fa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f2f5;
-      padding: 30px;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--background-color);
+      line-height: 1.6;
+      padding: 2rem 1rem;
     }
+
     .container {
-      max-width: 900px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 0 auto;
       background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      position: relative;
     }
+
     h2 {
       text-align: center;
-      color: #2A5CAA;
-      margin-bottom: 20px;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: var(--secondary-color);
+    }
+
+    .form-section {
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .form-section h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 1.2rem;
     }
+
     label {
-      font-weight: bold;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 0.5rem;
       display: block;
-      margin-bottom: 6px;
     }
-    input[type="text"], input[type="date"] {
+
+    input[type="text"], 
+    input[type="date"] {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
+      padding: 0.8rem;
+      border: 2px solid #e2e8f0;
       border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
     }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(42, 92, 170, 0.1);
+    }
+
     .radio-group {
-      margin: 8px 0 20px;
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
     }
-    .radio-group label {
-      display: inline-block;
-      margin-right: 20px;
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
     }
+
+    .radio-option input[type="radio"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #cbd5e0;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option input[type="radio"]:checked {
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
+    }
+
+    .radio-option input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+    }
+
     button {
-      padding: 12px 30px;
-      background-color: #2A5CAA;
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: var(--primary-color);
       color: white;
       border: none;
       border-radius: 6px;
-      font-size: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
       cursor: pointer;
-      display: block;
-      margin: 20px auto 0;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2rem;
     }
+
     button:hover {
-      background-color: #1e4688;
+      background: #1a467c;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .loading {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loading.active {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .form-section {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
