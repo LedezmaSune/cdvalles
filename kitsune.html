@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kitsune Support - by Ledezma</title>
+  <style>
+    :root {
+      --main-color: #f97316; /* naranja kitsune */
+      --dark: #1f2937;
+      --light: #f9fafb;
+      --gold: #d4af37;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+
+    header {
+      background: linear-gradient(to right, #1f1f1f, #2d2d2d);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    nav {
+      background: var(--main-color);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card h2 {
+      color: var(--main-color);
+    }
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .app-card {
+      background-color: #fff7ed;
+      border-left: 4px solid var(--main-color);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--main-color);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background: #ea580c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kitsune Support</h1>
+    <p>Soporte técnico ágil, con alma de zorro - by Ledezma</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#apps">Aplicaciones</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="sobre" class="card">
+    <h2>🦊 Sobre mí</h2>
+    <p>Hola, soy Ledezma, un apasionado por la tecnología, el orden digital y el soporte técnico efectivo. Me inspiro en los Kitsune, espíritus japoneses conocidos por su astucia e inteligencia, para ofrecer soluciones rápidas y efectivas a tus problemas tecnológicos.</p>
+  </section>
+
+  <section id="apps" class="card">
+    <h2>🛠 Aplicaciones con Soporte</h2>
+    <div class="apps">
+      <div class="app-card">
+        <strong>App A</strong><br>
+        Soporte completo, guías, y solución de errores frecuentes.
+      </div>
+      <div class="app-card">
+        <strong>App B</strong><br>
+        Videos tutoriales y acompañamiento técnico.
+      </div>
+      <div class="app-card">
+        <strong>App C</strong><br>
+        Preguntas frecuentes y base de conocimientos.
+      </div>
+    </div>
+  </section>
+
+  <section id="recursos" class="card">
+    <h2>📚 Recursos y Guías</h2>
+    <p>Aquí encontrarás guías prácticas, PDFs descargables y videotutoriales para resolver los problemas más comunes.</p>
+    <a class="btn" href="#">Ver recursos</a>
+  </section>
+
+  <section id="contacto" class="card">
+    <h2>📬 Contacto</h2>
+    <p>¿Necesitas ayuda directa? Contáctame por WhatsApp o correo electrónico.</p>
+    <a class="btn" href="https://wa.me/52XXXXXXXXXX" target="_blank">WhatsApp</a>
+    <a class="btn" href="mailto:soporte@kitsuneledezma.com">Correo</a>
+  </section>
+
+  <footer>
+    © 2025 Kitsune Support - Ledezma | Con astucia y eficiencia
+  </footer>
+
+</body>
+</html>
