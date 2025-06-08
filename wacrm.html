@@ -1,0 +1,496 @@
+
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Documentation</title>
+		<link rel="stylesheet" href="assets/doc.css" media="all">
+	</head>
+	<body>
+		<div class="menu">
+			<h2>Table of Contents</h2>
+			<ul>
+				<li><a href="#p1"  data="p1">1. Introduction</a></li>
+				<li><a href="#p2"  data="p2">2. Prerequisite</a></li>
+				<li><a href="#p3"  data="p3">3. How to Install and Activate WaCRM</a></li>
+				<li><a href="#p4"  data="p4">4. Scan Your WhatsApp accounts and use chat filters</a></li>
+				<li><a href="#p5"  data="p5">5. Broadcast - Send Message to Contacts</a></li>
+				<li><a href="#p6"  data="p6">6. Broadcast - Send Message to Labels</a></li>
+				<li><a href="#p7"  data="p7">7. Broadcast - Send Message to Groups</a></li>
+				<li><a href="#p8"  data="p8">8. Broadcast - Send Message to Group Members</a></li>
+				<li><a href="#p9"  data="p9">9. Broadcast - Send Message to UnSaved Numbers</a></li>
+				
+				<li><a href="#p10" data="p10">10. Broadcast - Send Dynamic Personalized Messages (Custom parameters)</a></li>
+				<li><a href="#p11" data="p11">11. Set AutoReply Bot with list options</a></li>
+				<li><a href="#p12" data="p12">12. How to use Group Guard</a></li>
+				<li><a href="#p13" data="p13">13. How to Schedule Messages</a></li>
+				<li><a href="#p14" data="p14">14. How to Set Reminders</a></li>
+				<li><a href="#p15" data="p15">15. Use Quick Reply</a></li>
+				<li><a href="#p16" data="p16">16. Use Data Extractors</a></li>
+				<li><a href="#p17" data="p17">17. Group Utilities - Use Group Joiner</a></li>
+				<li><a href="#p18" data="p18">18. Group Utilities - Group Destroyer</a></li>
+				<li><a href="#p19" data="p19">19. Group Utilities - Groups Management</a></li>
+				<li><a href="#p20" data="p20">20. Using Tools</a></li>
+				<li><a href="#p21" data="p21">21. Using Message Signeture</a></li>
+				<li><a href="#p22" data="p22">22. Using Message Translation</a></li>
+				<li><a href="#p23" data="p23">23. How To Tag Everyone In A WhatsApp Group</a></li>
+				<li><a href="#p24" data="p24">24. Using the list in broadcast message - Run Autoreply Bot and Broadcast at same time</a></li>
+				<li><a href="#p25" data="p25">25. Using the proxies</a></li>
+				
+				<li><a href="#p26" data="p26">26. How to get OpenAI API KEY</a></li>
+				<li><a href="#p27" data="p27">27. How to Run Bot in AI mode</a></li>
+				<li><a href="#p28" data="p28">28. WaCRM - How to Generate ai based replies while chatting</a></li>
+				<li><a href="#p29" data="p29">29. How to Export and import Settings (Or Backup the settings)</a></li>
+				<li><a href="#p30" data="p30">30. How Forward Messages</a></li>
+			</ul>
+		</div>
+		<div id="top">
+			<img src="./assets/Logo80.png" class="logo"/>
+			
+			<br class="clear">
+			<h1 id="game_name"></h1>
+			
+			<div class="author">
+				<p>
+				Thank you for purchasing WaCRM.<br>
+				If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a target="_blank" href="https://codecanyon.net/user/trendingapps">here</a>. Thanks so much!
+				</p>
+				<p>
+
+					Follow our WhatsApp channel for Updates, Announcements <a href="https://whatsapp.com/channel/0029Va81vTc8F2pMLSIiM21s">https://whatsapp.com/channel/0029Va81vTc8F2pMLSIiM21s</a>
+				</p>
+				
+				<p>
+					<table>
+						<tr><td>Update:</td><td id="update"></td></tr>
+						<tr><td>By:</td><td>TrendingApps<br> </td></tr>
+						<tr><td>Version:<br><br></td><td>3.3<br><br></td></tr>
+					</table>
+				</p>
+			</div>
+			<br>
+			<br class="clear">
+		</div>
+		
+		
+		<section id="p1">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>1. Introduction</h2>
+			
+			<p>
+				WaCRM be your most powerful assistant for your Business marketing and sales via WhatsApp Web.
+			</p>
+			<p>
+				Experience seamless customer relationship management like never before with TrendingApp's WaCRM. This innovative tool revolutionizes how you engage with your clients on WhatsApp, seamlessly integrating powerful CRM functionalities directly into your favorite messaging platform.
+			</p>
+
+			<p>
+				Unlock the full potential of WhatsApp as a business tool, effortlessly managing your contacts, conversations, and conversions all within a single interface. With intuitive features tailored for professionals, stay organized with advanced contact segmentation, real-time message tracking, and customizable templates for streamlined communication.
+			</p>
+			<p>
+				Enhance productivity with automated reminders and scheduling, ensuring no follow-up opportunity is missed
+			</p>
+			<p>
+				Whether you're a freelancer, small business owner, or enterprise executive, TrendingApp's WaCRM is your indispensable ally in building stronger client relationships and achieving unparalleled success in today's digital landscape.
+			</p>
+			<p>
+				Note: 
+WhatsApp is a trademark of WhatsApp Inc, registered in the U.S. and other countries. 
+This Software is an independent product developed by TrendingApps and has no relationship to WhatsApp, WhatsApp Inc, or Facebook Inc. 
+It is not an official WhatsApp or Facebook product.
+			</p>
+
+			
+			
+		
+			<br class="clear">
+		</section>
+		
+		<section id="p2">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>2. Prerequisite</h2>
+			<table border="1" style="width:100%;">
+				<tr>
+					<th>Package Name</th>
+					<th>Link</th>
+				</tr>
+				<tr>
+					<td>.Net Framework 4.8.1 runtime </td>
+					<td>
+						<a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer " target="_blank">https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer </a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Microsoft Edge WebView2
+					</td>
+					<td>
+						<a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/?form=MA13LH" target="_blank">https://developer.microsoft.com/en-us/microsoft-edge/webview2/?form=MA13LH</a>
+					</td>
+				</tr>
+				
+			</table>
+			
+			
+		</section>
+		
+		<section id="p3">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>3. How to Install and Activate WaCRM</h2>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/WCyrvVZgKeU?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p4">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>Scan Your WhatsApp accounts and use chat filters</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/LZsMF67Lb9Q?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		<section id="p5">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>5. Broadcast - Send Message to Contacts</h2>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/Ly2ZAAAhzvI?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+			
+		</section>
+		<section id="p6">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>6. Broadcast - Send Message to Labels</h2>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/OtWG7oMTZjM?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		
+		
+	
+		<section id="p7">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>7. Broadcast - Send Message to Groups</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/ingb2ukUrCo?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			
+			<br><br>
+		</section>
+		
+		
+		
+		
+		<section id="p8">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>8. Broadcast - Send Message to Group Members</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//kd7mPEIU5GE?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		
+		
+		
+		
+		
+		<section id="p9">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>9.  Broadcast - Send Message to UnSaved Numbers</h2>
+			
+						
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//BEqibSDne48?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+
+			<br><br>
+		</section>
+		
+		
+		
+		<section id="p10">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>10. Broadcast - Send Dynamic Personalized Messages (Custom parameters)</h2>
+				
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//6ueHejG4xqw?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		
+		<section id="p11">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>11. Set AutoReply Bot with list options</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//ybSu0mS650Q?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		
+
+		<section id="p12">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>12. How to use Group Guard</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//h9DEp8iGttY?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+		<section id="p13">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>13. How to Schedule Messages</h2>
+			<p class="box">
+				Please Note : Your PC and WaCRM Must be up and running at Schedule time
+			</p>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//cfeAdRcs4kk?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+		<section id="p14">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>14. How to Set Reminders</h2>
+			<p class="box">
+				Please Note : Your PC and WaCRM Must be up and running at Reminder time
+			</p>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//ZKMvOhnKAyw?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+		<section id="p15">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>15. Use Quick Reply</h2>
+			<p class="box">
+				Please Note : Quick reply will only work for Personal chats , Not in Groups 
+			</p>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//3-tlf-8dbPs?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+
+		<section id="p16">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>16. Use Data Extractors</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//kov8w9Fsco8?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+		<section id="p17">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>17. Group Utilities - Use Group Joiner</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//4vD7V_AFd-w?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+		<section id="p18">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>18. Group Utilities - Group Destroyer </h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//i4in6kQ5978?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+		<section id="p19">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>19. Group Utilities - Groups Management </h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//0F1kPeOTl_E?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+
+		<section id="p20">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>20. Using Tools </h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//exfTWtEzkKc?si=p1QSEOk3cimlIJj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		
+		<section id="p21">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>21. Using Message Signeture</h2>
+			
+			<p class="box">
+				<b> What is Message Signeture ?</b> <br>
+				If you have one WhatsApp account used by two or more staff members, you need to know which conversation or message was sent by which staff member. For example, if you have one support WhatsApp number handled by four staff members, and there are many incoming messages and support questions, your staff members will be managing those support queries. In this case, you may get confused when replying to the messages, because the same account is being handled by multiple staff members, and conversations can get mixed up. To avoid this, you need to know which message was sent by which staff member, so you can assign a "Message Signature" for each staff member. The Message Signature feature will automatically add the respective staff member's signature when replying to each message. This way, other staff members can easily understand who is handling which customer or support query.
+			</p>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//sao8QaTGRmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p22">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>22. Using Message Translation</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//M2sB8e5yNys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p23">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>23. How To Tag Everyone In A WhatsApp Group</h2>
+			<p class="box">
+				Please Note : this feature will not work for iOS users
+			</p>
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//d3o0qstPAoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p24">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>24. Using the list in broadcast message - Run Autoreply Bot and Broadcast at same time</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//SacxU2DaACQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p25">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>25. Using the proxies</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed//1jxHig_Yxp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p26">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>26. How to get OpenAI API KEY</h2>
+			
+			<p>
+				<ol>
+					<li> OPEN AI is not a free, you have to Buy a Limits </li>
+					<li>  For that Login to your OPEN AI account on  <a href="https://platform.openai.com/" targe="blank">https://platform.openai.com/</a> </li>
+					<li> Sign Up if you dont have an account or login your existing OpenAI account</li>
+					<li> After successfull login Click on Settings Button at top right corner icon and then find Billing Menu at left side of menus section <br>
+						<img src="assets/GPT-1.png"  style="width:100%">
+					
+					</li>
+					<li> 
+						Find `Add to credit balance` button and make a top-op the limit balance <br>
+						<img src="assets/GPT-2.png"  style="width:100%">
+					</li>
+					<li> 
+						After successfull Balance top-op , Find `API Keys` menu at left side menus section <br>
+						<img src="assets/GPT-3.png"  style="width:100%">
+					</li>
+					<li> 
+						Click on `Create New Secret Key` button <br>
+						<img src="assets/GPT-4.png"  style="width:100%">
+					</li>
+					<li> 
+						Give any name to the key and select the Default project (Or select respective project if you have many) <br>
+						<img src="assets/GPT-5.png"  style="width:100%"> <br>
+						
+						Then Click on `Create secret Key` button
+					</li>
+					<li> Your API key is ready, Copy it and keet it at safe place
+						<img src="assets/GPT-6.png"  style="width:100%"> <br>
+					</li>
+				</ol>
+			</p>
+			<br><br>
+		</section>
+		
+		
+		<section id="p27">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>27. How to Run Bot in AI mode</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/AqdQz1b-BeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p28">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>28. WaCRM - How to Generate ai based replies while chatting</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/pferW5h82Bs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p29">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>29. How to Export and import Settings (Or Backup the settings)</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/oPYbvlEedjQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		<section id="p30">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>30. How Forward Messages</h2>
+			
+			<p>
+				<iframe width="800" height="450" src="https://www.youtube.com/embed/KJVw6o1_ClE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</p>
+			<br><br>
+		</section>
+		
+		
+<!-- 
+		<section id="p122">
+			<a href="#top" class="top" data="top">&#8598;TOP</a>
+			<h2>12. How to use Group Guard</h2>
+			
+			<p>
+				
+			</p>
+			<br><br>
+		</section> -->
+
+		
+		
+		
+		
+		
+		<br><br><br><script src="assets/doc.js"></script>
+	</body>
+</html>
+UserDoc.html
+Mostrando UserDoc.html
