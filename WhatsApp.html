@@ -1,114 +1,167 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Enviar a WhatsApp (Click to Chat)</title>
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#9aa4b2;
-    }
-    *{box-sizing:border-box;font-family:Inter, system-ui, Arial, sans-serif}
-    body{
-      margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-      background:linear-gradient(180deg,#071029 0%, #0b1220 100%); color:#e6eef6; padding:24px;
-    }
-    .card{width:100%; max-width:760px; background:var(--card); border-radius:14px; padding:28px; box-shadow:0 8px 30px rgba(2,6,23,0.6);}
-    h1{margin:0 0 6px; font-size:20px;}
-    p.lead{margin:0 0 18px; color:var(--muted);}
-    label{display:block; font-size:13px; margin-top:12px; color:#cfeaf4;}
-    input[type="text"], textarea{
-      width:100%; padding:10px 12px; margin-top:6px; border-radius:8px; border:1px solid rgba(255,255,255,0.04);
-      background:rgba(255,255,255,0.02); color:inherit; font-size:14px;
-    }
-    .row{display:flex; gap:12px;}
-    .row .col{flex:1;}
-    button{
-      margin-top:14px; background:var(--accent); color:#052027; border:none; padding:10px 14px; border-radius:10px;
-      font-weight:600; cursor:pointer;
-    }
-    .small{font-size:12px; color:var(--muted); margin-top:8px;}
-    .link-preview{margin-top:12px; padding:10px; border-radius:8px; background:rgba(255,255,255,0.02); font-size:13px; word-break:break-all}
-    footer{margin-top:18px; font-size:12px; color:var(--muted)}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Enviar a WhatsApp</title>
+<style>
+  :root {
+    --bg: #f9fafb;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #06b6d4;
+    --input-bg: #f3f4f6;
+  }
+  .dark {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --text: #e6eef6;
+    --muted: #9aa4b2;
+    --accent: #06b6d4;
+    --input-bg: rgba(255,255,255,0.02);
+  }
+  * { box-sizing: border-box; font-family: system-ui, sans-serif; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    width: 100%;
+    max-width: 700px;
+    background: var(--card);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  h1 { margin-top: 0; font-size: 20px; }
+  p.lead { margin: 0 0 18px; color: var(--muted); }
+  label { display: block; margin-top: 12px; font-size: 13px; }
+  input, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 14px;
+  }
+  button {
+    background: var(--accent);
+    color: #052027;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .col { flex: 1; min-width: 160px; }
+  .small { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .link-preview {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--input-bg);
+    font-size: 13px;
+    word-break: break-all;
+  }
+  .topbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+  @media (max-width: 480px) {
+    .card { padding: 18px; }
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Enviar mensaje por WhatsApp (Click-to-Chat)</h1>
-    <p class="lead">Introduce el número en formato internacional (sin +, sin ceros delante) y tu mensaje. Se abrirá WhatsApp con el texto prellenado.</p>
+<div class="card">
+  <div class="topbar">
+    <button id="themeToggle">🌙</button>
+  </div>
+  <h1>Enviar mensaje por WhatsApp</h1>
+  <p class="lead">Introduce el número en formato internacional y el mensaje.</p>
 
-    <label for="phone">Número (ej. 5215512345678 para México)</label>
-    <input id="phone" type="text" placeholder="Código país + número (sin signos)" autocomplete="tel" />
+  <label for="phone">Número (ej. 5215512345678)</label>
+  <input id="phone" type="text" placeholder="Código país + número (sin +)" />
 
-    <label for="message">Mensaje</label>
-    <textarea id="message" rows="4" placeholder="Escribe tu mensaje personalizado aquí..."></textarea>
+  <label for="message">Mensaje</label>
+  <textarea id="message" rows="4" placeholder="Escribe tu mensaje..."></textarea>
 
-    <div class="row">
-      <div class="col">
-        <button id="openBtn">Abrir en WhatsApp</button>
-      </div>
-      <div class="col" style="min-width:160px">
-        <button id="copyBtn" type="button">Copiar enlace</button>
-      </div>
+  <div class="row">
+    <div class="col">
+      <button id="openBtn">Abrir en WhatsApp</button>
     </div>
-
-    <div class="small">Vista previa del enlace:</div>
-    <div id="preview" class="link-preview">Aquí aparecerá el enlace generado...</div>
-
-    <footer>
-      <div>Formato requerido: solo dígitos, con código de país. Ejemplo: <code>5215512345678</code>.</div>
-      <div>[No verificado] Si quieres ocultar el número en el enlace público, considera acortar con un servicio como Bitly (esto es una sugerencia; verifica políticas y privacidad del acortador antes de usarlo).</div>
-    </footer>
+    <div class="col">
+      <button id="copyBtn" type="button">Copiar enlace</button>
+    </div>
   </div>
 
-  <script>
-    const phoneEl = document.getElementById('phone');
-    const msgEl = document.getElementById('message');
-    const previewEl = document.getElementById('preview');
-    const openBtn = document.getElementById('openBtn');
-    const copyBtn = document.getElementById('copyBtn');
+  <div class="small">Vista previa del enlace:</div>
+  <div id="preview" class="link-preview">Aquí aparecerá el enlace...</div>
+</div>
 
-    function sanitizeNumber(n){
-      return (n||'').replace(/[^0-9]/g, '');
+<script>
+  const phoneEl = document.getElementById('phone');
+  const msgEl = document.getElementById('message');
+  const previewEl = document.getElementById('preview');
+  const openBtn = document.getElementById('openBtn');
+  const copyBtn = document.getElementById('copyBtn');
+  const themeToggle = document.getElementById('themeToggle');
+
+  function sanitizeNumber(n){
+    return (n||'').replace(/[^0-9]/g, '');
+  }
+  function buildLink(){
+    const phone = sanitizeNumber(phoneEl.value.trim());
+    const text = (msgEl.value || '').trim();
+    const encoded = encodeURIComponent(text);
+    if(!phone) return `https://wa.me/?text=${encoded}`;
+    return `https://wa.me/${phone}?text=${encoded}`;
+  }
+  function updatePreview(){
+    previewEl.textContent = buildLink();
+  }
+  phoneEl.addEventListener('input', updatePreview);
+  msgEl.addEventListener('input', updatePreview);
+  updatePreview();
+
+  openBtn.addEventListener('click', () => {
+    const phone = sanitizeNumber(phoneEl.value.trim());
+    if(phone && phone.length < 6){
+      alert('Número demasiado corto.');
+      return;
     }
+    window.open(buildLink(), '_blank');
+  });
 
-    function buildLink(){
-      const phone = sanitizeNumber(phoneEl.value.trim());
-      const text = (msgEl.value || '').trim();
-      const encoded = encodeURIComponent(text);
-      // Si el usuario no escribe número, abrimos el selector de contactos con solo el texto
-      if(!phone) return `https://wa.me/?text=${encoded}`;
-      return `https://wa.me/${phone}?text=${encoded}`;
-    }
-
-    function updatePreview(){
-      const link = buildLink();
-      previewEl.textContent = link;
-    }
-
-    phoneEl.addEventListener('input', updatePreview);
-    msgEl.addEventListener('input', updatePreview);
-    updatePreview();
-
-    openBtn.addEventListener('click', () => {
-      const phone = sanitizeNumber(phoneEl.value.trim());
-      if(phone && phone.length < 6){
-        alert('Número demasiado corto. Asegúrate de incluir código de país.');
-        return;
-      }
-      const url = buildLink();
-      // Abrir en nueva pestaña - si el dispositivo tiene WhatsApp instalado se abrirá la app
-      window.open(url, '_blank');
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(buildLink()).then(()=> {
+      alert('Enlace copiado');
     });
+  });
 
-    copyBtn.addEventListener('click', () => {
-      const url = buildLink();
-      navigator.clipboard?.writeText(url).then(()=> {
-        alert('Enlace copiado al portapapeles');
-      }).catch(()=> {
-        prompt('Copia manualmente:', url);
-      });
-    });
-  </script>
+  // Tema
+  function setTheme(dark){
+    document.body.classList.toggle('dark', dark);
+    themeToggle.textContent = dark ? '☀️' : '🌙';
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+  themeToggle.addEventListener('click', () => {
+    setTheme(!document.body.classList.contains('dark'));
+  });
+  // Detectar tema del sistema
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(localStorage.getItem('theme') 
+           ? localStorage.getItem('theme') === 'dark'
+           : prefersDark);
+</script>
 </body>
 </html>
