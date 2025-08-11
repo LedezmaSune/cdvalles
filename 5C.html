@@ -7,35 +7,80 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #f4f4f4;
         margin: 0;
         padding: 0;
     }
+
     nav {
-        background: #2c3e50;
         padding: 10px;
     }
+
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
     }
+
     li {
-        background: #34495e;
         margin: 8px 0;
         padding: 12px;
         border-radius: 5px;
         text-align: center;
-        transition: background 0.3s ease;
+        transition: background 0.3s ease, color 0.3s ease;
     }
+
     li a {
-        color: white;
         text-decoration: none;
         font-size: 16px;
         display: block;
     }
-    li:hover {
-        background: #1abc9c;
+
+    /* Modo claro */
+    @media (prefers-color-scheme: light) {
+        body {
+            background: #f4f4f4;
+            color: #000;
+        }
+        nav {
+            background: #e0e0e0;
+        }
+        li {
+            background: #ffffff;
+        }
+        li a {
+            color: #000;
+        }
+        li:hover {
+            background: #1abc9c;
+            color: #fff;
+        }
+        li:hover a {
+            color: #fff;
+        }
+    }
+
+    /* Modo oscuro */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background: #1e1e1e;
+            color: #fff;
+        }
+        nav {
+            background: #2c3e50;
+        }
+        li {
+            background: #34495e;
+        }
+        li a {
+            color: #fff;
+        }
+        li:hover {
+            background: #1abc9c;
+            color: #000;
+        }
+        li:hover a {
+            color: #000;
+        }
     }
 </style>
 </head>
