@@ -1,68 +1,63 @@
-/* ===========================
-   ARCADE-LITE PROFESIONAL
-   =========================== */
+/* ======================================
+   TEMA: Grupo Elektra (Arcade-Lite Pro)
+   ====================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
+/* Pega aquí los HEX oficiales cuando los tengas */
 :root{
-  /* Paleta sobria con acentos neón discretos */
-  --bg-1:#0e1320; 
-  --bg-2:#131a2b;
-  --surface:#171f34;
-  --text:#e6e9f5;
-  --muted:#9aa3bf;
+  --brand-red: #d32f2f;     /* <— reemplaza por el rojo oficial */
+  --brand-yellow: #ffcc00;  /* <— reemplaza por el amarillo oficial */
 
-  --primary:#4fd1ff;   /* cian ejecutivo */
-  --primary-600:#25a7d2;
-  --accent:#ffd166;     /* dorado tenue */
+  /* Derivados */
+  --bg-1:#0f1116;
+  --bg-2:#151922;
+  --surface:#171c27;
+  --text:#f3f5fb;
+  --muted:#aab1c5;
 
-  --ring: rgba(79,209,255,.55);
+  --primary: var(--brand-red);
+  --accent: var(--brand-yellow);
+
   --border: rgba(255,255,255,.08);
   --shadow: 0 10px 24px rgba(0,0,0,.45);
-
-  /* Intensidad “gamer”: baja para profesional */
-  --glow-soft: 0 0 12px rgba(79,209,255,.25);
-  --glow-strong: 0 0 22px rgba(79,209,255,.35);
+  --glow-soft: 0 0 12px color-mix(in srgb, var(--primary) 35%, transparent);
+  --glow-accent: 0 0 16px color-mix(in srgb, var(--accent) 40%, transparent);
 
   --radius: 14px;
 }
 
 /* ===== Global ===== */
-*{box-sizing:border-box}
+*{ box-sizing: border-box }
 body{
   margin:0;
-  font-family:'Inter', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, "Inter", "Roboto", sans-serif;
   color:var(--text);
   min-height:100vh;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   background:
-    radial-gradient(60% 50% at 70% 0%, rgba(79,209,255,.08), transparent 70%),
+    radial-gradient(60% 50% at 70% 0%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 70%),
     linear-gradient(135deg, var(--bg-1), var(--bg-2));
   overflow-x:hidden;
 }
 
-/* sutiles scanlines (muy tenues y pausadas) */
+/* sutiles scanlines muy tenues */
 body::before{
   content:""; position:fixed; inset:0; pointer-events:none;
-  background: repeating-linear-gradient(180deg, rgba(255,255,255,.018) 0 2px, transparent 2px 5px);
-  mix-blend-mode: overlay; opacity:.35;
-  animation: ambiance 8s ease-in-out infinite alternate;
+  background: repeating-linear-gradient(180deg, rgba(255,255,255,.014) 0 2px, transparent 2px 5px);
+  mix-blend-mode: overlay; opacity:.28;
 }
-@keyframes ambiance{to{opacity:.45; filter:saturate(1.06)}}
 
-/* ===== Navbar (HUD sobrio) ===== */
+/* ===== Navbar ===== */
 .navbar{
-  position:fixed; top:0; width:100%;
-  padding:12px 0; text-align:center; z-index:1000;
-  background:linear-gradient(180deg, rgba(19,26,43,.85), rgba(19,26,43,.55));
+  position:fixed; top:0; width:100%; z-index:1000;
+  text-align:center; padding:12px 0;
+  color:var(--text); font-weight:600; letter-spacing:.02em;
+  background:linear-gradient(180deg, rgba(21,25,34,.85), rgba(21,25,34,.55));
   backdrop-filter: blur(6px);
-  border-bottom:1px solid var(--border);
+  border-bottom:2px solid color-mix(in srgb, var(--primary) 55%, white 0%);
   box-shadow: var(--glow-soft);
-  color:var(--text);
-  font-weight:600; letter-spacing:.02em;
 }
 
-/* ===== Contenedor ===== */
+/* ===== Grid contenedor ===== */
 .container{
   margin:90px 0 70px;
   display:grid; gap:18px;
@@ -71,56 +66,56 @@ body::before{
 }
 @media (max-width:480px){ .container{ grid-template-columns:1fr } }
 
-/* Opcional: tarjetas contenedoras */
+/* Tarjetas opcionales (si envuelves botones) */
 .container > *{
   background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
   border:1px solid var(--border);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   padding:10px;
-  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 .container > *:hover{
   transform: translateY(-2px);
-  border-color: rgba(79,209,255,.35);
+  border-color: color-mix(in srgb, var(--primary) 35%, white 0%);
   box-shadow: 0 16px 36px rgba(0,0,0,.5);
 }
 
-/* ===== Botones (gamer sutil + profesional) ===== */
+/* ===== Botón primario (rojo Elektra) ===== */
 .button{
   display:inline-block; width:100%;
   text-align:center; text-decoration:none; cursor:pointer;
-  color:#0b111e; font-weight:600;
-  background: linear-gradient(135deg, var(--primary) 0%, #9be7ff 100%);
+  color:#fff; font-weight:600;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 92%, black 8%), color-mix(in srgb, var(--primary) 72%, white 28%));
   padding:14px 16px; border-radius:12px;
-  border:1px solid rgba(255,255,255,.25);
-  box-shadow: 0 6px 0 var(--primary-600), var(--glow-soft);
+  border:1px solid color-mix(in srgb, var(--primary) 60%, white 40%);
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--primary) 65%, black 35%), var(--glow-soft);
   transition: transform .12s ease, box-shadow .12s ease, filter .15s ease;
   position:relative; isolation:isolate;
 }
 .button:hover{
   transform: translateY(-1px);
-  box-shadow: 0 8px 0 var(--primary-600), var(--glow-strong);
+  box-shadow: 0 8px 0 color-mix(in srgb, var(--primary) 65%, black 35%), 0 0 18px color-mix(in srgb, var(--primary) 35%, transparent);
   filter: brightness(1.02);
 }
 .button:active{
   transform: translateY(3px);
-  box-shadow: 0 3px 0 var(--primary-600), 0 0 10px rgba(79,209,255,.25);
+  box-shadow: 0 3px 0 color-mix(in srgb, var(--primary) 65%, black 35%), 0 0 10px color-mix(in srgb, var(--primary) 25%, transparent);
 }
 .button:focus-visible{
   outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* Variante secundaria más discreta */
+/* ===== Botón secundario (amarillo Elektra) ===== */
 .button.is-secondary{
-  color:var(--text);
-  background: linear-gradient(135deg, #1f2943 0%, #22304f 100%);
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow: 0 4px 0 #11182c, 0 0 10px rgba(0,0,0,.25);
+  color:#1b1b1b; font-weight:700;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, white 30%));
+  border:1px solid color-mix(in srgb, var(--accent) 55%, white 45%);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--accent) 60%, black 40%), var(--glow-accent);
 }
 .button.is-secondary:hover{
-  box-shadow: 0 6px 0 #11182c, 0 0 18px rgba(79,209,255,.18);
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--accent) 60%, black 40%), 0 0 16px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 /* ===== PDF container ===== */
@@ -136,8 +131,8 @@ body::before{
 .pdf-container::before{
   content:"Módulo PDF";
   position:absolute; top:-10px; left:14px;
-  font-size:10px; font-weight:600; letter-spacing:.06em;
-  padding:4px 6px; color:#132; background:var(--accent);
+  font-size:10px; font-weight:700; letter-spacing:.06em;
+  padding:4px 6px; color:#2a2000; background:var(--accent);
   border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,.3);
 }
 
@@ -147,7 +142,7 @@ body::before{
   text-align:center; padding:10px 0;
   color:var(--muted); font-size:14px;
   background: linear-gradient(180deg, rgba(19,26,43,0), rgba(19,26,43,.7));
-  border-top:1px solid var(--border);
+  border-top:2px solid color-mix(in srgb, var(--primary) 55%, white 0%);
   box-shadow: var(--glow-soft);
 }
 
