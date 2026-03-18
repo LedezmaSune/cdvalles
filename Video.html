@@ -1,34 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ing. Adelfo</title>
-  <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ing. Adelfo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fondo Animado Moderno -->
+    <div class="background-elements">
+      <div class="blob red"></div>
+      <div class="blob yellow"></div>
+      <div class="blob accent"></div>
+    </div>
 
-</head>
-<body>
-  <!-- Barra de navegación -->
-  <header class="navbar">Ing. Adelfo</header>
+    <!-- Barra de navegación -->
+    <!-- Barra de navegación -->
+    <header class="navbar">
+      <div class="navbar-content">
+        <i class="ph-fill ph-storefront logo-icon"></i>
+        <h1>Región CD Valles</h1>
+      </div>
+    </header>
 
+    <iframe
+      src="https://drive.google.com/file/d/15gzRf5Mmd2hiF_QhVRtbDLcZ8_RWrnq7/preview"
+      width="640"
+      height="480"
+      allow="autoplay; fullscreen"
+    >
+    </iframe>
 
-<iframe 
-  src="https://drive.google.com/file/d/15gzRf5Mmd2hiF_QhVRtbDLcZ8_RWrnq7/preview" 
-  width="640" 
-  height="480" 
-  allow="autoplay; fullscreen">
-</iframe>
+    <!-- Pie de página -->
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
+      </div>
+    </footer>
 
-  
-
-  <!-- Pie de página -->
-  <footer class="footer">
-    &copy; <span id="year"></span> Cd Valles
-  </footer>
-
-  <script>
-    // Actualizar el año automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script>
+      // Actualizar el año automáticamente
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

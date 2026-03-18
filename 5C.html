@@ -1,81 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menú de Opciones</title>
-<style>
-    body {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú de Opciones</title>
+    <style>
+      body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-    }
-    nav {
+      }
+      nav {
         padding: 10px;
-    }
-    ul {
+      }
+      ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column; /* Por defecto, vertical (móvil) */
         gap: 10px;
-    }
-    li {
+      }
+      li {
         padding: 12px;
         border-radius: 5px;
         text-align: center;
-        transition: background 0.3s ease, color 0.3s ease;
-    }
-    li a {
+        transition:
+          background 0.3s ease,
+          color 0.3s ease;
+      }
+      li a {
         text-decoration: none;
         font-size: 16px;
         display: block;
-    }
+      }
 
-    /* Modo claro */
-    @media (prefers-color-scheme: light) {
-        body { background: #f4f4f4; color: #000; }
-        nav { background: #e0e0e0; }
-        li { background: #ffffff; }
-        li a { color: #000; }
-        li:hover { background: #1abc9c; }
-        li:hover a { color: #fff; }
-    }
-
-    /* Modo oscuro */
-    @media (prefers-color-scheme: dark) {
-        body { background: #1e1e1e; color: #fff; }
-        nav { background: #2c3e50; }
-        li { background: #34495e; }
-        li a { color: #fff; }
-        li:hover { background: #1abc9c; }
-        li:hover a { color: #000; }
-    }
-
-    /* Diseño para PC (pantallas grandes) */
-    @media (min-width: 768px) {
-        ul {
-            flex-direction: row; /* Menú horizontal */
-            justify-content: center;
+      /* Modo claro */
+      @media (prefers-color-scheme: light) {
+        body {
+          background: #f4f4f4;
+          color: #000;
+        }
+        nav {
+          background: #e0e0e0;
         }
         li {
-            min-width: 200px;
+          background: #ffffff;
         }
-    }
-</style>
-</head>
-<body>
+        li a {
+          color: #000;
+        }
+        li:hover {
+          background: #1abc9c;
+        }
+        li:hover a {
+          color: #fff;
+        }
+      }
 
-<nav>
-    <ul>
-        <li><a href="https://forms.gle/vcVf13AuJTN2e3TQA" target="_blank">1. Orientación al Puesto y Relación</a></li>
-        <li><a href="https://forms.gle/6YzrgzN3ypBgvd6C6" target="_blank">2. Conexión Rápida</a></li>
-        <li><a href="https://forms.gle/vkXRiJYhZTsYaxKu8" target="_blank">3. Chequeo</a></li>
-        <li><a href="https://forms.gle/gAxfqaEJ2ykmj7Gs9" target="_blank">4. Conversación para Desarrollo</a></li>
-        <li><a href="https://forms.gle/gTC33aokGNcq7rQc9" target="_blank">5. Conversación de Desempeño</a></li>
-    </ul>
-</nav>
+      /* Modo oscuro */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #1e1e1e;
+          color: #fff;
+        }
+        nav {
+          background: #2c3e50;
+        }
+        li {
+          background: #34495e;
+        }
+        li a {
+          color: #fff;
+        }
+        li:hover {
+          background: #1abc9c;
+        }
+        li:hover a {
+          color: #000;
+        }
+      }
 
-</body>
+      /* Diseño para PC (pantallas grandes) */
+      @media (min-width: 768px) {
+        ul {
+          flex-direction: row; /* Menú horizontal */
+          justify-content: center;
+        }
+        li {
+          min-width: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fondo Animado Moderno -->
+    <div class="background-elements">
+      <div class="blob red"></div>
+      <div class="blob yellow"></div>
+      <div class="blob accent"></div>
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="https://forms.gle/vcVf13AuJTN2e3TQA" target="_blank"
+            >1. Orientación al Puesto y Relación</a
+          >
+        </li>
+        <li>
+          <a href="https://forms.gle/6YzrgzN3ypBgvd6C6" target="_blank"
+            >2. Conexión Rápida</a
+          >
+        </li>
+        <li>
+          <a href="https://forms.gle/vkXRiJYhZTsYaxKu8" target="_blank"
+            >3. Chequeo</a
+          >
+        </li>
+        <li>
+          <a href="https://forms.gle/gAxfqaEJ2ykmj7Gs9" target="_blank"
+            >4. Conversación para Desarrollo</a
+          >
+        </li>
+        <li>
+          <a href="https://forms.gle/gTC33aokGNcq7rQc9" target="_blank"
+            >5. Conversación de Desempeño</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </body>
 </html>

@@ -1,35 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PDF Matriz de Sanciones</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- Fondo Animado Moderno -->
+  <div class="background-elements">
+    <div class="blob red"></div>
+    <div class="blob yellow"></div>
+    <div class="blob accent"></div>
+  </div>
 
   <!-- Barra de navegación -->
-  <div class="navbar">Región CD Valles</div>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="navbar-content">
+      <i class="ph-fill ph-storefront logo-icon"></i>
+      <h1>Región CD Valles</h1>
+    </div>
+  </header>
 
   <!-- Contenedor del PDF -->
   <div class="pdf-container">
-    <h2>Grito de Guerra Cd. Valles 4Q 25 </h2>
-   <iframe src="https://drive.google.com/file/d/1SJKBpIupLHiA3xgJSr3rtzt1g-9lWj5L/preview" width="100%" height="600px" style="border: none;"></iframe>
+    <h2>Grito de Guerra Cd. Valles 4Q 25</h2>
+    <iframe src="https://drive.google.com/file/d/1SJKBpIupLHiA3xgJSr3rtzt1g-9lWj5L/preview" width="100%" height="600px"
+      style="border: none"></iframe>
   </div>
 
- <a href="index.html" class="button">Volver a Página Principal</a>
-  </div>
+  <a href="index.html" class="button">Volver a Página Principal</a>
 
-  
- 
+  <!-- Pie de página -->
   <!-- Pie de página -->
   <footer class="footer">
-    &copy; <span id="year"></span> Cd Valles
+    <div class="footer-content">
+      <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
+    </div>
   </footer>
 
   <script>
     // Actualizar el año automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>

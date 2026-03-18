@@ -1,257 +1,452 @@
 /* ======================================
-   TEMA: Grupo Elektra (Pro Light)
+   TEMA: Modern Glassmorphism - Grupo Elektra
    ====================================== */
 
-/* Pega aquí los HEX oficiales cuando los tengas */
-:root{
-  --brand-red: #d32f2f;     /* <— reemplaza por el rojo oficial */
-  --brand-yellow: #ffcc00;  /* <— reemplaza por el amarillo oficial */
+:root {
+  /* Brand Colors */
+  --brand-red: #da291c;
+  --brand-yellow: #ffc72c;
+  --brand-red-dark: #b52217;
+  --brand-red-light: #fbeae9;
 
-  /* Derivados para tema claro */
-  --bg-1:#f5f6fb;
-  --bg-2:#e5e9f3;
-  --surface:#ffffff;
-  --text:#1f2430;
-  --muted:#6f7482;
+  /* Modern Colors */
+  --bg-color: #f3f4f8;
+  --surface-color: rgba(255, 255, 255, 0.75);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
 
-  --primary: var(--brand-red);
-  --accent: var(--brand-yellow);
+  /* Neumorphic / Glassmorphic */
+  --border-light: rgba(255, 255, 255, 0.6);
+  --border-glass: rgba(255, 255, 255, 0.3);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 40px rgba(218, 41, 28, 0.08);
+  --shadow-hover: 0 15px 35px rgba(218, 41, 28, 0.15);
 
-  --border: rgba(15,23,42,.08);
-  --shadow: 0 10px 24px rgba(15,23,42,.12);
-  --glow-soft: 0 0 18px rgba(211,47,47,.18);
-  --glow-accent: 0 0 18px rgba(255,204,0,.24);
-
-  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
 }
 
-/* ===== Global ===== */
-*{ box-sizing: border-box }
-
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, "Inter", "Roboto", sans-serif;
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(60% 50% at 0% 0%, rgba(211,47,47,.08), transparent 55%),
-    linear-gradient(135deg, var(--bg-1), var(--bg-2));
-  overflow-x:hidden;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* capa muy sutil, ya no oscura */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:linear-gradient(180deg, rgba(255,255,255,.35), transparent 40%);
-  opacity:.25;
-  mix-blend-mode:soft-light;
+body {
+  font-family:
+    "Outfit",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* ===== Navbar ===== */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
-  text-align:center;
-  padding:10px 0;
-  color:var(--text);
-  font-weight:600;
-  letter-spacing:.02em;
-  background:rgba(255,255,255,.92);
+/* --- Animated Background Blobs --- */
+.background-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  background: var(--bg-color);
+}
+
+.blob {
+  position: absolute;
+  filter: blur(80px);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float 20s infinite ease-in-out alternate;
+}
+
+.blob.red {
+  background: rgba(218, 41, 28, 0.3);
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.blob.yellow {
+  background: rgba(255, 199, 44, 0.3);
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  left: -100px;
+  animation-delay: -5s;
+}
+
+.blob.accent {
+  background: rgba(255, 255, 255, 0.8);
+  width: 600px;
+  height: 600px;
+  top: 30%;
+  left: 30%;
+  animation-duration: 25s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-30px, 50px) scale(1.05);
+  }
+
+  100% {
+    transform: translate(50px, 20px) scale(0.95);
+  }
+}
+
+/* --- Navbar --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 28px;
+  color: var(--brand-red);
+}
+
+.navbar-content h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--brand-red);
+  letter-spacing: -0.5px;
+}
+
+/* --- Dashboard Container --- */
+.dashboard {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 100px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.dashboard-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.dashboard-header p {
+  font-size: 18px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* --- Category Sections --- */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.category-section {
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.category-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.category-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(218, 41, 28, 0.1);
+}
+
+.category-title i {
+  color: var(--brand-red);
+  font-size: 26px;
+}
+
+/* --- Glassmorphic Cards --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  text-decoration: none;
+  background: var(--surface-color);
   backdrop-filter: blur(12px);
-  border-bottom:1px solid rgba(211,47,47,.35);
-  box-shadow:0 2px 10px rgba(15,23,42,.10);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
 }
 
-/* ===== Grid contenedor ===== */
-.container{
-  margin:90px 0 70px;
-  display:grid;
-  gap:18px;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  width:min(92%, 980px);
+/* Subtle gradient border effect on hover */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-yellow));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-@media (max-width:480px){
-  .container{ grid-template-columns:1fr }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.95);
 }
 
-/* Tarjetas opcionales (si envuelves botones) */
-.container > *{
-  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,.96));
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:10px;
-  transition:
-    transform .16s ease,
-    border-color .16s ease,
-    box-shadow .16s ease,
-    background .16s ease;
+.card:hover::before {
+  opacity: 1;
 }
 
-.container > *:hover{
-  transform: translateY(-2px);
-  border-color: rgba(211,47,47,.35);
-  box-shadow:0 18px 32px rgba(15,23,42,.16);
-  background:linear-gradient(180deg, #ffffff, #f7f8fc);
+/* Card Icon Box */
+.card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--brand-red-light);
+  color: var(--brand-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: all 0.3s ease;
 }
 
-/* ===== Botón primario (rojo Elektra) ===== */
-.button{
-  display:inline-block;
-  width:100%;
-  text-align:center;
-  text-decoration:none;
-  cursor:pointer;
-  color:#ffffff;
-  font-weight:600;
-  padding:14px 16px;
-  border-radius:12px;
-
-  /* gradiente limpio y corporativo */
-  background:
-    linear-gradient(135deg,
-      color-mix(in srgb, var(--primary) 90%, #000 10%),
-      color-mix(in srgb, var(--primary) 70%, #fff 30%)
-    );
-  background-size:180% 100%;
-  background-position:0% 50%;
-
-  border:1px solid color-mix(in srgb, var(--primary) 60%, #fff 40%);
-  box-shadow:
-    0 8px 18px rgba(211,47,47,.45);
-
-  position:relative;
-  isolation:isolate;
-  transition:
-    transform .14s ease-out,
-    box-shadow .14s ease-out,
-    background-position .20s ease-out,
-    filter .14s ease-out;
+.card:hover .card-icon {
+  background: var(--brand-red);
+  color: white;
+  transform: scale(1.1) rotate(-5deg);
 }
 
-/* brillo lateral sutil */
-.button::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(120deg,
-      rgba(255,255,255,.45) 0%,
-      transparent 35%,
-      transparent 65%,
-      rgba(255,255,255,.35) 100%
-    );
-  opacity:0;
-  mix-blend-mode:soft-light;
-  transition:opacity .18s ease-out;
-  pointer-events:none;
+/* Specific styling for highlighted card */
+.card.highlight {
+  background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
+  border: 1px solid rgba(255, 199, 44, 0.4);
 }
 
-/* efecto hover: ligero movimiento + luz + cambio de gradiente */
-.button:hover{
-  transform: translateY(-2px) scale(1.01);
-  box-shadow:
-    0 10px 22px rgba(211,47,47,.55);
-  background-position:100% 50%;
-  filter:brightness(1.02);
+.card.highlight .brand {
+  background: rgba(255, 199, 44, 0.15);
+  color: #ff9900;
 }
 
-.button:hover::before{
-  opacity:1;
+.card.highlight:hover .brand {
+  background: var(--brand-yellow);
+  color: #1e293b;
 }
 
-/* efecto clic */
-.button:active{
-  transform: translateY(1px) scale(.99);
-  box-shadow:
-    0 4px 12px rgba(211,47,47,.4);
-  filter:brightness(.98);
+/* Card Texts */
+.card-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
-/* accesibilidad */
-.button:focus-visible{
-  outline:3px solid var(--accent);
-  outline-offset:2px;
+.card-content p {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.4;
 }
 
-/* ===== Botón secundario (amarillo Elektra) ===== */
-.button.is-secondary{
-  color:#3b3b3b;
-  font-weight:600;
-  background:
-    linear-gradient(135deg,
-      color-mix(in srgb, var(--accent) 90%, #000 10%),
-      color-mix(in srgb, var(--accent) 70%, #fff 30%)
-    );
-  background-size:180% 100%;
-  background-position:0% 50%;
-
-  border:1px solid color-mix(in srgb, var(--accent) 55%, #fff 45%);
-  box-shadow:0 6px 16px rgba(255,204,0,.45);
+.card:hover .card-content h4 {
+  color: var(--brand-red);
 }
 
-.button.is-secondary:hover{
-  background-position:100% 50%;
-  box-shadow:0 9px 20px rgba(255,204,0,.55);
+.card.highlight:hover .card-content h4 {
+  color: #ff9900;
 }
 
-/* ===== PDF container ===== */
-.pdf-container{
-  margin:20px auto;
-  padding:20px;
-  max-width:900px;
-  width:92%;
-  background: linear-gradient(180deg, #ffffff, #f7f8fc);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow: var(--shadow);
-  position:relative;
+/* --- Footer --- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-glass);
 }
 
-/* etiqueta superior */
-.pdf-container::before{
-  content:"Módulo PDF";
-  position:absolute;
-  top:-10px;
-  left:14px;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.06em;
-  padding:4px 6px;
-  color:#5a4100;
-  background:var(--accent);
-  border-radius:6px;
-  box-shadow:0 2px 10px rgba(0,0,0,.18);
+.footer-content {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
 }
 
-/* ===== Footer ===== */
-.footer{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  text-align:center;
-  padding:10px 0;
-  color:var(--muted);
-  font-size:14px;
-  background:linear-gradient(180deg, rgba(255,255,255,.0), rgba(255,255,255,.92));
-  border-top:1px solid rgba(211,47,47,.30);
-  box-shadow:0 -4px 12px rgba(15,23,42,.10);
+/* --- Buttons for Other Pages (Legacy Support) --- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+  border: none;
+  box-shadow: 0 8px 20px rgba(218, 41, 28, 0.3);
+  transition: all 0.3s ease;
 }
 
-/* ===== Accesibilidad ===== */
-@media (prefers-reduced-motion: reduce){
-  *{
-    animation:none !important;
-    transition:none !important;
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(218, 41, 28, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Legacy Container */
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 100px;
+  /* space for header and footer */
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.container>p,
+.container>h2,
+.container>h3,
+.container>h1 {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.container>.button {
+  flex: 1 1 250px;
+  max-width: 350px;
+}
+
+/* Legacy PDF Container */
+.pdf-container {
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.pdf-container h2 {
+  color: var(--brand-red);
+  margin-bottom: 20px;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 30px 15px 100px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-title {
+    font-size: 20px;
   }
 }

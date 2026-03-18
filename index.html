@@ -1,40 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal de Recursos - Región CD Valles</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Barra de navegación -->
-  <header class="navbar">Región CD Valles</header>
 
-  <!-- Contenedor de botones -->
-  <main class="container">
-    <a href="https://forms.gle/tTar3mU3pZbApg9S6" target="_blank" class="button">Cortes Diarios</a>
-    <a href="https://tally.so/r/mRbxWp" target="_blank" class="button">Reuniónes RED</a>
-    <a href="checklist.html" class="button">Check Lists</a>
-    <a href="pdf.html" class="button">Para Imprimir</a>
-    <a href="eo.html" class="button">Expediente Operativo</a>
-    <a href="veo.html" class="button">Buscador PDF Expediente Operativo</a>
-    <a href="https://auth.gruposalinas.com.mx" target="_blank" class="button">Grupo Salinas</a>
-    <a href="pdfgg.html" class="button">Grito de Guerra</a>
-    <a href="pdfms.html" class="button">Matriz de Sanciones</a>
-    <a href="vacaciones.html" target="_blank" class="button">Agenda Vacaciones G/LF/LO</a>
-    <a href="qr.html" target="_blank" class="button">Generara QRs</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Recursos - Región CD Valles</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Fondo Animado Moderno -->
+  <div class="background-elements">
+    <div class="blob red"></div>
+    <div class="blob yellow"></div>
+    <div class="blob accent"></div>
+  </div>
+
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="navbar-content">
+      <i class="ph-fill ph-storefront logo-icon"></i>
+      <h1>Región CD Valles</h1>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <main class="dashboard">
+    <div class="dashboard-header">
+      <h2>Bienvenido al Portal</h2>
+      <p>Selecciona una herramienta o recurso para comenzar</p>
+    </div>
+
+    <div class="grid-container">
+      <!-- Categoría: Operación Diaria -->
+      <section class="category-section">
+        <h3 class="category-title">
+          <i class="ph ph-briefcase"></i> Operación Diaria
+        </h3>
+        <div class="cards-grid">
+          <a href="https://forms.gle/tTar3mU3pZbApg9S6" target="_blank" class="card">
+            <div class="card-icon"><i class="ph ph-money"></i></div>
+            <div class="card-content">
+              <h4>Cortes Diarios</h4>
+              <p>Registro y reporte de cortes</p>
+            </div>
+          </a>
+          <a href="https://tally.so/r/mRbxWp" target="_blank" class="card">
+            <div class="card-icon"><i class="ph ph-users-three"></i></div>
+            <div class="card-content">
+              <h4>Reuniones RED</h4>
+              <p>Acceso a minutas y reuniones</p>
+            </div>
+          </a>
+          <a href="checklist.html" class="card">
+            <div class="card-icon">
+              <i class="ph ph-check-square-offset"></i>
+            </div>
+            <div class="card-content">
+              <h4>Check Lists</h4>
+              <p>Listas de verificación de tienda</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Categoría: Expedientes y Documentos -->
+      <section class="category-section">
+        <h3 class="category-title">
+          <i class="ph ph-folder-open"></i> Documentos y Expedientes
+        </h3>
+        <div class="cards-grid">
+          <a href="eo.html" class="card">
+            <div class="card-icon"><i class="ph ph-files"></i></div>
+            <div class="card-content">
+              <h4>Expediente Operativo</h4>
+              <p>Consulta de expedientes</p>
+            </div>
+          </a>
+          <a href="veo.html" class="card">
+            <div class="card-icon">
+              <i class="ph ph-magnifying-glass"></i>
+            </div>
+            <div class="card-content">
+              <h4>Buscador PDF</h4>
+              <p>Encuentra PDFs rápidamente</p>
+            </div>
+          </a>
+          <a href="pdf.html" class="card">
+            <div class="card-icon"><i class="ph ph-printer"></i></div>
+            <div class="card-content">
+              <h4>Para Imprimir</h4>
+              <p>Material listo para impresión</p>
+            </div>
+          </a>
+          <a href="pdfgg.html" class="card">
+            <div class="card-icon"><i class="ph ph-megaphone"></i></div>
+            <div class="card-content">
+              <h4>Grito de Guerra</h4>
+              <p>Material de Grito de Guerra</p>
+            </div>
+          </a>
+          <a href="pdfms.html" class="card">
+            <div class="card-icon"><i class="ph ph-gavel"></i></div>
+            <div class="card-content">
+              <h4>Matriz de Sanciones</h4>
+              <p>Reglamento y lineamientos</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Categoría: Herramientas Adicionales -->
+      <section class="category-section">
+        <h3 class="category-title">
+          <i class="ph ph-wrench"></i> Herramientas y Portales
+        </h3>
+        <div class="cards-grid">
+          <a href="https://auth.gruposalinas.com.mx" target="_blank" class="card highlight">
+            <div class="card-icon brand"><i class="ph ph-buildings"></i></div>
+            <div class="card-content">
+              <h4>Grupo Salinas</h4>
+              <p>Portal Institucional Oficial</p>
+            </div>
+          </a>
+          <a href="vacaciones.html" target="_blank" class="card">
+            <div class="card-icon"><i class="ph ph-calendar-blank"></i></div>
+            <div class="card-content">
+              <h4>Agenda Vacaciones</h4>
+              <p>Programación G/LF/LO</p>
+            </div>
+          </a>
+          <a href="qr.html" target="_blank" class="card">
+            <div class="card-icon"><i class="ph ph-qr-code"></i></div>
+            <div class="card-content">
+              <h4>Generar QRs</h4>
+              <p>Herramienta creadora de QRs</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- Pie de página -->
   <footer class="footer">
-    &copy; <span id="year"></span> Cd Valles
+    <div class="footer-content">
+      <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
+    </div>
   </footer>
 
   <script>
     // Actualizar el año automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
-
-

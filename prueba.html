@@ -1,168 +1,322 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario de Datos</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fondo Animado Moderno -->
+    <div class="background-elements">
+      <div class="blob red"></div>
+      <div class="blob yellow"></div>
+      <div class="blob accent"></div>
+    </div>
 
     <h1>Datos Red CD Valles</h1>
     <form id="formulario">
-        <!-- Marca Temporal y Otros Campos -->
-        <label for="marca_temporal">Marca Temporal:</label>
-        <input type="datetime-local" id="marca_temporal" name="marca_temporal" required><br><br>
+      <!-- Marca Temporal y Otros Campos -->
+      <label for="marca_temporal">Marca Temporal:</label>
+      <input
+        type="datetime-local"
+        id="marca_temporal"
+        name="marca_temporal"
+        required
+      /><br /><br />
 
-        <label for="semana">Semana:</label>
-        <input type="number" id="semana" name="semana" required><br><br>
+      <label for="semana">Semana:</label>
+      <input type="number" id="semana" name="semana" required /><br /><br />
 
-        <label for="dia">Día:</label>
-        <select id="dia" name="dia" required>
-            <option value="Lunes">Lunes</option>
-            <option value="Martes">Martes</option>
-            <option value="Miércoles">Miércoles</option>
-            <option value="Jueves">Jueves</option>
-            <option value="Viernes">Viernes</option>
-            <option value="Sábado">Sábado</option>
-            <option value="Domingo">Domingo</option>
-        </select><br><br>
+      <label for="dia">Día:</label>
+      <select id="dia" name="dia" required>
+        <option value="Lunes">Lunes</option>
+        <option value="Martes">Martes</option>
+        <option value="Miércoles">Miércoles</option>
+        <option value="Jueves">Jueves</option>
+        <option value="Viernes">Viernes</option>
+        <option value="Sábado">Sábado</option>
+        <option value="Domingo">Domingo</option></select
+      ><br /><br />
 
+      <label for="dato">Dato:</label>
+      <input type="text" id="dato" name="dato" required /><br /><br />
 
-        <label for="dato">Dato:</label>
-        <input type="text" id="dato" name="dato" required><br><br>
+      <!-- Sucursal -->
+      <label for="sucursal">Sucursal:</label>
+      <select id="sucursal" name="sucursal" required>
+        <option value="1756 - DAZ TAMUIN">1756 - DAZ TAMUIN</option>
+        <option value="3282 - DAZ TANCANHUITZ">3282 - DAZ TANCANHUITZ</option>
+        <option value="3446 - EKT TAMUIN SLP">3446 - EKT TAMUIN SLP</option>
+        <option value="4307 - EKT CD VALLES">4307 - EKT CD VALLES</option>
+        <option value="4678 - PRESTA PRENDA CD VALLES">
+          4678 - PRESTA PRENDA CD VALLES
+        </option>
+        <option value="5901 - DAZ TAMASOPO">5901 - DAZ TAMASOPO</option>
+        <option value="6116 - EKT SLP CD VALLES LOMAS YUEJAT">
+          6116 - EKT SLP CD VALLES LOMAS YUEJAT
+        </option>
+        <option value="8319 - DAZ EL HIGO VERACRUZ">
+          8319 - DAZ EL HIGO VERACRUZ
+        </option>
+        <option value="4812 - DAZ RIO VERDE">4812 - DAZ RIO VERDE</option>
+        <option value="9603 - MEGA RIO VERDE">9603 - MEGA RIO VERDE</option>
+        <option value="0736 - DAZ CERRITO">0736 - DAZ CERRITO</option></select
+      ><br /><br />
 
-        <!-- Sucursal -->
-        <label for="sucursal">Sucursal:</label>
-        <select id="sucursal" name="sucursal" required>
-            <option value="1756 - DAZ TAMUIN">1756 - DAZ TAMUIN</option>
-            <option value="3282 - DAZ TANCANHUITZ">3282 - DAZ TANCANHUITZ</option>
-            <option value="3446 - EKT TAMUIN SLP">3446 - EKT TAMUIN SLP</option>
-            <option value="4307 - EKT CD VALLES">4307 - EKT CD VALLES</option>
-            <option value="4678 - PRESTA PRENDA CD VALLES">4678 - PRESTA PRENDA CD VALLES</option>
-            <option value="5901 - DAZ TAMASOPO">5901 - DAZ TAMASOPO</option>
-            <option value="6116 - EKT SLP CD VALLES LOMAS YUEJAT">6116 - EKT SLP CD VALLES LOMAS YUEJAT</option>
-            <option value="8319 - DAZ EL HIGO VERACRUZ">8319 - DAZ EL HIGO VERACRUZ</option>
-            <option value="4812 - DAZ RIO VERDE">4812 - DAZ RIO VERDE</option>
-            <option value="9603 - MEGA RIO VERDE">9603 - MEGA RIO VERDE</option>
-            <option value="0736 - DAZ CERRITO">0736 - DAZ CERRITO</option>
-        </select><br><br>
+      <!-- Campos con # y $ -->
+      <label for="colocacion_total">Colocación Total $:</label>
+      <input
+        type="number"
+        id="colocacion_total"
+        name="colocacion_total"
+        required
+      /><br /><br />
 
-        <!-- Campos con # y $ -->
-        <label for="colocacion_total">Colocación Total $:</label>
-        <input type="number" id="colocacion_total" name="colocacion_total" required><br><br>
+      <label for="efectivo_app_percent">Efectivo app %:</label>
+      <input
+        type="number"
+        id="efectivo_app_percent"
+        name="efectivo_app_percent"
+        required
+      /><br /><br />
 
-        <label for="efectivo_app_percent">Efectivo app %:</label>
-        <input type="number" id="efectivo_app_percent" name="efectivo_app_percent" required><br><br>
+      <label for="recompra_renovacion_num">Recompra y renovación #:</label>
+      <input
+        type="number"
+        id="recompra_renovacion_num"
+        name="recompra_renovacion_num"
+        required
+      />
+      <label for="recompra_renovacion_val"> $:</label>
+      <input
+        type="number"
+        id="recompra_renovacion_val"
+        name="recompra_renovacion_val"
+        required
+      /><br /><br />
 
-        <label for="recompra_renovacion_num">Recompra y renovación #:</label>
-        <input type="number" id="recompra_renovacion_num" name="recompra_renovacion_num" required>
-        <label for="recompra_renovacion_val"> $:</label>
-        <input type="number" id="recompra_renovacion_val" name="recompra_renovacion_val" required><br><br>
+      <label for="clientes_nuevos_num">Clientes Nuevos #:</label>
+      <input
+        type="number"
+        id="clientes_nuevos_num"
+        name="clientes_nuevos_num"
+        required
+      />
+      <label for="clientes_nuevos_val"> $:</label>
+      <input
+        type="number"
+        id="clientes_nuevos_val"
+        name="clientes_nuevos_val"
+        required
+      /><br /><br />
 
-        <label for="clientes_nuevos_num">Clientes Nuevos #:</label>
-        <input type="number" id="clientes_nuevos_num" name="clientes_nuevos_num" required>
-        <label for="clientes_nuevos_val"> $:</label>
-        <input type="number" id="clientes_nuevos_val" name="clientes_nuevos_val" required><br><br>
+      <label for="guardadito_num">Guardadito #:</label>
+      <input type="number" id="guardadito_num" name="guardadito_num" required />
+      <label for="guardadito_val"> $:</label>
+      <input
+        type="number"
+        id="guardadito_val"
+        name="guardadito_val"
+        required
+      /><br /><br />
 
-        <label for="guardadito_num">Guardadito #:</label>
-        <input type="number" id="guardadito_num" name="guardadito_num" required>
-        <label for="guardadito_val"> $:</label>
-        <input type="number" id="guardadito_val" name="guardadito_val" required><br><br>
+      <label for="somos_num">SOMOS #:</label>
+      <input type="number" id="somos_num" name="somos_num" required />
+      <label for="somos_val"> $:</label>
+      <input
+        type="number"
+        id="somos_val"
+        name="somos_val"
+        required
+      /><br /><br />
 
-        <label for="somos_num">SOMOS #:</label>
-        <input type="number" id="somos_num" name="somos_num" required>
-        <label for="somos_val"> $:</label>
-        <input type="number" id="somos_val" name="somos_val" required><br><br>
+      <label for="debito_azteca_num">Débito Azteca #:</label>
+      <input
+        type="number"
+        id="debito_azteca_num"
+        name="debito_azteca_num"
+        required
+      />
+      <label for="debito_azteca_val"> $:</label>
+      <input
+        type="number"
+        id="debito_azteca_val"
+        name="debito_azteca_val"
+        required
+      /><br /><br />
 
-        <label for="debito_azteca_num">Débito Azteca #:</label>
-        <input type="number" id="debito_azteca_num" name="debito_azteca_num" required>
-        <label for="debito_azteca_val"> $:</label>
-        <input type="number" id="debito_azteca_val" name="debito_azteca_val" required><br><br>
+      <label for="debito_negocio_num">Débito Negocio #:</label>
+      <input
+        type="number"
+        id="debito_negocio_num"
+        name="debito_negocio_num"
+        required
+      />
+      <label for="debito_negocio_val"> $:</label>
+      <input
+        type="number"
+        id="debito_negocio_val"
+        name="debito_negocio_val"
+        required
+      /><br /><br />
 
-        <label for="debito_negocio_num">Débito Negocio #:</label>
-        <input type="number" id="debito_negocio_num" name="debito_negocio_num" required>
-        <label for="debito_negocio_val"> $:</label>
-        <input type="number" id="debito_negocio_val" name="debito_negocio_val" required><br><br>
+      <label for="inversion_creciente_num">Inversión Creciente #:</label>
+      <input
+        type="number"
+        id="inversion_creciente_num"
+        name="inversion_creciente_num"
+        required
+      />
+      <label for="inversion_creciente_val"> $:</label>
+      <input
+        type="number"
+        id="inversion_creciente_val"
+        name="inversion_creciente_val"
+        required
+      /><br /><br />
 
-        <label for="inversion_creciente_num">Inversión Creciente #:</label>
-        <input type="number" id="inversion_creciente_num" name="inversion_creciente_num" required>
-        <label for="inversion_creciente_val"> $:</label>
-        <input type="number" id="inversion_creciente_val" name="inversion_creciente_val" required><br><br>
+      <label for="inversion_azteca_num">Inversión Azteca #:</label>
+      <input
+        type="number"
+        id="inversion_azteca_num"
+        name="inversion_azteca_num"
+        required
+      />
+      <label for="inversion_azteca_val"> $:</label>
+      <input
+        type="number"
+        id="inversion_azteca_val"
+        name="inversion_azteca_val"
+        required
+      /><br /><br />
 
-        <label for="inversion_azteca_num">Inversión Azteca #:</label>
-        <input type="number" id="inversion_azteca_num" name="inversion_azteca_num" required>
-        <label for="inversion_azteca_val"> $:</label>
-        <input type="number" id="inversion_azteca_val" name="inversion_azteca_val" required><br><br>
+      <label for="inversion_plazo_num">Inversión A Plazo #:</label>
+      <input
+        type="number"
+        id="inversion_plazo_num"
+        name="inversion_plazo_num"
+        required
+      />
+      <label for="inversion_plazo_val"> $:</label>
+      <input
+        type="number"
+        id="inversion_plazo_val"
+        name="inversion_plazo_val"
+        required
+      /><br /><br />
 
-        <label for="inversion_plazo_num">Inversión A Plazo #:</label>
-        <input type="number" id="inversion_plazo_num" name="inversion_plazo_num" required>
-        <label for="inversion_plazo_val"> $:</label>
-        <input type="number" id="inversion_plazo_val" name="inversion_plazo_val" required><br><br>
+      <label for="afiliaciones_num">Afiliaciones #:</label>
+      <input
+        type="number"
+        id="afiliaciones_num"
+        name="afiliaciones_num"
+        required
+      /><br /><br />
 
-        <label for="afiliaciones_num">Afiliaciones #:</label>
-        <input type="number" id="afiliaciones_num" name="afiliaciones_num" required><br><br>
+      <label for="portabilidad_num">Portabilidad #:</label>
+      <input
+        type="number"
+        id="portabilidad_num"
+        name="portabilidad_num"
+        required
+      /><br /><br />
 
-        <label for="portabilidad_num">Portabilidad #:</label>
-        <input type="number" id="portabilidad_num" name="portabilidad_num" required><br><br>
+      <label for="snl_val">SNL $:</label>
+      <input type="number" id="snl_val" name="snl_val" required /><br /><br />
 
-        <label for="snl_val">SNL $:</label>
-        <input type="number" id="snl_val" name="snl_val" required><br><br>
+      <label for="factor_vidamax">Factor VidaMax:</label>
+      <input
+        type="number"
+        id="factor_vidamax"
+        name="factor_vidamax"
+        required
+      /><br /><br />
 
-        <label for="factor_vidamax">Factor VidaMax:</label>
-        <input type="number" id="factor_vidamax" name="factor_vidamax" required><br><br>
+      <label for="whatsapp_num">WhatsApp #:</label>
+      <input
+        type="number"
+        id="whatsapp_num"
+        name="whatsapp_num"
+        required
+      /><br /><br />
 
-        <label for="whatsapp_num">WhatsApp #:</label>
-        <input type="number" id="whatsapp_num" name="whatsapp_num" required><br><br>
+      <label for="directo_a_cuenta_num">Directo A Cuenta #:</label>
+      <input
+        type="number"
+        id="directo_a_cuenta_num"
+        name="directo_a_cuenta_num"
+        required
+      /><br /><br />
 
-        <label for="directo_a_cuenta_num">Directo A Cuenta #:</label>
-        <input type="number" id="directo_a_cuenta_num" name="directo_a_cuenta_num" required><br><br>
+      <label for="atm_num">ATM #:</label>
+      <input type="number" id="atm_num" name="atm_num" required /><br /><br />
 
-        <label for="atm_num">ATM #:</label>
-        <input type="number" id="atm_num" name="atm_num" required><br><br>
+      <label for="app_banco_azteca_num">App Banco Azteca #:</label>
+      <input
+        type="number"
+        id="app_banco_azteca_num"
+        name="app_banco_azteca_num"
+        required
+      /><br /><br />
 
-        <label for="app_banco_azteca_num">App Banco Azteca #:</label>
-        <input type="number" id="app_banco_azteca_num" name="app_banco_azteca_num" required><br><br>
+      <label for="app_banco_azteca_divisa_num"
+        >App Banco Azteca Divisa #:</label
+      >
+      <input
+        type="number"
+        id="app_banco_azteca_divisa_num"
+        name="app_banco_azteca_divisa_num"
+        required
+      /><br />
 
-        <label for="app_banco_azteca_divisa_num">App Banco Azteca Divisa #:</label>
-        <input type="number" id="app_banco_azteca_divisa_num" name="app_banco_azteca_divisa_num" required><br>
-
-     
-
-
-        <button type="submit">Enviar</button>
+      <button type="submit">Enviar</button>
     </form>
 
     <script>
-        // Evento para el formulario
-        document.getElementById('formulario').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+      // Evento para el formulario
+      document
+        .getElementById("formulario")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
 
-            // Crear el objeto FormData
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+          // Crear el objeto FormData
+          const formData = new FormData(this);
+          const data = {};
+          formData.forEach((value, key) => {
+            data[key] = value;
+          });
 
-            // Usar fetch para enviar los datos al Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbxsGPFi1_RI_X2cRpU_ms_x6hwkdg0EaTiCN93AQ6VXBG1zxaygnp6Rq4PCiJU4U0U2ZQ/exec', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+          // Usar fetch para enviar los datos al Google Apps Script
+          fetch(
+            "https://script.google.com/macros/s/AKfycbxsGPFi1_RI_X2cRpU_ms_x6hwkdg0EaTiCN93AQ6VXBG1zxaygnp6Rq4PCiJU4U0U2ZQ/exec",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            },
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Éxito:", data);
+              alert("Datos enviados correctamente");
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Éxito:', data);
-                alert('Datos enviados correctamente');
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Hubo un error al enviar los datos');
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Hubo un error al enviar los datos");
             });
         });
     </script>
-</body>
+  </body>
 </html>

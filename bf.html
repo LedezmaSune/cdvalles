@@ -1,30 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buen Fin </title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buen Fin</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- Fondo Animado Moderno -->
+  <div class="background-elements">
+    <div class="blob red"></div>
+    <div class="blob yellow"></div>
+    <div class="blob accent"></div>
+  </div>
+
   <!-- Barra de navegación -->
-  <header class="navbar">Buen Fin Guia de Exhibicion</header>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="navbar-content">
+      <i class="ph-fill ph-storefront logo-icon"></i>
+      <h1>Región CD Valles</h1>
+    </div>
+  </header>
 
   <!-- Contenedor de botones -->
   <main class="container">
-    <a href="https://forms.gle/gpBCc7WwnpmMvk5g6" target="_blank" class="button">Guia de exhibicion Buen Fin</a> 
+    <a href="https://forms.gle/gpBCc7WwnpmMvk5g6" target="_blank" class="button">Guia de exhibicion Buen Fin</a>
     <a href="index.html" class="button">Volver a Página Principal</a>
-  </div>
+  </main>
 
   <!-- Pie de página -->
+  <!-- Pie de página -->
   <footer class="footer">
-    &copy; <span id="year"></span> Cd Valles
+    <div class="footer-content">
+      <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
+    </div>
   </footer>
 
   <script>
     // Actualizar el año automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
 
+</html>

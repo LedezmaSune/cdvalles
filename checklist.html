@@ -1,38 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Check List</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Barra de navegación -->
-  <div class="navbar">Check List </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check List</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fondo Animado Moderno -->
+    <div class="background-elements">
+      <div class="blob red"></div>
+      <div class="blob yellow"></div>
+      <div class="blob accent"></div>
+    </div>
 
-  
-  <!-- Contenido de la página -->
-  <div class="container">
-    <p>Bienvenido a Check List </p>
-    <a href="https://forms.gle/qxusH2MubMCCQ7Yb7" target="_blank" class="button">Check List Asesores de Banco </a>
-    <a href="https://forms.gle/6P3c16DjzD9AxKz4A" target="_blank" class="button">Check List Ventanilla </a>
-    <a href="https://forms.gle/ytKnXEUN1EnWeDYt7" target="_blank" class="button">Check List Asesor de Comercio</a>
-    
-    <p>Check List Estandar Operacion </p>
-    <a href="https://forms.gle/aVp46YpYi7rGZVih8" target="_blank" class="button">EO GPV </a>
-    <a href="https://forms.gle/3bPMdPr3FRfdzxmV6" target="_blank" class="button">EO LF </a>
-    <a href="https://forms.gle/Uc1qeLcu32BXhN77A" target="_blank" class="button">EO LC </a>
-    <a href="index.html" class="button">Volver a Página Principal</a>
-  </div>
+    <!-- Barra de navegación -->
+    <!-- Barra de navegación -->
+    <header class="navbar">
+      <div class="navbar-content">
+        <i class="ph-fill ph-storefront logo-icon"></i>
+        <h1>Región CD Valles</h1>
+      </div>
+    </header>
 
-  <!-- Pie de página -->
+    <!-- Contenido de la página -->
+    <div class="container">
+      <p>Bienvenido a Check List</p>
+      <a
+        href="https://forms.gle/qxusH2MubMCCQ7Yb7"
+        target="_blank"
+        class="button"
+        >Check List Asesores de Banco
+      </a>
+      <a
+        href="https://forms.gle/6P3c16DjzD9AxKz4A"
+        target="_blank"
+        class="button"
+        >Check List Ventanilla
+      </a>
+      <a
+        href="https://forms.gle/ytKnXEUN1EnWeDYt7"
+        target="_blank"
+        class="button"
+        >Check List Asesor de Comercio</a
+      >
+
+      <p>Check List Estandar Operacion</p>
+      <a
+        href="https://forms.gle/aVp46YpYi7rGZVih8"
+        target="_blank"
+        class="button"
+        >EO GPV
+      </a>
+      <a
+        href="https://forms.gle/3bPMdPr3FRfdzxmV6"
+        target="_blank"
+        class="button"
+        >EO LF
+      </a>
+      <a
+        href="https://forms.gle/Uc1qeLcu32BXhN77A"
+        target="_blank"
+        class="button"
+        >EO LC
+      </a>
+      <a href="index.html" class="button">Volver a Página Principal</a>
+    </div>
+
+    <!-- Pie de página -->
+    <!-- Pie de página -->
     <footer class="footer">
-    &copy; <span id="year"></span> Cd Valles
-  </footer>
+      <div class="footer-content">
+        <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
+      </div>
+    </footer>
 
-  <script>
-    // Actualizar el año automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script>
+      // Actualizar el año automáticamente
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

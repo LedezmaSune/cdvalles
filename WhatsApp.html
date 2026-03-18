@@ -1,167 +1,215 @@
 <!doctype html>
 <html lang="es">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Enviar a WhatsApp</title>
-<style>
-  :root {
-    --bg: #f9fafb;
-    --card: #ffffff;
-    --text: #111827;
-    --muted: #6b7280;
-    --accent: #06b6d4;
-    --input-bg: #f3f4f6;
-  }
-  .dark {
-    --bg: #0f1724;
-    --card: #0b1220;
-    --text: #e6eef6;
-    --muted: #9aa4b2;
-    --accent: #06b6d4;
-    --input-bg: rgba(255,255,255,0.02);
-  }
-  * { box-sizing: border-box; font-family: system-ui, sans-serif; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    display: flex;
-    justify-content: center;
-    padding: 24px;
-  }
-  .card {
-    width: 100%;
-    max-width: 700px;
-    background: var(--card);
-    border-radius: 14px;
-    padding: 28px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-  }
-  h1 { margin-top: 0; font-size: 20px; }
-  p.lead { margin: 0 0 18px; color: var(--muted); }
-  label { display: block; margin-top: 12px; font-size: 13px; }
-  input, textarea {
-    width: 100%;
-    padding: 10px 12px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.05);
-    background: var(--input-bg);
-    color: var(--text);
-    font-size: 14px;
-  }
-  button {
-    background: var(--accent);
-    color: #052027;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .row { display: flex; gap: 12px; flex-wrap: wrap; }
-  .col { flex: 1; min-width: 160px; }
-  .small { font-size: 12px; color: var(--muted); margin-top: 8px; }
-  .link-preview {
-    margin-top: 12px;
-    padding: 10px;
-    border-radius: 8px;
-    background: var(--input-bg);
-    font-size: 13px;
-    word-break: break-all;
-  }
-  .topbar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 12px;
-  }
-  @media (max-width: 480px) {
-    .card { padding: 18px; }
-  }
-</style>
-</head>
-<body>
-<div class="card">
-  <div class="topbar">
-    <button id="themeToggle">🌙</button>
-  </div>
-  <h1>Enviar mensaje por WhatsApp</h1>
-  <p class="lead">Introduce el número en formato internacional y el mensaje.</p>
-
-  <label for="phone">Número (ej. 5215512345678)</label>
-  <input id="phone" type="text" placeholder="Código país + número (sin +)" />
-
-  <label for="message">Mensaje</label>
-  <textarea id="message" rows="4" placeholder="Escribe tu mensaje..."></textarea>
-
-  <div class="row">
-    <div class="col">
-      <button id="openBtn">Abrir en WhatsApp</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Enviar a WhatsApp</title>
+    <style>
+      :root {
+        --bg: #f9fafb;
+        --card: #ffffff;
+        --text: #111827;
+        --muted: #6b7280;
+        --accent: #06b6d4;
+        --input-bg: #f3f4f6;
+      }
+      .dark {
+        --bg: #0f1724;
+        --card: #0b1220;
+        --text: #e6eef6;
+        --muted: #9aa4b2;
+        --accent: #06b6d4;
+        --input-bg: rgba(255, 255, 255, 0.02);
+      }
+      * {
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        width: 100%;
+        max-width: 700px;
+        background: var(--card);
+        border-radius: 14px;
+        padding: 28px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+      h1 {
+        margin-top: 0;
+        font-size: 20px;
+      }
+      p.lead {
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+      label {
+        display: block;
+        margin-top: 12px;
+        font-size: 13px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        margin-top: 6px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        background: var(--input-bg);
+        color: var(--text);
+        font-size: 14px;
+      }
+      button {
+        background: var(--accent);
+        color: #052027;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .col {
+        flex: 1;
+        min-width: 160px;
+      }
+      .small {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .link-preview {
+        margin-top: 12px;
+        padding: 10px;
+        border-radius: 8px;
+        background: var(--input-bg);
+        font-size: 13px;
+        word-break: break-all;
+      }
+      .topbar {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 12px;
+      }
+      @media (max-width: 480px) {
+        .card {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fondo Animado Moderno -->
+    <div class="background-elements">
+      <div class="blob red"></div>
+      <div class="blob yellow"></div>
+      <div class="blob accent"></div>
     </div>
-    <div class="col">
-      <button id="copyBtn" type="button">Copiar enlace</button>
+
+    <div class="card">
+      <div class="topbar">
+        <button id="themeToggle">🌙</button>
+      </div>
+      <h1>Enviar mensaje por WhatsApp</h1>
+      <p class="lead">
+        Introduce el número en formato internacional y el mensaje.
+      </p>
+
+      <label for="phone">Número (ej. 5215512345678)</label>
+      <input
+        id="phone"
+        type="text"
+        placeholder="Código país + número (sin +)"
+      />
+
+      <label for="message">Mensaje</label>
+      <textarea
+        id="message"
+        rows="4"
+        placeholder="Escribe tu mensaje..."
+      ></textarea>
+
+      <div class="row">
+        <div class="col">
+          <button id="openBtn">Abrir en WhatsApp</button>
+        </div>
+        <div class="col">
+          <button id="copyBtn" type="button">Copiar enlace</button>
+        </div>
+      </div>
+
+      <div class="small">Vista previa del enlace:</div>
+      <div id="preview" class="link-preview">Aquí aparecerá el enlace...</div>
     </div>
-  </div>
 
-  <div class="small">Vista previa del enlace:</div>
-  <div id="preview" class="link-preview">Aquí aparecerá el enlace...</div>
-</div>
+    <script>
+      const phoneEl = document.getElementById("phone");
+      const msgEl = document.getElementById("message");
+      const previewEl = document.getElementById("preview");
+      const openBtn = document.getElementById("openBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const themeToggle = document.getElementById("themeToggle");
 
-<script>
-  const phoneEl = document.getElementById('phone');
-  const msgEl = document.getElementById('message');
-  const previewEl = document.getElementById('preview');
-  const openBtn = document.getElementById('openBtn');
-  const copyBtn = document.getElementById('copyBtn');
-  const themeToggle = document.getElementById('themeToggle');
+      function sanitizeNumber(n) {
+        return (n || "").replace(/[^0-9]/g, "");
+      }
+      function buildLink() {
+        const phone = sanitizeNumber(phoneEl.value.trim());
+        const text = (msgEl.value || "").trim();
+        const encoded = encodeURIComponent(text);
+        if (!phone) return `https://wa.me/?text=${encoded}`;
+        return `https://wa.me/${phone}?text=${encoded}`;
+      }
+      function updatePreview() {
+        previewEl.textContent = buildLink();
+      }
+      phoneEl.addEventListener("input", updatePreview);
+      msgEl.addEventListener("input", updatePreview);
+      updatePreview();
 
-  function sanitizeNumber(n){
-    return (n||'').replace(/[^0-9]/g, '');
-  }
-  function buildLink(){
-    const phone = sanitizeNumber(phoneEl.value.trim());
-    const text = (msgEl.value || '').trim();
-    const encoded = encodeURIComponent(text);
-    if(!phone) return `https://wa.me/?text=${encoded}`;
-    return `https://wa.me/${phone}?text=${encoded}`;
-  }
-  function updatePreview(){
-    previewEl.textContent = buildLink();
-  }
-  phoneEl.addEventListener('input', updatePreview);
-  msgEl.addEventListener('input', updatePreview);
-  updatePreview();
+      openBtn.addEventListener("click", () => {
+        const phone = sanitizeNumber(phoneEl.value.trim());
+        if (phone && phone.length < 6) {
+          alert("Número demasiado corto.");
+          return;
+        }
+        window.open(buildLink(), "_blank");
+      });
 
-  openBtn.addEventListener('click', () => {
-    const phone = sanitizeNumber(phoneEl.value.trim());
-    if(phone && phone.length < 6){
-      alert('Número demasiado corto.');
-      return;
-    }
-    window.open(buildLink(), '_blank');
-  });
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(buildLink()).then(() => {
+          alert("Enlace copiado");
+        });
+      });
 
-  copyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(buildLink()).then(()=> {
-      alert('Enlace copiado');
-    });
-  });
-
-  // Tema
-  function setTheme(dark){
-    document.body.classList.toggle('dark', dark);
-    themeToggle.textContent = dark ? '☀️' : '🌙';
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-  }
-  themeToggle.addEventListener('click', () => {
-    setTheme(!document.body.classList.contains('dark'));
-  });
-  // Detectar tema del sistema
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  setTheme(localStorage.getItem('theme') 
-           ? localStorage.getItem('theme') === 'dark'
-           : prefersDark);
-</script>
-</body>
+      // Tema
+      function setTheme(dark) {
+        document.body.classList.toggle("dark", dark);
+        themeToggle.textContent = dark ? "☀️" : "🌙";
+        localStorage.setItem("theme", dark ? "dark" : "light");
+      }
+      themeToggle.addEventListener("click", () => {
+        setTheme(!document.body.classList.contains("dark"));
+      });
+      // Detectar tema del sistema
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      setTheme(
+        localStorage.getItem("theme")
+          ? localStorage.getItem("theme") === "dark"
+          : prefersDark,
+      );
+    </script>
+  </body>
 </html>

@@ -1,36 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5901 Daz Tamasopo </title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5901 Daz Tamasopo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fondo Animado Moderno -->
+    <div class="background-elements">
+      <div class="blob red"></div>
+      <div class="blob yellow"></div>
+      <div class="blob accent"></div>
+    </div>
 
+    <!-- Barra de navegación -->
+    <!-- Barra de navegación -->
+    <header class="navbar">
+      <div class="navbar-content">
+        <i class="ph-fill ph-storefront logo-icon"></i>
+        <h1>Región CD Valles</h1>
+      </div>
+    </header>
 
-  
-  <!-- Barra de navegación -->
-  <div class="navbar">Daz Tamasopo 5901 </div>
+    <!-- Contenedor de botones -->
+    <div class="container">
+      <a href="5C.html" class="button">5 Conversaciones</a>
+      <a href="eo.html" class="button">Expediente Operativo</a>
+      <a href="https://auth.gruposalinas.com.mx" target="_blank" class="button"
+        >Grupo Salinas</a
+      >
+      <a href="pdfgg.html" class="button">Grito de Guerra</a>
+      <a href="pdfms.html" class="button">Matriz de Sanciones</a>
+      <a href="5901agenda.html" target="_blank" class="button"
+        >Agenda/Vacaciones/Permisos/FineS</a
+      >
+    </div>
 
-  <!-- Contenedor de botones -->
-  <div class="container">
-    <a href="5C.html" class="button">5 Conversaciones</a>
-    <a href="eo.html" class="button">Expediente Operativo</a>
-    <a href="https://auth.gruposalinas.com.mx" target="_blank" class="button">Grupo Salinas</a>
-    <a href="pdfgg.html" class="button">Grito de Guerra</a>
-    <a href="pdfms.html" class="button">Matriz de Sanciones</a>
-    <a href="5901agenda.html" target="_blank" class="button">Agenda/Vacaciones/Permisos/FineS</a>
-  </div>
-
-  <!-- Pie de página -->
+    <!-- Pie de página -->
+    <!-- Pie de página -->
     <footer class="footer">
-    &copy; <span id="year"></span> Cd Valles
-  </footer>
+      <div class="footer-content">
+        <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
+      </div>
+    </footer>
 
-  <script>
-    // Actualizar el año automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script>
+      // Actualizar el año automáticamente
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
