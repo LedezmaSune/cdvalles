@@ -59,16 +59,18 @@ files.forEach(file => {
   }
 
   // 3. Update Navbar
-  if (content.match(/<(header|div) class="navbar".*?>.*?<\/(header|div)>/i)) {
-    content = content.replace(/<(header|div) class="navbar".*?>.*?<\/(header|div)>/i, newHeader.trim());
+  const navbarRegex = /(\s*<!-- Barra de navegación -->)?\s*<(header|div) class="navbar"[\s\S]*?<\/\2>/i;
+  if (content.match(navbarRegex)) {
+    content = content.replace(navbarRegex, `\n${newHeader.trim()}`);
   } else if (content.match(/<(header|div) class="navbar">/i)) {
     // If it's just the opening tag with no closing tag
-    content = content.replace(/<(header|div) class="navbar">.*?(?=[\n\r])/i, newHeader.trim());
+    content = content.replace(/<(header|div) class="navbar">.*?(?=[\n\r])/i, `\n${newHeader.trim()}`);
   }
 
   // 4. Update Footer
-  if (content.match(/<footer class="footer".*?>[\s\S]*?<\/footer>/i)) {
-    content = content.replace(/<footer class="footer".*?>[\s\S]*?<\/footer>/i, newFooter.trim());
+  const footerRegex = /(\s*<!-- Pie de página -->)?\s*<footer class="footer"[\s\S]*?<\/footer>/i;
+  if (content.match(footerRegex)) {
+    content = content.replace(footerRegex, `\n${newFooter.trim()}`);
   }
 
   fs.writeFileSync(path.join(dir, file), content, 'utf8');
