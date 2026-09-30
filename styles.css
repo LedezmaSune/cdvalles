@@ -450,3 +450,408 @@ body {
     font-size: 20px;
   }
 }
+
+/* ======================================
+   ESTILOS: Compartir por WhatsApp y Documentos
+   ====================================== */
+
+/* Tarjetas de Documentos (pdf.html) */
+.doc-card {
+  flex: 1 1 320px;
+  max-width: 440px;
+  background: var(--surface-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.doc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(218, 41, 28, 0.3);
+}
+
+.doc-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--brand-red-light);
+  color: var(--brand-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.doc-info h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.3;
+  margin: 0;
+  word-break: break-word;
+}
+
+.doc-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-doc-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(218, 41, 28, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-doc-view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(218, 41, 28, 0.35);
+  filter: brightness(1.05);
+}
+
+.btn-doc-share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: #25D366;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-doc-share:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.45);
+  background: #20ba5a;
+}
+
+/* Barra de acciones para visores (pdfgg.html, pdfms.html) */
+.view-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-action-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: #25D366;
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-action-wa:hover {
+  background: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Toast de Carga */
+.share-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.share-toast.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.share-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #25D366;
+  border-radius: 50%;
+  animation: shareSpin 0.8s linear infinite;
+}
+
+@keyframes shareSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Modal Overlay */
+.share-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.share-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.share-modal-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.share-modal-overlay.active .share-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.share-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.share-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-modal-title h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.share-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.2s;
+}
+
+.share-modal-close:hover {
+  color: var(--text-main);
+}
+
+.share-doc-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+}
+
+.share-doc-preview i {
+  font-size: 28px;
+  color: var(--brand-red);
+}
+
+.share-doc-preview strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.share-doc-preview small {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.share-input-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.share-input-group {
+  display: flex;
+  align-items: center;
+  background: var(--bg-color);
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+
+.share-input-group:focus-within {
+  border-color: #25D366;
+}
+
+.share-input-prefix {
+  padding: 10px 14px;
+  background: #f1f5f9;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 14px;
+  border-right: 1px solid #e2e8f0;
+}
+
+.share-input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: var(--text-main);
+  outline: none;
+  font-family: inherit;
+}
+
+.share-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.share-btn-primary {
+  background: #25D366;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.share-btn-primary:hover {
+  background: #20ba5a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.share-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 14px 0;
+}
+
+.share-divider::before,
+.share-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.share-divider span {
+  padding: 0 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.share-btn-secondary {
+  background: #f1f5f9;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.share-btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.share-btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.share-btn-ghost:hover {
+  color: var(--text-main);
+  background: rgba(0, 0, 0, 0.03);
+}

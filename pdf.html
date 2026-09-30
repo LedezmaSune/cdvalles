@@ -35,73 +35,164 @@
     <!-- Contenido de la página -->
     <div class="container">
       <p>PDF para imprimir</p>
-      <a
-        href="https://drive.google.com/drive/folders/11y8DNDSp59aRg_TZd-sbAD9hz7cp7gug?usp=drive_link"
-        target="_blank"
-        class="button"
-        >Cheques</a
-      >
-      <a
-        href="https://drive.google.com/file/d/1zAGJidM6abfgR6VYAALrP9n8T4QVKqKT/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Acta de Depuración ID</a
-      >
-      <a
-        href="https://drive.google.com/file/d/1-i78t-nYCyynAOeS3woaLuJZ1Y4tUjeE/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Agenda Fin</a
-      >
-      <a
-        href="https://drive.google.com/file/d/1aOoQYUsSoemcYR6xpf3iedWixcVXS4SU/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Bitacora Cajas</a
-      >
-      <a
-        href="https://drive.google.com/file/d/1-lIer6NiCL_jg97yJAW77uNALhQAoNPi/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Productividad ASF</a
-      >
-      <a
-        href="https://drive.google.com/file/d/1aIA4-luM4A-DDR0vuEVXgh0rEn61Vx9X/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Productividad ASC</a
-      >
-      <a
-        href="https://drive.google.com/file/d/1aP8toiRe4MxXpD18sNKFTRhUfs3e2GEn/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Productividad ACSF
-      </a>
-      <a
-        href="https://drive.google.com/file/d/1G0QomSwwK3u6xfX12XQJSsKELg5bbidU/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Arrastre 8 Semanas
-      </a>
 
-      <a
-        href="https://drive.google.com/file/d/1ZS3XQ8XMUr5hI79qtTx06uaZPuojdnVy/view?usp=drivesdk"
-        target="_blank"
-        class="button"
-        >Reunión con Cobranza
-      </a>
+      <!-- Cheques (Carpeta) -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-folder"></i></div>
+          <h4>Cheques</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/drive/folders/11y8DNDSp59aRg_TZd-sbAD9hz7cp7gug?usp=drive_link" target="_blank" class="btn-doc-view">
+            <i class="ph ph-arrow-square-out"></i> Abrir
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Cheques', 'https://drive.google.com/drive/folders/11y8DNDSp59aRg_TZd-sbAD9hz7cp7gug?usp=drive_link', true)">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
 
-      <a href="index.html" class="button">Volver a Página Principal</a>
+      <!-- Acta de Depuración ID -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Acta de Depuración ID</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1zAGJidM6abfgR6VYAALrP9n8T4QVKqKT/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Acta de Depuración ID', 'https://drive.google.com/file/d/1zAGJidM6abfgR6VYAALrP9n8T4QVKqKT/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Agenda Fin -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Agenda Fin</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1-i78t-nYCyynAOeS3woaLuJZ1Y4tUjeE/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Agenda Fin', 'https://drive.google.com/file/d/1-i78t-nYCyynAOeS3woaLuJZ1Y4tUjeE/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bitacora Cajas -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Bitacora Cajas</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1aOoQYUsSoemcYR6xpf3iedWixcVXS4SU/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Bitacora Cajas', 'https://drive.google.com/file/d/1aOoQYUsSoemcYR6xpf3iedWixcVXS4SU/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Productividad ASF -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Productividad ASF</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1-lIer6NiCL_jg97yJAW77uNALhQAoNPi/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Productividad ASF', 'https://drive.google.com/file/d/1-lIer6NiCL_jg97yJAW77uNALhQAoNPi/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Productividad ASC -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Productividad ASC</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1aIA4-luM4A-DDR0vuEVXgh0rEn61Vx9X/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Productividad ASC', 'https://drive.google.com/file/d/1aIA4-luM4A-DDR0vuEVXgh0rEn61Vx9X/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Productividad ACSF -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Productividad ACSF</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1aP8toiRe4MxXpD18sNKFTRhUfs3e2GEn/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Productividad ACSF', 'https://drive.google.com/file/d/1aP8toiRe4MxXpD18sNKFTRhUfs3e2GEn/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Arrastre 8 Semanas -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Arrastre 8 Semanas</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1G0QomSwwK3u6xfX12XQJSsKELg5bbidU/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Arrastre 8 Semanas', 'https://drive.google.com/file/d/1G0QomSwwK3u6xfX12XQJSsKELg5bbidU/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Reunión con Cobranza -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <div class="doc-icon-wrap"><i class="ph ph-file-pdf"></i></div>
+          <h4>Reunión con Cobranza</h4>
+        </div>
+        <div class="doc-actions">
+          <a href="https://drive.google.com/file/d/1ZS3XQ8XMUr5hI79qtTx06uaZPuojdnVy/view?usp=drivesdk" target="_blank" class="btn-doc-view">
+            <i class="ph ph-eye"></i> Ver
+          </a>
+          <button type="button" class="btn-doc-share" title="Compartir por WhatsApp" onclick="compartirDocumento('Reunión con Cobranza', 'https://drive.google.com/file/d/1ZS3XQ8XMUr5hI79qtTx06uaZPuojdnVy/view?usp=drivesdk')">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+          </button>
+        </div>
+      </div>
+
+      <div style="width: 100%; display: flex; justify-content: center; margin-top: 25px;">
+        <a href="index.html" class="button">Volver a Página Principal</a>
+      </div>
     </div>
 
     <!-- Pie de página -->
-<!-- Pie de página -->
     <footer class="footer">
       <div class="footer-content">
         <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
       </div>
     </footer>
 
+    <script src="share.js"></script>
     <script>
       // Actualizar el año automáticamente
       document.getElementById("year").textContent = new Date().getFullYear();

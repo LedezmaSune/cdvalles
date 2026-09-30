@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PDF Matriz de Sanciones</title>
+  <title>Grito de Guerra - Región CD Valles</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,21 +33,33 @@
 
   <!-- Contenedor del PDF -->
   <div class="pdf-container">
-    <h2>Grito de Guerra Cd. Valles</h2>
+    <div class="view-actions">
+      <h2>Grito de Guerra Cd. Valles</h2>
+      <div class="action-buttons-group">
+        <a href="https://drive.google.com/file/d/1mGyAL-63Uycg75jzU3lAN0GrSu29g05g/view?usp=drive_link" target="_blank" class="external-link-btn">
+          <i class="ph ph-arrow-square-out"></i> Abrir en Drive
+        </a>
+        <button type="button" class="btn-action-wa" onclick="compartirDocumento('Grito de Guerra Cd. Valles', 'https://drive.google.com/file/d/1mGyAL-63Uycg75jzU3lAN0GrSu29g05g/view?usp=drive_link')">
+          <i class="ph-fill ph-whatsapp-logo"></i> Compartir por WhatsApp
+        </button>
+      </div>
+    </div>
     <iframe src="https://drive.google.com/file/d/1mGyAL-63Uycg75jzU3lAN0GrSu29g05g/view?usp=drive_link" width="100%" height="600px"
-      style="border: none"></iframe>
+      style="border: none; border-radius: var(--radius-md);"></iframe>
   </div>
 
-  <a href="index.html" class="button">Volver a Página Principal</a>
+  <div style="display: flex; justify-content: center; margin: 20px auto 60px;">
+    <a href="index.html" class="button">Volver a Página Principal</a>
+  </div>
 
   <!-- Pie de página -->
-<!-- Pie de página -->
-    <footer class="footer">
-      <div class="footer-content">
-        <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
-      </div>
-    </footer>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Grupo Elektra &copy; <span id="year"></span> | Región CD Valles</p>
+    </div>
+  </footer>
 
+  <script src="share.js"></script>
   <script>
     // Actualizar el año automáticamente
     document.getElementById("year").textContent = new Date().getFullYear();
