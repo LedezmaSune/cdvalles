@@ -98,6 +98,15 @@
       }
     });
 
+    function formatearTelefonoMexico(numRaw) {
+      const limpio = (numRaw || '').replace(/\D/g, '');
+      if (limpio.length === 10) return '521' + limpio;
+      if (limpio.startsWith('52') && !limpio.startsWith('521') && limpio.length === 12) {
+        return '521' + limpio.slice(2);
+      }
+      return limpio;
+    }
+
     // Envío automático vía BotMaRe (a través de Google Apps Script)
     sendDirectBtn.addEventListener('click', async () => {
       const raw = phoneInput.value.replace(/\D/g, '');
@@ -107,7 +116,7 @@
         return;
       }
       localStorage.setItem('last_wa_phone', raw);
-      const phone = raw.length === 10 ? '52' + raw : raw;
+      const phone = formatearTelefonoMexico(raw);
 
       const originalBtnHtml = sendDirectBtn.innerHTML;
       sendDirectBtn.disabled = true;
@@ -166,7 +175,7 @@
     // Envío manual directo abriendo WhatsApp con el número
     openWaBtn.addEventListener('click', () => {
       const raw = phoneInput.value.replace(/\D/g, '');
-      const phone = raw.length === 10 ? '52' + raw : raw;
+      const phone = formatearTelefonoMexico(raw);
       const mensaje = armarMensajeTexto(currentDoc.nombre, currentDoc.url);
       if (phone) {
         localStorage.setItem('last_wa_phone', raw);
