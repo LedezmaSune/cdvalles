@@ -8,6 +8,9 @@
 
 (function () {
   // Estructura del modal y del indicador de carga
+// URL del Webhook Escudo en Google Apps Script
+  const GAS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyamFZv8Exlj0WYg4RjeFifIX55Z0425ugM5P2GC0lIqZyB-u1ILgRTVsvebRrgN6_Qxw/exec';
+
   let modalInitialized = false;
   let currentDoc = { nombre: '', url: '', esCarpeta: false };
 
@@ -55,13 +58,17 @@
           </div>
 
           <button type="button" id="shareSendDirectBtn" class="share-btn share-btn-primary">
-            <i class="ph ph-paper-plane-right"></i> Enviar a este número
+            <i class="ph ph-paper-plane-right"></i> Enviar con BotMaRe (Automático)
+          </button>
+
+          <button type="button" id="shareOpenWaBtn" class="share-btn share-btn-secondary" style="margin-top: 8px;">
+            <i class="ph-fill ph-whatsapp-logo"></i> Abrir en mi WhatsApp
           </button>
 
           <div class="share-divider"><span>o elige tu chat</span></div>
 
           <button type="button" id="shareChooseContactBtn" class="share-btn share-btn-secondary">
-            <i class="ph ph-chats-circle"></i> Elegir contacto en WhatsApp
+            <i class="ph ph-chats-circle"></i> Elegir contacto en WhatsApp Web
           </button>
 
           <button type="button" id="shareCopyLinkBtn" class="share-btn share-btn-ghost">
@@ -75,6 +82,7 @@
     // Eventos del modal
     const closeBtn = document.getElementById('shareCloseBtn');
     const sendDirectBtn = document.getElementById('shareSendDirectBtn');
+    const openWaBtn = document.getElementById('shareOpenWaBtn');
     const chooseContactBtn = document.getElementById('shareChooseContactBtn');
     const copyLinkBtn = document.getElementById('shareCopyLinkBtn');
     const phoneInput = document.getElementById('sharePhoneInput');
@@ -90,19 +98,82 @@
       }
     });
 
-    sendDirectBtn.addEventListener('click', () => {
+    // Envío automático vía BotMaRe (a través de Google Apps Script)
+    sendDirectBtn.addEventListener('click', async () => {
       const raw = phoneInput.value.replace(/\D/g, '');
       if (!raw || raw.length < 10) {
         alert('Por favor introduce un número válido a 10 dígitos.');
         phoneInput.focus();
         return;
       }
-      // Guardar último número usado
       localStorage.setItem('last_wa_phone', raw);
+      const phone = raw.length === 10 ? '52' + raw : raw;
 
+      const originalBtnHtml = sendDirectBtn.innerHTML;
+      sendDirectBtn.disabled = true;
+      sendDirectBtn.innerHTML = '<i class="ph ph-spinner-gap" style="display:inline-block; animation: shareSpin 0.8s linear infinite;"></i> Enviando...';
+
+      try {
+        const resp = await fetch(GAS_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            phone: phone,
+            nombre: currentDoc.nombre,
+            url: currentDoc.url
+          })
+        });
+
+        const resultado = await resp.json();
+        let detalleObj = null;
+        try {
+          detalleObj = typeof resultado.detalles === 'string' ? JSON.parse(resultado.detalles) : resultado.detalles;
+        } catch (e) {}
+
+        if (resultado.status === 'ok' && (!detalleObj || detalleObj.success !== false)) {
+          sendDirectBtn.style.background = '#10b981';
+          sendDirectBtn.innerHTML = '<i class="ph ph-check-circle"></i> ¡Enviado por WhatsApp!';
+          setTimeout(() => {
+            cerrarModal();
+            sendDirectBtn.style.background = '';
+            sendDirectBtn.innerHTML = originalBtnHtml;
+            sendDirectBtn.disabled = false;
+          }, 1800);
+        } else {
+          const errorMsg = (detalleObj && detalleObj.error) ? detalleObj.error : (resultado.mensaje || 'Error al enviar');
+          console.warn('Respuesta de BotMaRe:', errorMsg);
+
+          if (confirm(`BotMaRe reportó: "${errorMsg}".\n\n¿Deseas abrir WhatsApp Web directamente para enviarlo de forma manual?`)) {
+            const mensaje = armarMensajeTexto(currentDoc.nombre, currentDoc.url);
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`, '_blank');
+            cerrarModal();
+          }
+          sendDirectBtn.innerHTML = originalBtnHtml;
+          sendDirectBtn.disabled = false;
+        }
+      } catch (err) {
+        console.error('Error al conectar con webhook:', err);
+        if (confirm('No se pudo conectar con el bot automático.\n\n¿Deseas abrir WhatsApp Web para enviarlo manualmente?')) {
+          const mensaje = armarMensajeTexto(currentDoc.nombre, currentDoc.url);
+          window.open(`https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`, '_blank');
+          cerrarModal();
+        }
+        sendDirectBtn.innerHTML = originalBtnHtml;
+        sendDirectBtn.disabled = false;
+      }
+    });
+
+    // Envío manual directo abriendo WhatsApp con el número
+    openWaBtn.addEventListener('click', () => {
+      const raw = phoneInput.value.replace(/\D/g, '');
       const phone = raw.length === 10 ? '52' + raw : raw;
       const mensaje = armarMensajeTexto(currentDoc.nombre, currentDoc.url);
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`, '_blank');
+      if (phone) {
+        localStorage.setItem('last_wa_phone', raw);
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`, '_blank');
+      } else {
+        window.open(`https://wa.me/?text=${encodeURIComponent(mensaje)}`, '_blank');
+      }
       cerrarModal();
     });
 
