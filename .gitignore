@@ -1,0 +1,5 @@
+# Documentación privada y notas sensibles (no subir a GitHub)
+NOTAS_INTEGRACION.md
+*.privado.md
+*.secret.md
+.env
